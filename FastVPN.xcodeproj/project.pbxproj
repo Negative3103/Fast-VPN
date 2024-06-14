@@ -18,6 +18,10 @@
 		D10750082C1CBA8200026F0A /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750072C1CBA8200026F0A /* UINavigationBar.swift */; };
 		D107500A2C1CC1A000026F0A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750092C1CC1A000026F0A /* UIViewController.swift */; };
 		D107500C2C1CC1D200026F0A /* MainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107500B2C1CC1D200026F0A /* MainConstants.swift */; };
+		D10750122C1CCAF900026F0A /* attribution.docx in Resources */ = {isa = PBXBuildFile; fileRef = D107500E2C1CCAF900026F0A /* attribution.docx */; };
+		D10750132C1CCAF900026F0A /* politicy.docx in Resources */ = {isa = PBXBuildFile; fileRef = D107500F2C1CCAF900026F0A /* politicy.docx */; };
+		D10750142C1CCAF900026F0A /* dataCollection.docx in Resources */ = {isa = PBXBuildFile; fileRef = D10750102C1CCAF900026F0A /* dataCollection.docx */; };
+		D10750152C1CCAF900026F0A /* conditions.docx in Resources */ = {isa = PBXBuildFile; fileRef = D10750112C1CCAF900026F0A /* conditions.docx */; };
 		D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */; };
 		D1C6E1D22C1C2F94006935CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */; };
 		D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */; };
@@ -79,6 +83,10 @@
 		D10750072C1CBA8200026F0A /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		D10750092C1CC1A000026F0A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D107500B2C1CC1D200026F0A /* MainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConstants.swift; sourceTree = "<group>"; };
+		D107500E2C1CCAF900026F0A /* attribution.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = attribution.docx; path = ../../../../Downloads/attribution.docx; sourceTree = "<group>"; };
+		D107500F2C1CCAF900026F0A /* politicy.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = politicy.docx; path = ../../../../Downloads/politicy.docx; sourceTree = "<group>"; };
+		D10750102C1CCAF900026F0A /* dataCollection.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = dataCollection.docx; path = ../../../../Downloads/dataCollection.docx; sourceTree = "<group>"; };
+		D10750112C1CCAF900026F0A /* conditions.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = conditions.docx; path = ../../../../Downloads/conditions.docx; sourceTree = "<group>"; };
 		D1C6E1CE2C1C2F94006935CD /* FastVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +154,17 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		D107500D2C1CCAEC00026F0A /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				D107500E2C1CCAF900026F0A /* attribution.docx */,
+				D107500F2C1CCAF900026F0A /* politicy.docx */,
+				D10750102C1CCAF900026F0A /* dataCollection.docx */,
+				D10750112C1CCAF900026F0A /* conditions.docx */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		D1C6E1C52C1C2F94006935CD = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +203,7 @@
 		D1C6E1EC2C1C2FCD006935CD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D107500D2C1CCAEC00026F0A /* Files */,
 				D1C6E1F02C1C3007006935CD /* Protocols */,
 				D1C6E1EE2C1C2FE8006935CD /* Extensions */,
 				D1C6E1ED2C1C2FD4006935CD /* Classes */,
@@ -405,10 +425,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D10750142C1CCAF900026F0A /* dataCollection.docx in Resources */,
+				D10750132C1CCAF900026F0A /* politicy.docx in Resources */,
 				D1C6E23D2C1C3672006935CD /* AboutView.xib in Resources */,
 				D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */,
 				D1C6E1DE2C1C2F96006935CD /* Base in Resources */,
+				D10750122C1CCAF900026F0A /* attribution.docx in Resources */,
 				D1C6E2352C1C360F006935CD /* VPNView.xib in Resources */,
+				D10750152C1CCAF900026F0A /* conditions.docx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -658,7 +682,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

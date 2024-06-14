@@ -10,4 +10,15 @@ import UIKit
 final class AboutView: CustomView {
     
     //MARK: - Outlets
+    @IBOutlet weak var versionLabel: UILabel! {
+        didSet {
+            guard let version = Bundle.main.releaseVersionNumber else {return}
+            versionLabel.text = "ВЕРСИЯ \(version)"
+        }
+    }
+    @IBOutlet var views: [UIView]! {
+        didSet {
+            views.forEach({ $0.layer.cornerRadius = 10 })
+        }
+    }
 }
