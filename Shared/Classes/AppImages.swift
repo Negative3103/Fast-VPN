@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+enum AppImages: String {
+    case vpn
+    case about
+    case ballNoActiv
+    case ballActiv
+    case email
+    case supportChat
+    case telegram
+    case logo
+    case global
+}
