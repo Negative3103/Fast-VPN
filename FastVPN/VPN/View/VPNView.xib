@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,9 +18,94 @@
         <view contentMode="scaleToFill" id="PpW-Tw-9fu" customClass="VPNView" customModule="FastVPN" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9aZ-3f-PSh">
+                    <rect key="frame" x="10" y="69" width="373" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0c-ET-iax">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" name="gray"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-Vm-tu6">
+                            <rect key="frame" x="0.0" y="50" width="373" height="50"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="textColor" name="black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EOh-f9-p0q">
+                    <rect key="frame" x="20" y="678" width="353" height="120"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9J-f1-dKZ" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="353" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="zCZ-nd-PGH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="tintColor" name="black"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                            <state key="normal" title="Поддержка" image="telegram">
+                                <color key="titleColor" name="black"/>
+                            </state>
+                            <connections>
+                                <action selector="supportAction:" destination="-1" eventType="touchUpInside" id="X9v-Ax-edF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rxw-Hq-cQS" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="70" width="353" height="50"/>
+                            <color key="backgroundColor" name="black"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                            <state key="normal" title="Настроить VPN" image="global"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                    <color key="value" name="black"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                                    <color key="value" name="black50"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="settingsAction:" destination="-1" eventType="touchUpInside" id="4Sy-eU-BNv"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="EXO-Y4-NCa"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <point key="canvasLocation" x="247" y="-316"/>
+            <constraints>
+                <constraint firstItem="EXO-Y4-NCa" firstAttribute="trailing" secondItem="EOh-f9-p0q" secondAttribute="trailing" constant="20" id="0oy-Vp-Ucd"/>
+                <constraint firstItem="9aZ-3f-PSh" firstAttribute="leading" secondItem="EXO-Y4-NCa" secondAttribute="leading" constant="10" id="BfB-QT-km7"/>
+                <constraint firstItem="9aZ-3f-PSh" firstAttribute="top" secondItem="EXO-Y4-NCa" secondAttribute="top" constant="10" id="IUu-t5-E1w"/>
+                <constraint firstItem="EXO-Y4-NCa" firstAttribute="bottom" secondItem="EOh-f9-p0q" secondAttribute="bottom" constant="20" id="NPw-26-mGj"/>
+                <constraint firstItem="EXO-Y4-NCa" firstAttribute="trailing" secondItem="9aZ-3f-PSh" secondAttribute="trailing" constant="10" id="pu0-sk-xlp"/>
+                <constraint firstItem="EOh-f9-p0q" firstAttribute="leading" secondItem="EXO-Y4-NCa" secondAttribute="leading" constant="20" id="y42-t3-pkn"/>
+            </constraints>
+            <connections>
+                <outlet property="accessLabel" destination="I0c-ET-iax" id="K5i-xe-16Y"/>
+                <outlet property="dateLabel" destination="qyf-Vm-tu6" id="fnf-2S-uYq"/>
+                <outlet property="settingsButton" destination="rxw-Hq-cQS" id="DY0-b2-36f"/>
+                <outlet property="supportButton" destination="O9J-f1-dKZ" id="xcU-CK-R53"/>
+            </connections>
+            <point key="canvasLocation" x="246.56488549618319" y="-316.19718309859155"/>
         </view>
     </objects>
+    <resources>
+        <image name="global" width="18" height="18.333333969116211"/>
+        <image name="telegram" width="18" height="15"/>
+        <namedColor name="black">
+            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black50">
+            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gray">
+            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

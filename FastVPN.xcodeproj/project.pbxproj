@@ -12,6 +12,12 @@
 		D1074FFB2C1CB20E00026F0A /* OutlineAppleLib in Frameworks */ = {isa = PBXBuildFile; productRef = D1074FFA2C1CB20E00026F0A /* OutlineAppleLib */; };
 		D1074FFD2C1CB20E00026F0A /* OutlineLauncher in Frameworks */ = {isa = PBXBuildFile; productRef = D1074FFC2C1CB20E00026F0A /* OutlineLauncher */; };
 		D1074FFF2C1CB20E00026F0A /* PacketTunnelProvider in Frameworks */ = {isa = PBXBuildFile; productRef = D1074FFE2C1CB20E00026F0A /* PacketTunnelProvider */; };
+		D10750012C1CB5AA00026F0A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750002C1CB5AA00026F0A /* UserDefaults.swift */; };
+		D10750042C1CB6A800026F0A /* VPNViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750032C1CB6A800026F0A /* VPNViewModel.swift */; };
+		D10750062C1CBA6600026F0A /* HighlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750052C1CBA6600026F0A /* HighlightButton.swift */; };
+		D10750082C1CBA8200026F0A /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750072C1CBA8200026F0A /* UINavigationBar.swift */; };
+		D107500A2C1CC1A000026F0A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750092C1CC1A000026F0A /* UIViewController.swift */; };
+		D107500C2C1CC1D200026F0A /* MainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107500B2C1CC1D200026F0A /* MainConstants.swift */; };
 		D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */; };
 		D1C6E1D22C1C2F94006935CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */; };
 		D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */; };
@@ -67,6 +73,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D10750002C1CB5AA00026F0A /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		D10750032C1CB6A800026F0A /* VPNViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNViewModel.swift; sourceTree = "<group>"; };
+		D10750052C1CBA6600026F0A /* HighlightButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightButton.swift; sourceTree = "<group>"; };
+		D10750072C1CBA8200026F0A /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		D10750092C1CC1A000026F0A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D107500B2C1CC1D200026F0A /* MainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConstants.swift; sourceTree = "<group>"; };
 		D1C6E1CE2C1C2F94006935CD /* FastVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +138,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D10750022C1CB69500026F0A /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				D10750032C1CB6A800026F0A /* VPNViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		D1C6E1C52C1C2F94006935CD = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +198,7 @@
 				D1C6E21C2C1C34B9006935CD /* AppColors.swift */,
 				D1C6E21E2C1C3510006935CD /* AppImages.swift */,
 				D1C6E2362C1C361D006935CD /* CustomView.swift */,
+				D107500B2C1CC1D200026F0A /* MainConstants.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -186,9 +207,13 @@
 			isa = PBXGroup;
 			children = (
 				D1C6E1FC2C1C3071006935CD /* UIView.swift */,
+				D10750052C1CBA6600026F0A /* HighlightButton.swift */,
+				D10750072C1CBA8200026F0A /* UINavigationBar.swift */,
 				D1C6E2002C1C30A3006935CD /* Bundle.swift */,
+				D10750092C1CC1A000026F0A /* UIViewController.swift */,
 				D1C6E2182C1C3494006935CD /* UIColor.swift */,
 				D1C6E21A2C1C349E006935CD /* UIImage.swift */,
+				D10750002C1CB5AA00026F0A /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +263,7 @@
 				D1C6E2282C1C35CA006935CD /* VPNCoordinator.swift */,
 				D1C6E22F2C1C35FF006935CD /* View Controller */,
 				D1C6E22E2C1C35FD006935CD /* View */,
+				D10750022C1CB69500026F0A /* View Model */,
 			);
 			path = VPN;
 			sourceTree = "<group>";
@@ -401,16 +427,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C6E1FF2C1C308A006935CD /* CustomTableViewCell.swift in Sources */,
+				D10750042C1CB6A800026F0A /* VPNViewModel.swift in Sources */,
 				D1C6E2242C1C3586006935CD /* TabBarController.swift in Sources */,
+				D10750082C1CBA8200026F0A /* UINavigationBar.swift in Sources */,
+				D107500A2C1CC1A000026F0A /* UIViewController.swift in Sources */,
 				D1C6E21F2C1C3510006935CD /* AppImages.swift in Sources */,
 				D1C6E2372C1C361D006935CD /* CustomView.swift in Sources */,
 				D1C6E23B2C1C365F006935CD /* AboutView.swift in Sources */,
+				D10750012C1CB5AA00026F0A /* UserDefaults.swift in Sources */,
+				D10750062C1CBA6600026F0A /* HighlightButton.swift in Sources */,
 				D1C6E21B2C1C349E006935CD /* UIImage.swift in Sources */,
 				D1C6E1FD2C1C3071006935CD /* UIView.swift in Sources */,
 				D1C6E2312C1C360A006935CD /* VPNViewController.swift in Sources */,
 				D1C6E1F22C1C300F006935CD /* Coordinator.swift in Sources */,
 				D1C6E2332C1C360D006935CD /* VPNView.swift in Sources */,
 				D1C6E2392C1C3656006935CD /* AboutViewController.swift in Sources */,
+				D107500C2C1CC1D200026F0A /* MainConstants.swift in Sources */,
 				D1C6E21D2C1C34B9006935CD /* AppColors.swift in Sources */,
 				D1C6E2012C1C30A3006935CD /* Bundle.swift in Sources */,
 				D1C6E2192C1C3494006935CD /* UIColor.swift in Sources */,

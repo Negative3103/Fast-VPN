@@ -17,4 +17,6 @@ enum AppImages: String {
     case telegram
     case logo
     case global
+    case plus
+    case arrowLeft
 }
