@@ -58,14 +58,14 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="Kjr-gb-hx3"/>
                                             </constraints>
-                                            <color key="textColor" name="gray"/>
+                                            <color key="textColor" name="black"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                         </textField>
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" name="mainBackground"/>
+                            <color key="backgroundColor" name="gray"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="V68-ey-JYg" secondAttribute="bottom" id="7t3-km-OZ5"/>
                                 <constraint firstAttribute="trailing" secondItem="V68-ey-JYg" secondAttribute="trailing" constant="20" id="MpN-uc-kyF"/>
@@ -121,13 +121,10 @@
             <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black50">
-            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gray">
             <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="mainBackground">
-            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

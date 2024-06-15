@@ -13,8 +13,21 @@ final class VPNView: UIView {
     @IBOutlet weak var accessLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var ballBtn: UIButton!
-    @IBOutlet weak var viewFirst: UIImageView!
-    @IBOutlet weak var viewSecond: UIImageView!
+    @IBOutlet weak var viewFirst: UIImageView! {
+        didSet {
+            viewFirst.layer.cornerRadius = viewFirst.frame.width / 2
+        }
+    }
+    @IBOutlet weak var viewSecond: UIImageView! {
+        didSet {
+            viewSecond.layer.cornerRadius = viewSecond.frame.width / 2
+        }
+    }
+    @IBOutlet weak var viewThird: UIImageView! {
+        didSet {
+            viewThird.layer.cornerRadius = viewThird.frame.width / 2
+        }
+    }
     @IBOutlet weak var supportButton: HighlightButton! {
         didSet {
             supportButton.setBorder(enable: true, borderWidth: 2)

@@ -1,19 +1,19 @@
 //
-//  PacketTunnelProvider.swift
+//  AppProxyProvider.swift
 //  VpnExtension
 //
-//  Created by Хасан Давронбеков on 14/06/24.
+//  Created by Хасан Давронбеков on 15/06/24.
 //
 
 import NetworkExtension
 
-class PacketTunnelProvider: NEPacketTunnelProvider {
+class AppProxyProvider: NEAppProxyProvider {
 
-    override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
+    override func startProxy(options: [String : Any]? = nil, completionHandler: @escaping (Error?) -> Void) {
         // Add code here to start the process of connecting the tunnel.
     }
     
-    override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
+    override func stopProxy(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
         // Add code here to start the process of stopping the tunnel.
         completionHandler()
     }
@@ -25,12 +25,17 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         }
     }
     
-    override func sleep(completionHandler: @escaping () -> Void) {
+    override func sleep(completionHandler: @escaping() -> Void) {
         // Add code here to get ready to sleep.
         completionHandler()
     }
     
     override func wake() {
         // Add code here to wake up.
+    }
+    
+    override func handleNewFlow(_ flow: NEAppProxyFlow) -> Bool {
+        // Add code here to handle the incoming flow.
+        return false
     }
 }

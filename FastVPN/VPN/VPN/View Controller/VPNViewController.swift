@@ -57,45 +57,14 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
+        setupButtonStatus()
     }
 }
 
 //MARK: - Networking
-
-//MARK: - Other func
-extension VPNViewController {
-    private func appearanceSettings() {
-        navigationItem.title = "Быстрый VPN"
-        navigationController?.navigationBar.installBlurEffect()
-        view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
-    }
-    
-    @objc private func presentAddView() {
-        coordinator?.presentAddView(viewController: self)
-    }
-        
-    private func connectVpn() {
-        guard let key = UserDefaults.standard.getVpnKey() else {
-            showErrorAlert(message: "Для подключения добавьте ключ")
-            return
-        }
-        parseSSURl(url: key)
-    }
-    
-    private func parseSSURl(url: String) {
-        guard let configJson = viewModel.parseShadowsocksURL(url)?.returnJSON() else {
-            showErrorAlert(message: "URL error")
-            vpn.stop("0")
-            setupButtonStatus()
-            return }
-        
-        guard !vpn.isActive("0") else {
-            vpn.stop("0")
-            setupButtonStatus()
-            return }
-        startAnimation()
-        vpn.start("0", configJson: configJson) { [weak self] errorCode in
+extension VPNViewController: VPNViewModelProtocol {
+    func didFinishFetch(configJson: ShadowSocksData) {
+        vpn.start("0", configJson: configJson.returnJSON()) { [weak self] errorCode in
             guard let `self` = self else { return }
             if errorCode == .noError {
                 Haptic.impact(.soft).generate()
@@ -105,6 +74,39 @@ extension VPNViewController {
                 showErrorAlert()
             }
         }
+    }
+}
+
+//MARK: - Other func
+extension VPNViewController {
+    private func appearanceSettings() {
+        viewModel.delegate = self
+        navigationItem.title = "Быстрый VPN"
+        navigationController?.navigationBar.installBlurEffect()
+        view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
+    }
+    
+    @objc private func presentAddView() {
+        coordinator?.presentAddView(viewController: self)
+    }
+    
+    private func connectVpn() {
+        guard let key = UserDefaults.standard.getVpnKey() else {
+            showErrorAlert(message: "Для подключения добавьте ключ")
+            return
+        }
+        parseSSURl(url: key)
+    }
+    
+    private func parseSSURl(url: String) {
+        guard !vpn.isActive("0") else {
+            vpn.stop("0")
+            setupButtonStatus()
+            return }
+        startAnimation()
+        let fetchUrl = url.replacingOccurrences(of: "ssconf://", with: "https://")
+        viewModel.connect(url: fetchUrl)
     }
     
     private func setupButtonStatus() {
@@ -135,19 +137,27 @@ extension VPNViewController {
             view().viewFirst.alpha = 0
             view().viewSecond.alpha = 0
             return }
-        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
             self.view().viewFirst.alpha = 1
         }, completion: { _ in
-            UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
                 self.view().viewSecond.alpha = 1
             }, completion: { _ in
-                UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
-                    self.view().viewFirst.alpha = 0
+                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+                    self.view().viewThird.alpha = 1
                 }, completion: { _ in
-                    UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
-                        self.view().viewSecond.alpha = 0
+                    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+                        self.view().viewFirst.alpha = 0
                     }, completion: { _ in
-                        self.buttonAnimation()
+                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+                            self.view().viewSecond.alpha = 0
+                        }, completion: { _ in
+                            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+                                self.view().viewThird.alpha = 0
+                            }, completion: { _ in
+                                self.buttonAnimation()
+                            })
+                        })
                     })
                 })
             })
