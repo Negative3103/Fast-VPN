@@ -26,6 +26,12 @@
 		D196B4622C1D7F4A00EC7038 /* AddKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196B4612C1D7F4A00EC7038 /* AddKeyViewController.swift */; };
 		D196B4642C1D7F9B00EC7038 /* AddKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196B4632C1D7F9B00EC7038 /* AddKeyView.swift */; };
 		D196B4662C1D833F00EC7038 /* AddKeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D196B4652C1D833F00EC7038 /* AddKeyView.xib */; };
+		D196B46B2C1D91E200EC7038 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196B46A2C1D91E200EC7038 /* LaunchScreenViewController.swift */; };
+		D196B46D2C1D91E600EC7038 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196B46C2C1D91E600EC7038 /* LaunchScreenView.swift */; };
+		D196B46F2C1D91E900EC7038 /* LaunchScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D196B46E2C1D91E900EC7038 /* LaunchScreenView.xib */; };
+		D196B4722C1D985600EC7038 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D196B4712C1D985600EC7038 /* Lottie */; };
+		D196B4752C1D9CC700EC7038 /* lightning.json in Resources */ = {isa = PBXBuildFile; fileRef = D196B4742C1D9CC700EC7038 /* lightning.json */; };
+		D196B4782C1D9DC900EC7038 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D196B4772C1D9DC900EC7038 /* SnapKit */; };
 		D1C6E1D22C1C2F94006935CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */; };
 		D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */; };
 		D1C6E1DE2C1C2F96006935CD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E1DD2C1C2F96006935CD /* Base */; };
@@ -92,6 +98,10 @@
 		D196B4612C1D7F4A00EC7038 /* AddKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKeyViewController.swift; sourceTree = "<group>"; };
 		D196B4632C1D7F9B00EC7038 /* AddKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKeyView.swift; sourceTree = "<group>"; };
 		D196B4652C1D833F00EC7038 /* AddKeyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddKeyView.xib; sourceTree = "<group>"; };
+		D196B46A2C1D91E200EC7038 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		D196B46C2C1D91E600EC7038 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		D196B46E2C1D91E900EC7038 /* LaunchScreenView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreenView.xib; sourceTree = "<group>"; };
+		D196B4742C1D9CC700EC7038 /* lightning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = lightning.json; path = ../../../../Downloads/lightning.json; sourceTree = "<group>"; };
 		D1C6E1CE2C1C2F94006935CD /* FastVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,8 +143,10 @@
 				D1074FFB2C1CB20E00026F0A /* OutlineAppleLib in Frameworks */,
 				D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */,
 				D1074FF82C1CB1F600026F0A /* SwiftMessages in Frameworks */,
+				D196B4782C1D9DC900EC7038 /* SnapKit in Frameworks */,
 				D1074FFD2C1CB20E00026F0A /* OutlineLauncher in Frameworks */,
 				D1074FF52C1CB1E300026F0A /* Haptica in Frameworks */,
+				D196B4722C1D985600EC7038 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +217,40 @@
 			path = "View  Controller";
 			sourceTree = "<group>";
 		};
+		D196B4672C1D91C400EC7038 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D196B4692C1D91D300EC7038 /* View Controller */,
+				D196B4682C1D91CF00EC7038 /* View */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		D196B4682C1D91CF00EC7038 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D196B46C2C1D91E600EC7038 /* LaunchScreenView.swift */,
+				D196B46E2C1D91E900EC7038 /* LaunchScreenView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D196B4692C1D91D300EC7038 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D196B46A2C1D91E200EC7038 /* LaunchScreenViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		D196B4732C1D9CB200EC7038 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				D196B4742C1D9CC700EC7038 /* lightning.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		D1C6E1C52C1C2F94006935CD = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				D1C6E23E2C1C37DF006935CD /* FastVPN.entitlements */,
+				D196B4672C1D91C400EC7038 /* LaunchScreen */,
 				D1C6E2222C1C356B006935CD /* Tabbar Controller */,
 				D1C6E2212C1C3565006935CD /* VPN */,
 				D1C6E2202C1C355A006935CD /* About */,
@@ -243,6 +290,7 @@
 		D1C6E1EC2C1C2FCD006935CD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D196B4732C1D9CB200EC7038 /* Lottie */,
 				D107500D2C1CCAEC00026F0A /* Files */,
 				D1C6E1F02C1C3007006935CD /* Protocols */,
 				D1C6E1EE2C1C2FE8006935CD /* Extensions */,
@@ -391,6 +439,8 @@
 				D1074FF72C1CB1F600026F0A /* SwiftMessages */,
 				D1074FFA2C1CB20E00026F0A /* OutlineAppleLib */,
 				D1074FFC2C1CB20E00026F0A /* OutlineLauncher */,
+				D196B4712C1D985600EC7038 /* Lottie */,
+				D196B4772C1D9DC900EC7038 /* SnapKit */,
 			);
 			productName = FastVPN;
 			productReference = D1C6E1CE2C1C2F94006935CD /* FastVPN.app */;
@@ -447,6 +497,8 @@
 				D1074FF32C1CB1E300026F0A /* XCRemoteSwiftPackageReference "Haptica" */,
 				D1074FF62C1CB1F600026F0A /* XCRemoteSwiftPackageReference "SwiftMessages" */,
 				D1074FF92C1CB20E00026F0A /* XCRemoteSwiftPackageReference "Outline-SPM" */,
+				D196B4702C1D985600EC7038 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				D196B4762C1D9DC900EC7038 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = D1C6E1CF2C1C2F94006935CD /* Products */;
 			projectDirPath = "";
@@ -464,11 +516,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D10750142C1CCAF900026F0A /* dataCollection.docx in Resources */,
+				D196B46F2C1D91E900EC7038 /* LaunchScreenView.xib in Resources */,
 				D10750132C1CCAF900026F0A /* politicy.docx in Resources */,
 				D1C6E23D2C1C3672006935CD /* AboutView.xib in Resources */,
 				D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */,
 				D1C6E1DE2C1C2F96006935CD /* Base in Resources */,
 				D196B4662C1D833F00EC7038 /* AddKeyView.xib in Resources */,
+				D196B4752C1D9CC700EC7038 /* lightning.json in Resources */,
 				D10750122C1CCAF900026F0A /* attribution.docx in Resources */,
 				D1C6E2352C1C360F006935CD /* VPNView.xib in Resources */,
 				D10750152C1CCAF900026F0A /* conditions.docx in Resources */,
@@ -495,9 +549,11 @@
 				D196B4642C1D7F9B00EC7038 /* AddKeyView.swift in Sources */,
 				D107500A2C1CC1A000026F0A /* UIViewController.swift in Sources */,
 				D1C6E21F2C1C3510006935CD /* AppImages.swift in Sources */,
+				D196B46B2C1D91E200EC7038 /* LaunchScreenViewController.swift in Sources */,
 				D1C6E2372C1C361D006935CD /* CustomView.swift in Sources */,
 				D1C6E23B2C1C365F006935CD /* AboutView.swift in Sources */,
 				D10750012C1CB5AA00026F0A /* UserDefaults.swift in Sources */,
+				D196B46D2C1D91E600EC7038 /* LaunchScreenView.swift in Sources */,
 				D196B4622C1D7F4A00EC7038 /* AddKeyViewController.swift in Sources */,
 				D10750062C1CBA6600026F0A /* HighlightButton.swift in Sources */,
 				D1C6E21B2C1C349E006935CD /* UIImage.swift in Sources */,
@@ -682,8 +738,10 @@
 				INFOPLIST_FILE = FastVPN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -715,8 +773,10 @@
 				INFOPLIST_FILE = FastVPN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -851,6 +911,22 @@
 				kind = branch;
 			};
 		};
+		D196B4702C1D985600EC7038 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		D196B4762C1D9DC900EC7038 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -878,6 +954,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D1074FF92C1CB20E00026F0A /* XCRemoteSwiftPackageReference "Outline-SPM" */;
 			productName = PacketTunnelProvider;
+		};
+		D196B4712C1D985600EC7038 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D196B4702C1D985600EC7038 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		D196B4772C1D9DC900EC7038 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D196B4762C1D9DC900EC7038 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

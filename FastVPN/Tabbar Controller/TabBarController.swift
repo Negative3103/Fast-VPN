@@ -22,7 +22,6 @@ final class TabBarController: UITabBarController {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createControllers()
-
     }
     
     override func viewDidLoad() {
@@ -31,13 +30,12 @@ final class TabBarController: UITabBarController {
     }
 }
 
-
+// MARK: - Other funcs
 extension TabBarController {
     func createControllers() {
         vpnCoordinator.start()
         aboutCoordinator.start()
-        viewControllers = [vpnCoordinator.navigationController,
-                           aboutCoordinator.navigationController]
+        viewControllers = [vpnCoordinator.navigationController, aboutCoordinator.navigationController]
     }
     
     private func appearanceSettings() {

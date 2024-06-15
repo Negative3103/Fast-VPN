@@ -9,12 +9,12 @@ import UIKit
 import SwiftMessages
 
 final class VPNCoordinator: Coordinator {
-    internal var childCoordinators: [Coordinator] = []
+    
+    internal var childCoordinators = [Coordinator]()
     internal var navigationController: UINavigationController
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        navigationController.setNavigationBarHidden(true, animated: false)
     }
     
     internal func start() {
