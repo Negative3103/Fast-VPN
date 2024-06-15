@@ -28,7 +28,6 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     //MARK: - Attrbiutes
     private var shouldAnimate = false
     private let vpn = OutlineVpn.shared
-    private let ssURL = "ss://YWVzLTI1Ni1nY206ODg4OTk5@91.215.152.217:8388#%D1%82%D0%B5%D1%81%D1%82"
     
     //MARK: - Actions
     @IBAction func connectAction(_ sender: UIButton) {
@@ -78,7 +77,7 @@ extension VPNViewController {
         
     private func connectVpn() {
         guard let key = UserDefaults.standard.getVpnKey() else {
-            showErrorAlert(message: "Для подключения добавьте ключ ШАР")
+            showErrorAlert(message: "Для подключения добавьте ключ")
             return
         }
         parseSSURl(url: key)
