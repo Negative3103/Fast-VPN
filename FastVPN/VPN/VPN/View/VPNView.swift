@@ -7,11 +7,14 @@
 
 import UIKit
 
-final class VPNView: CustomView {
+final class VPNView: UIView {
     
     //MARK: - Outlets
     @IBOutlet weak var accessLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var ballBtn: UIButton!
+    @IBOutlet weak var viewFirst: UIImageView!
+    @IBOutlet weak var viewSecond: UIImageView!
     @IBOutlet weak var supportButton: HighlightButton! {
         didSet {
             supportButton.setBorder(enable: true, borderWidth: 2)

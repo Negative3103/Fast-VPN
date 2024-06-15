@@ -50,6 +50,11 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     }
     
     //MARK: - Lifecycles
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
@@ -63,8 +68,12 @@ extension VPNViewController {
     private func appearanceSettings() {
         navigationItem.title = "Быстрый VPN"
         navigationController?.navigationBar.installBlurEffect()
-//        view().addButton.addTarget(self, action: #selector(), for: .touchUpInside)
+        view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
+    }
+    
+    @objc private func presentAddView() {
+        coordinator?.presentAddView(viewController: self)
     }
         
     private func connectVpn() {
@@ -86,14 +95,14 @@ extension VPNViewController {
             vpn.stop("0")
             setupButtonStatus()
             return }
-//        startAnimation()
+        startAnimation()
         vpn.start("0", configJson: configJson) { [weak self] errorCode in
             guard let `self` = self else { return }
             if errorCode == .noError {
                 Haptic.impact(.soft).generate()
                 setupButtonStatus()
             } else {
-//                stopAnimation()
+                stopAnimation()
                 showErrorAlert()
             }
         }
@@ -103,9 +112,53 @@ extension VPNViewController {
         let active = vpn.isActive("0")
         self.shouldAnimate = active
         UIView.transition(with: view(), duration: 1.3, options: .transitionCrossDissolve) {
-//            self.view().ballBtn.setImage(active ? .appImage(.ballActiv) : .appImage(.ballNoActiv), for: .normal)
+            self.view().ballBtn.setImage(active ? .appImage(.ballActiv) : .appImage(.ballNoActiv), for: .normal)
         }
-//        buttonAnimation()
-//        stopAnimation()
+        buttonAnimation()
+        stopAnimation()
+    }
+    
+    private func startAnimation() {
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.toValue = NSNumber(value: Double.pi * 2)
+        rotationAnimation.duration = 1.0
+        rotationAnimation.isCumulative = true
+        rotationAnimation.repeatCount = Float.greatestFiniteMagnitude
+        view().ballBtn.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+    private func stopAnimation() {
+        view().ballBtn.layer.removeAnimation(forKey: "rotationAnimation")
+    }
+    
+    private func buttonAnimation() {
+        guard shouldAnimate else {
+            view().viewFirst.alpha = 0
+            view().viewSecond.alpha = 0
+            return }
+        UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
+            self.view().viewFirst.alpha = 1
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
+                self.view().viewSecond.alpha = 1
+            }, completion: { _ in
+                UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
+                    self.view().viewFirst.alpha = 0
+                }, completion: { _ in
+                    UIView.animate(withDuration: 0.7, delay: 0, options: .curveEaseInOut, animations: {
+                        self.view().viewSecond.alpha = 0
+                    }, completion: { _ in
+                        self.buttonAnimation()
+                    })
+                })
+            })
+        })
+    }
+}
+
+//MARK: - AddKeyPopUpViewControllerDelegate
+extension VPNViewController: AddKeyViewControllerDelegate {
+    func didFinishKey() {
+        connectVpn()
     }
 }

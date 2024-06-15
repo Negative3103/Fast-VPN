@@ -46,7 +46,6 @@ extension TabBarController {
         tabBar.addGestureRecognizer(longPressRecognizer)
         tabBar.tintColor = UIColor.appColor(.black)
         tabBar.backgroundColor = .white
-        tabBar.isTranslucent = true
         tabBar.clipsToBounds = true
     }
         

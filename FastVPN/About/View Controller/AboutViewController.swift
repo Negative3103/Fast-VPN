@@ -79,7 +79,7 @@ final class AboutViewController: UIViewController, ViewSpecificController, Alert
 //MARK: - Other funcs
 extension AboutViewController {
     private func appearanceSettings() {
-        
+        navigationController?.navigationBar.installBlurEffect()
     }
     
     private func openFile() {

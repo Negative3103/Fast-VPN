@@ -23,6 +23,9 @@
 		D10750142C1CCAF900026F0A /* dataCollection.docx in Resources */ = {isa = PBXBuildFile; fileRef = D10750102C1CCAF900026F0A /* dataCollection.docx */; };
 		D10750152C1CCAF900026F0A /* conditions.docx in Resources */ = {isa = PBXBuildFile; fileRef = D10750112C1CCAF900026F0A /* conditions.docx */; };
 		D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */; };
+		D196B4622C1D7F4A00EC7038 /* AddKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196B4612C1D7F4A00EC7038 /* AddKeyViewController.swift */; };
+		D196B4642C1D7F9B00EC7038 /* AddKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D196B4632C1D7F9B00EC7038 /* AddKeyView.swift */; };
+		D196B4662C1D833F00EC7038 /* AddKeyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D196B4652C1D833F00EC7038 /* AddKeyView.xib */; };
 		D1C6E1D22C1C2F94006935CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */; };
 		D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */; };
 		D1C6E1DE2C1C2F96006935CD /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E1DD2C1C2F96006935CD /* Base */; };
@@ -31,7 +34,6 @@
 		D1C6E1F62C1C3027006935CD /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1F52C1C3027006935CD /* ReusableView.swift */; };
 		D1C6E1F82C1C302F006935CD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1F72C1C302F006935CD /* AlertViewController.swift */; };
 		D1C6E1FD2C1C3071006935CD /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1FC2C1C3071006935CD /* UIView.swift */; };
-		D1C6E1FF2C1C308A006935CD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1FE2C1C308A006935CD /* CustomTableViewCell.swift */; };
 		D1C6E2012C1C30A3006935CD /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E2002C1C30A3006935CD /* Bundle.swift */; };
 		D1C6E2092C1C33D7006935CD /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */; };
 		D1C6E20C2C1C33D7006935CD /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E20B2C1C33D7006935CD /* PacketTunnelProvider.swift */; };
@@ -87,6 +89,9 @@
 		D107500F2C1CCAF900026F0A /* politicy.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = politicy.docx; path = ../../../../Downloads/politicy.docx; sourceTree = "<group>"; };
 		D10750102C1CCAF900026F0A /* dataCollection.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = dataCollection.docx; path = ../../../../Downloads/dataCollection.docx; sourceTree = "<group>"; };
 		D10750112C1CCAF900026F0A /* conditions.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = conditions.docx; path = ../../../../Downloads/conditions.docx; sourceTree = "<group>"; };
+		D196B4612C1D7F4A00EC7038 /* AddKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKeyViewController.swift; sourceTree = "<group>"; };
+		D196B4632C1D7F9B00EC7038 /* AddKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddKeyView.swift; sourceTree = "<group>"; };
+		D196B4652C1D833F00EC7038 /* AddKeyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddKeyView.xib; sourceTree = "<group>"; };
 		D1C6E1CE2C1C2F94006935CD /* FastVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,7 +102,6 @@
 		D1C6E1F52C1C3027006935CD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		D1C6E1F72C1C302F006935CD /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		D1C6E1FC2C1C3071006935CD /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		D1C6E1FE2C1C308A006935CD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D1C6E2002C1C30A3006935CD /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		D1C6E2062C1C33D7006935CD /* VpnExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VpnExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -165,6 +169,42 @@
 			path = Files;
 			sourceTree = "<group>";
 		};
+		D196B45D2C1D7F1C00EC7038 /* VPN */ = {
+			isa = PBXGroup;
+			children = (
+				D1C6E22F2C1C35FF006935CD /* View Controller */,
+				D1C6E22E2C1C35FD006935CD /* View */,
+				D10750022C1CB69500026F0A /* View Model */,
+			);
+			path = VPN;
+			sourceTree = "<group>";
+		};
+		D196B45E2C1D7F2800EC7038 /* AddKey */ = {
+			isa = PBXGroup;
+			children = (
+				D196B4602C1D7F4000EC7038 /* View  Controller */,
+				D196B45F2C1D7F3D00EC7038 /* View */,
+			);
+			path = AddKey;
+			sourceTree = "<group>";
+		};
+		D196B45F2C1D7F3D00EC7038 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D196B4632C1D7F9B00EC7038 /* AddKeyView.swift */,
+				D196B4652C1D833F00EC7038 /* AddKeyView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D196B4602C1D7F4000EC7038 /* View  Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D196B4612C1D7F4A00EC7038 /* AddKeyViewController.swift */,
+			);
+			path = "View  Controller";
+			sourceTree = "<group>";
+		};
 		D1C6E1C52C1C2F94006935CD = {
 			isa = PBXGroup;
 			children = (
@@ -214,7 +254,6 @@
 		D1C6E1ED2C1C2FD4006935CD /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D1C6E1FE2C1C308A006935CD /* CustomTableViewCell.swift */,
 				D1C6E21C2C1C34B9006935CD /* AppColors.swift */,
 				D1C6E21E2C1C3510006935CD /* AppImages.swift */,
 				D1C6E2362C1C361D006935CD /* CustomView.swift */,
@@ -281,9 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				D1C6E2282C1C35CA006935CD /* VPNCoordinator.swift */,
-				D1C6E22F2C1C35FF006935CD /* View Controller */,
-				D1C6E22E2C1C35FD006935CD /* View */,
-				D10750022C1CB69500026F0A /* View Model */,
+				D196B45D2C1D7F1C00EC7038 /* VPN */,
+				D196B45E2C1D7F2800EC7038 /* AddKey */,
 			);
 			path = VPN;
 			sourceTree = "<group>";
@@ -430,6 +468,7 @@
 				D1C6E23D2C1C3672006935CD /* AboutView.xib in Resources */,
 				D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */,
 				D1C6E1DE2C1C2F96006935CD /* Base in Resources */,
+				D196B4662C1D833F00EC7038 /* AddKeyView.xib in Resources */,
 				D10750122C1CCAF900026F0A /* attribution.docx in Resources */,
 				D1C6E2352C1C360F006935CD /* VPNView.xib in Resources */,
 				D10750152C1CCAF900026F0A /* conditions.docx in Resources */,
@@ -450,15 +489,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1C6E1FF2C1C308A006935CD /* CustomTableViewCell.swift in Sources */,
 				D10750042C1CB6A800026F0A /* VPNViewModel.swift in Sources */,
 				D1C6E2242C1C3586006935CD /* TabBarController.swift in Sources */,
 				D10750082C1CBA8200026F0A /* UINavigationBar.swift in Sources */,
+				D196B4642C1D7F9B00EC7038 /* AddKeyView.swift in Sources */,
 				D107500A2C1CC1A000026F0A /* UIViewController.swift in Sources */,
 				D1C6E21F2C1C3510006935CD /* AppImages.swift in Sources */,
 				D1C6E2372C1C361D006935CD /* CustomView.swift in Sources */,
 				D1C6E23B2C1C365F006935CD /* AboutView.swift in Sources */,
 				D10750012C1CB5AA00026F0A /* UserDefaults.swift in Sources */,
+				D196B4622C1D7F4A00EC7038 /* AddKeyViewController.swift in Sources */,
 				D10750062C1CBA6600026F0A /* HighlightButton.swift in Sources */,
 				D1C6E21B2C1C349E006935CD /* UIImage.swift in Sources */,
 				D1C6E1FD2C1C3071006935CD /* UIView.swift in Sources */,

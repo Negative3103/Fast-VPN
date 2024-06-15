@@ -14,4 +14,14 @@ extension UIViewController {
             UIApplication.shared.open(selectedURL, options: [:], completionHandler: nil)
         }
     }
+    
+    @objc open func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    internal func closeKeyboardOnOutsideTap() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
 }
