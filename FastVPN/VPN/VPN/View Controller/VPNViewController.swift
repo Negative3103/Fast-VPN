@@ -45,7 +45,19 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     @IBAction func settingsAction(_ sender: UIButton) {
         sender.showAnimation()
         Haptic.impact(.soft).generate()
-        openURL(urlString: MainConstants.tgSettings.rawValue)
+        openURL(urlString: MainConstants.tgSettings.rawValue + (UIDevice.current.identifierForVendor?.uuidString ?? ""))
+    }
+    
+    @IBAction func deleteAction(_ sender: UIButton) {
+        sender.showAnimation()
+        Haptic.impact(.soft).generate()
+        showAlertDestructive(message: "Удалить текущую ссылку?", buttonTitle: "Удалить") { [weak self] in
+            guard let `self` = self else { return }
+            UserDefaults.standard.removeVpnKey()
+            UserDefaults.standard.removeVpnServer()
+            vpn.stop("0")
+            setupButtonStatus()
+        }
     }
     
     //MARK: - Lifecycles
@@ -67,6 +79,7 @@ extension VPNViewController: VPNViewModelProtocol {
         vpn.start("0", configJson: configJson.returnJSON()) { [weak self] errorCode in
             guard let `self` = self else { return }
             if errorCode == .noError {
+                UserDefaults.standard.setVpnServer(server: configJson.host ?? "")
                 Haptic.impact(.soft).generate()
                 setupButtonStatus()
             } else {
@@ -85,13 +98,15 @@ extension VPNViewController {
         navigationController?.navigationBar.installBlurEffect()
         view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
+        
+        view().animate(animation: .connected, viewController: self)
     }
     
     @objc private func presentAddView() {
         coordinator?.presentAddView(viewController: self)
     }
     
-    private func connectVpn() {
+    @objc func connectVpn() {
         guard let key = UserDefaults.standard.getVpnKey() else {
             showErrorAlert(message: "Для подключения добавьте ключ")
             return
@@ -113,9 +128,12 @@ extension VPNViewController {
         let active = vpn.isActive("0")
         self.shouldAnimate = active
         UIView.transition(with: view(), duration: 1.3, options: .transitionCrossDissolve) {
-            self.view().ballBtn.setImage(active ? .appImage(.ballActiv) : .appImage(.ballNoActiv), for: .normal)
+            self.view().ballBtn.isHidden = active
+            self.view().animationView.isHidden = !active
         }
-        buttonAnimation()
+        view().statusLabel.text = active ? "Подключен" : "Отключен"
+        view().statusLabel.textColor = active ? .green : .red
+        view().serverLabel.text = UserDefaults.standard.getVpnServer()
         stopAnimation()
     }
     
@@ -131,43 +149,15 @@ extension VPNViewController {
     private func stopAnimation() {
         view().ballBtn.layer.removeAnimation(forKey: "rotationAnimation")
     }
-    
-    private func buttonAnimation() {
-        guard shouldAnimate else {
-            view().viewFirst.alpha = 0
-            view().viewSecond.alpha = 0
-            return }
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-            self.view().viewFirst.alpha = 1
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-                self.view().viewSecond.alpha = 1
-            }, completion: { _ in
-                UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-                    self.view().viewThird.alpha = 1
-                }, completion: { _ in
-                    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-                        self.view().viewFirst.alpha = 0
-                    }, completion: { _ in
-                        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-                            self.view().viewSecond.alpha = 0
-                        }, completion: { _ in
-                            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
-                                self.view().viewThird.alpha = 0
-                            }, completion: { _ in
-                                self.buttonAnimation()
-                            })
-                        })
-                    })
-                })
-            })
-        })
-    }
 }
 
 //MARK: - AddKeyPopUpViewControllerDelegate
 extension VPNViewController: AddKeyViewControllerDelegate {
     func didFinishKey() {
+        guard let key = UserDefaults.standard.getVpnKey() else { return }
+        guard key.contains("ssconf://") else { 
+            showErrorAlert(message: "Введите действительную ссылку")
+            return }
         connectVpn()
     }
 }

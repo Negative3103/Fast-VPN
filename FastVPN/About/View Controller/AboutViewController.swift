@@ -111,7 +111,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
     }
     
     internal func openMail() {
-        let recipientEmail = "someMail@gmail.com"
+        let recipientEmail = "Support@rapiddevops.am"
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self

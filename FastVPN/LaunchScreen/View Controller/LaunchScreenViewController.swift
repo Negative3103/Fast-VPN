@@ -10,6 +10,7 @@ import Lottie
 
 enum LottieAnimation: String {
     case lightning
+    case connected
 }
 
 final class LaunchScreenViewController: UIViewController, ViewSpecificController, AlertViewController {

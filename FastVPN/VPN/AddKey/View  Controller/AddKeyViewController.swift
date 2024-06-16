@@ -27,6 +27,9 @@ final class AddKeyViewController: UIViewController, ViewSpecificController, Aler
         guard let text = view().keyTextField.text, !text.isEmpty else {
             showErrorAlert(message: "Заполните поле")
             return }
+        guard text.contains("ssconf://") else {
+            showErrorAlert(message: "Введите действительную ссылку")
+            return }
         UserDefaults.standard.setVpnKey(key: text)
         delegate?.didFinishKey()
         dismiss(animated: true)
@@ -36,12 +39,33 @@ final class AddKeyViewController: UIViewController, ViewSpecificController, Aler
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
+        closeKeyboardOnOutsideTap()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkClipboard()
+    }
+
 }
 
 //MARK: - Other funcs
 extension AddKeyViewController {
-    private func appearanceSettings() {}
+    private func appearanceSettings() {
+        view().keyTextField.delegate = self
+    }
+    
+    @objc private func checkClipboard() {
+        if let clipboardText = UIPasteboard.general.string {
+            view().keyTextField.text = clipboardText
+        }
+    }
 }
 
+//MARK: - UITextFieldDelegate
+extension AddKeyViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return true
+    }
+}
