@@ -53,6 +53,9 @@
                                     <state key="normal" title="Поддержка" image="telegram">
                                         <color key="titleColor" name="black"/>
                                     </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="support"/>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="supportAction:" destination="-1" eventType="touchUpInside" id="X9v-Ax-edF"/>
                                     </connections>
@@ -71,6 +74,7 @@
                                         <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
                                             <color key="value" name="black50"/>
                                         </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="settingVpn"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="settingsAction:" destination="-1" eventType="touchUpInside" id="4Sy-eU-BNv"/>
@@ -103,12 +107,15 @@
                             <state key="normal" title="Удалить текущую ссылку">
                                 <color key="titleColor" name="black"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="deleteCurrentUrl"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="v14-Ab-Spm"/>
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-iB-ZC8">
-                            <rect key="frame" x="16" y="130" width="64.333333333333329" height="105"/>
+                            <rect key="frame" x="16" y="130" width="64.333333333333314" height="105"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-U2-QNA">
                                     <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="105"/>
@@ -118,12 +125,18 @@
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                             <color key="textColor" name="gray"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="server"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9Z-bI-rvv">
                                             <rect key="frame" x="0.0" y="55" width="59.333333333333336" height="50"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                             <color key="textColor" name="gray"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="status"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                 </stackView>

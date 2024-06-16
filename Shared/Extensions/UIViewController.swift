@@ -24,4 +24,17 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
+    
+    func resetTabBarTransition() {
+        guard let window = UIApplication.shared.windows.first, let tabBarController = self.tabBarController else {
+            return
+        }
+        
+        let newTabBarController = TabBarController()
+        newTabBarController.selectedIndex = tabBarController.selectedIndex
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = newTabBarController
+        }, completion: nil)
+    }
 }

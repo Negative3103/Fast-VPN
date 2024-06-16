@@ -51,7 +51,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     @IBAction func deleteAction(_ sender: UIButton) {
         sender.showAnimation()
         Haptic.impact(.soft).generate()
-        showAlertDestructive(message: "Удалить текущую ссылку?", buttonTitle: "Удалить") { [weak self] in
+        showAlertDestructive(message: "deleteCurrentUrl".localized, buttonTitle: "delete".localized) { [weak self] in
             guard let `self` = self else { return }
             UserDefaults.standard.removeVpnKey()
             UserDefaults.standard.removeVpnServer()
@@ -94,7 +94,7 @@ extension VPNViewController: VPNViewModelProtocol {
 extension VPNViewController {
     private func appearanceSettings() {
         viewModel.delegate = self
-        navigationItem.title = "Быстрый VPN"
+        navigationItem.title = "fastVPN".localized
         navigationController?.navigationBar.installBlurEffect()
         view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
@@ -108,7 +108,7 @@ extension VPNViewController {
     
     @objc func connectVpn() {
         guard let key = UserDefaults.standard.getVpnKey() else {
-            showErrorAlert(message: "Для подключения добавьте ключ")
+            showErrorAlert(message: "enterKey".localized)
             return
         }
         parseSSURl(url: key)
@@ -131,7 +131,7 @@ extension VPNViewController {
             self.view().ballBtn.isHidden = active
             self.view().animationView.isHidden = !active
         }
-        view().statusLabel.text = active ? "Подключен" : "Отключен"
+        view().statusLabel.text = active ? "connected".localized : "disconnected".localized
         view().statusLabel.textColor = active ? .green : .red
         view().serverLabel.text = UserDefaults.standard.getVpnServer()
         stopAnimation()
@@ -156,7 +156,7 @@ extension VPNViewController: AddKeyViewControllerDelegate {
     func didFinishKey() {
         guard let key = UserDefaults.standard.getVpnKey() else { return }
         guard key.contains("ssconf://") else { 
-            showErrorAlert(message: "Введите действительную ссылку")
+            showErrorAlert(message: "enterValidKey".localized)
             return }
         connectVpn()
     }

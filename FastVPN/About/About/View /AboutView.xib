@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWI-Ep-SW7">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="582.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="625.66666666666663"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3jO-a4-q6a">
                                     <rect key="frame" x="16" y="0.0" width="223" height="30"/>
@@ -40,17 +40,23 @@
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                             <color key="textColor" name="black"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="fastVPN"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ВЕРСИЯ 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-7K-EO4">
-                                    <rect key="frame" x="16" y="60" width="93.333333333333329" height="17"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-7K-EO4">
+                                    <rect key="frame" x="16" y="60" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                     <color key="textColor" name="gray"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="version"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0hC-AJ-dwL">
-                                    <rect key="frame" x="16" y="93" width="361" height="170"/>
+                                    <rect key="frame" x="16" y="76" width="361" height="230"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKE-3O-zo1">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
@@ -70,6 +76,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="chatSupport"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
@@ -151,6 +160,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="emailSupport"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
@@ -173,11 +185,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="jsK-t3-hUa" secondAttribute="bottom" id="opW-pA-yPa"/>
                                             </constraints>
                                         </view>
-                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c6-Ei-MIL">
-                                            <rect key="frame" x="0.0" y="170" width="361" height="0.0"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c6-Ei-MIL">
+                                            <rect key="frame" x="0.0" y="180" width="361" height="50"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xpe-Z9-8sB">
-                                                    <rect key="frame" x="10" y="-10" width="341" height="20"/>
+                                                    <rect key="frame" x="10" y="15" width="341" height="20"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="global" translatesAutoresizingMaskIntoConstraints="NO" id="ey0-q2-BOI">
                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -192,11 +204,14 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="language"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjq-LK-Tv1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="0.0"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <connections>
                                                         <action selector="infoButtonActions:" destination="-1" eventType="touchUpInside" id="vXw-hs-XXM"/>
@@ -217,14 +232,17 @@
                                     </subviews>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7P-PM-Wdy">
-                                    <rect key="frame" x="16" y="313" width="361" height="39.666666666666686"/>
+                                    <rect key="frame" x="16" y="356" width="361" height="39.666666666666686"/>
                                     <string key="text">Быстрй VPN основан на платформе Outline, разработанной командой Jigsaw. Это программа с открытым исходным кодом, использующая протокол Shadowsocks.</string>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                     <color key="textColor" name="gray"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="aboutText"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kd-BU-jfm">
-                                    <rect key="frame" x="16" y="372.66666666666669" width="361" height="190.00000000000006"/>
+                                    <rect key="frame" x="16" y="415.66666666666669" width="361" height="190.00000000000006"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qrI-u8-tvM">
                                             <rect key="frame" x="0.0" y="10" width="361" height="170"/>
@@ -237,6 +255,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="privacy"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj8-Ul-Pbw">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="35"/>
@@ -267,6 +288,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="dataCollection"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F9k-xc-xLG">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="35"/>
@@ -289,13 +313,16 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hq-Cl-Qh8">
-                                                    <rect key="frame" x="0.0" y="90" width="361" height="35"/>
+                                                    <rect key="frame" x="0.0" y="89.999999999999943" width="361" height="35"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Условия Использования" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhM-aF-dKk">
                                                             <rect key="frame" x="10" y="0.0" width="341" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="termOfUse"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cCe-8e-mNx">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="35"/>
@@ -325,6 +352,9 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="licenses"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YkS-ds-Jas">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="35"/>

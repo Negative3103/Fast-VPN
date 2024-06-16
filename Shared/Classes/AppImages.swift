@@ -19,4 +19,6 @@ enum AppImages: String {
     case global
     case plus
     case arrowLeft
+    case check
+    case uncheck
 }

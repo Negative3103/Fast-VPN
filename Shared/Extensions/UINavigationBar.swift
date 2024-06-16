@@ -20,7 +20,6 @@ extension UINavigationBar {
         let backButton = BackBarButtonItem()
         backButton.title = ""
         backButton.tintColor = UIColor.white
-        backButton.image = .appImage(.arrowLeft)
         topItem?.backBarButtonItem = backButton
     }
     

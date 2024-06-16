@@ -5,3 +5,46 @@
   Created by Хасан Давронбеков on 16/06/24.
   
 */
+
+//MARK: - Tabbar
+vpn = "VPN";
+about = "Информация";
+
+//MARK: - VPN
+fastVPN = "Быстрый VPN";
+server = "Сервер:";
+status = "Статус:";
+connected = "Подключен";
+disconnected = "Отключен";
+deleteCurrentUrl = "Удалить текущую ссылку";
+enterKey = "Для подключения добавьте ключ";
+enterValidKey = "Введите действительную ссылку";
+
+//MARK: - Buttons
+delete = "Удалить";
+support = "Поддержка";
+settingVpn = "Настроить VPN";
+add = "Добавить";
+
+//MARK: - About
+version = "Версия";
+chatSupport = "Чат поддержки";
+emailSupport = "Email поддержки: Support@rapiddevops.am";
+privacy = "Конфиденциальность";
+dataCollection = "Сбор данных";
+termOfUse = "Условия Использования";
+licenses = "Лицензии";
+aboutText = "Быстрй VPN основан на платформе Outline, разработанной командой Jigsaw. Это программа с открытым исходным кодом, использующая протокол Shadowsocks.";
+language = "Изменить язык";
+
+//MARK: - Add key
+keyTitle = "Добавление ключа доступа";
+keySubtitle = "Чтобы добавить сервер Быстрый VPN, вставьте ключ доступа в это поле";
+
+//MARK: - Language
+chooseLanguage = "Выберите Язык";
+russian = "Русский";
+english = "English";
+
+//MARK: - Alert
+fill = "Заполните поле";

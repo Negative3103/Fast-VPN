@@ -5,3 +5,46 @@
   Created by Хасан Давронбеков on 16/06/24.
   
 */
+
+//MARK: - Tabbar
+vpn = "VPN";
+about = "About";
+
+//MARK: - VPN
+fastVPN = "Fast VPN";
+server = "Server:";
+status = "Status:";
+connected = "Connected";
+disconnected = "Disconnected";
+deleteCurrentUrl = "Delete current link";
+enterKey = "Add a key to connect";
+enterValidKey = "Enter a valid link";
+
+//MARK: - Buttons
+delete = "Delete";
+support = "Support";
+settingVpn = "Configure VPN";
+add = "Add";
+
+//MARK: - About
+version = "Version";
+chatSupport = "Support Chat";
+emailSupport = "Support email: Support@rapiddevops.am";
+privacy = "Privacy";
+dataCollection = "Data Collection";
+termOfUse = "Terms of Use";
+licenses = "Licenses";
+aboutText = "Fast VPN is based on the Outline platform developed by the Jigsaw team. It is an open source program that uses the Shadowsocks protocol.";
+language = "Change language";
+
+//MARK: - Add key
+keyTitle = "Adding an access key";
+keySubtitle = "To add a Fast VPN server, paste the access key into this field";
+
+//MARK: - Language
+chooseLanguage = "Choose Language";
+russian = "Русский";
+english = "English";
+
+//MARK: - Alert
+fill = "Fill in the field";

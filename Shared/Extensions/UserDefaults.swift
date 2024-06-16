@@ -7,12 +7,26 @@
 
 import UIKit
 
+enum AppLanguage: String {
+    case ru
+    case en
+}
+
 enum UserDefaultsKeys: String {
+    case localization
     case vpnKey
     case server
 }
 
 extension UserDefaults {
+    func getLocalization() -> String {
+        return string(forKey: UserDefaultsKeys.localization.rawValue) ?? AppLanguage.ru.rawValue
+    }
+
+    func saveLocalization(lang: String) {
+        set(lang, forKey: UserDefaultsKeys.localization.rawValue)
+    }
+    
     func setVpnKey(key: String) {
         set(key, forKey: UserDefaultsKeys.vpnKey.rawValue)
     }

@@ -25,13 +25,17 @@ final class AddKeyViewController: UIViewController, ViewSpecificController, Aler
     //MARK: - Actions
     @IBAction func buttonAction(_ sender: UIButton) {
         guard let text = view().keyTextField.text, !text.isEmpty else {
-            showErrorAlert(message: "Заполните поле")
+            showErrorAlert(message: "fill".localized)
             return }
         guard text.contains("ssconf://") else {
-            showErrorAlert(message: "Введите действительную ссылку")
+            showErrorAlert(message: "enterValidKey".localized)
             return }
         UserDefaults.standard.setVpnKey(key: text)
         delegate?.didFinishKey()
+        dismiss(animated: true)
+    }
+    
+    @IBAction func closeAction(_ sender: UIButton) {
         dismiss(animated: true)
     }
     

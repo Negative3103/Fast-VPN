@@ -13,7 +13,7 @@ final class AboutView: CustomView {
     @IBOutlet weak var versionLabel: UILabel! {
         didSet {
             guard let version = Bundle.main.releaseVersionNumber else {return}
-            versionLabel.text = "ВЕРСИЯ \(version)"
+            versionLabel.text = "version".localized + Symbols.space.rawValue + version
         }
     }
     @IBOutlet var views: [UIView]! {

@@ -30,12 +30,18 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="keyTitle"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чтобы добавить сервер Быстрый VPN,  вставьте ключ доступа в это поле:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT6-cJ-p1V">
                                     <rect key="frame" x="0.0" y="26.333333333333339" width="361" height="43.666666666666657"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" name="gray"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="keySubtitle"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                             </subviews>
                         </stackView>
@@ -90,6 +96,7 @@
                                 <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
                                     <color key="value" name="black"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="add"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="buttonAction:" destination="-1" eventType="touchUpInside" id="D66-da-dWd"/>
@@ -97,11 +104,26 @@
                         </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VAi-op-a93">
+                    <rect key="frame" x="351" y="10" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="Ibv-ap-vYf"/>
+                        <constraint firstAttribute="height" constant="32" id="hKj-yt-LHg"/>
+                    </constraints>
+                    <color key="tintColor" name="black50"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="closeAction:" destination="-1" eventType="touchUpInside" id="7Y6-9f-MFk"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="MVK-9o-fl7"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="VAi-op-a93" firstAttribute="top" secondItem="xo4-dp-bsA" secondAttribute="top" constant="10" id="5cL-aY-6bF"/>
                 <constraint firstAttribute="bottom" secondItem="LoJ-H3-Gb1" secondAttribute="bottom" constant="20" id="FtD-r0-8E3"/>
+                <constraint firstAttribute="trailing" secondItem="VAi-op-a93" secondAttribute="trailing" constant="10" id="Spx-3E-cH3"/>
                 <constraint firstItem="LoJ-H3-Gb1" firstAttribute="top" secondItem="xo4-dp-bsA" secondAttribute="top" constant="30" id="gn0-rS-iH4"/>
                 <constraint firstAttribute="trailing" secondItem="LoJ-H3-Gb1" secondAttribute="trailing" constant="16" id="mOX-bb-rZC"/>
                 <constraint firstItem="LoJ-H3-Gb1" firstAttribute="leading" secondItem="MVK-9o-fl7" secondAttribute="leading" constant="16" id="o5R-eB-bCg"/>
@@ -117,6 +139,7 @@
     </objects>
     <resources>
         <image name="key" width="16" height="16.333333969116211"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="black">
             <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

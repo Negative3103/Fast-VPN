@@ -36,6 +36,8 @@ final class AboutViewController: UIViewController, ViewSpecificController, Alert
             openURL(urlString: MainConstants.tgSupport.rawValue)
         case 2:
             openMail()
+        case 3:
+            coordinator?.pushLanguageVC(viewController: self)
         default:
             break
         }
@@ -122,5 +124,12 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
         } else {
             print("Mail services are not available")
         }
+    }
+}
+
+//MARK: - LanguageViewControllerDelegate
+extension AboutViewController: LanguageViewControllerDelegate {
+    func didSelect() {
+        resetTabBarTransition()
     }
 }
