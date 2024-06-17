@@ -44,6 +44,7 @@ final class AddKeyViewController: UIViewController, ViewSpecificController, Aler
         super.viewDidLoad()
         appearanceSettings()
         closeKeyboardOnOutsideTap()
+        view().keyTextField.becomeFirstResponder()
     }
     
     override func viewDidAppear(_ animated: Bool) {

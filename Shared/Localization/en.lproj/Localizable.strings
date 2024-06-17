@@ -19,6 +19,7 @@ disconnected = "Disconnected";
 deleteCurrentUrl = "Delete current link";
 enterKey = "Add a key to connect";
 enterValidKey = "Enter a valid link";
+tariffEndDate = "Subscription end date";
 
 //MARK: - Buttons
 delete = "Delete";

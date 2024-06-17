@@ -6,15 +6,18 @@
 //
 
 import Foundation
+import UIKit
 
 protocol VPNViewModelProtocol: NSObject {
     func didFinishFetch(configJson: ShadowSocksData)
+    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?)
 }
 
 final class VPNViewModel {
     
     // MARK: - Attributes
     weak var delegate: VPNViewModelProtocol?
+    var uuid = UIDevice.current.identifierForVendor?.uuidString ?? ""
     
     // MARK: - Network call
     internal func connect(url: String) {
@@ -33,6 +36,23 @@ final class VPNViewModel {
                               let prefix = json["prefix"] as? String else { return }
                         self.delegate?.didFinishFetch(configJson: ShadowSocksData(host: server, port: serverPort, method: method, password: password, prefix: prefix))
                     }
+                } catch {
+                    print(APIError.invalidData)
+                }
+            }
+        })
+    }
+    
+    internal func getServerInfo() {
+        JSONDownloader.shared.jsonTask(url: EndPoints.server.rawValue + uuid, requestMethod: .get, completionHandler: { [weak self]  (result) in
+            guard let self = self else { return }
+            switch result {
+            case .Error(let error):
+                print(error)
+            case .Success(let json):
+                do {
+                    let fetchedData = try CustomDecoder().decode(JSONData<ServerModel>.self, from: json)
+                    self.delegate?.didFinishFetch(server: fetchedData.data, endDate: fetchedData.tokenEndDate, serverName: fetchedData.server)
                 } catch {
                     print(APIError.invalidData)
                 }

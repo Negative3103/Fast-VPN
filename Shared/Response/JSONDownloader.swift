@@ -68,7 +68,7 @@ struct JSONDownloader {
                         print("Result: \(String(describing: jsonResult))")
                         
                         switch httpResponse.statusCode {
-                        case 200, 201, 203:
+                        case 200, 201, 203, 400:
                             completion(.Success(data))
                         case 401:
                             completion(.Error(.notAuthorized))

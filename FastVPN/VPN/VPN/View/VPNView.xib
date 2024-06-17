@@ -23,16 +23,19 @@
                     <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="9aZ-3f-PSh">
-                            <rect key="frame" x="16" y="0.0" width="398" height="100"/>
+                            <rect key="frame" x="16" y="0.0" width="398" height="67"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0c-ET-iax">
-                                    <rect key="frame" x="0.0" y="0.0" width="398" height="50"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дата окончания подписки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0c-ET-iax">
+                                    <rect key="frame" x="0.0" y="0.0" width="398" height="17"/>
+                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                     <color key="textColor" name="gray"/>
                                     <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="tariffEndDate"/>
+                                    </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyf-Vm-tu6">
-                                    <rect key="frame" x="0.0" y="50" width="398" height="50"/>
+                                    <rect key="frame" x="0.0" y="17" width="398" height="50"/>
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
@@ -115,7 +118,7 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-iB-ZC8">
-                            <rect key="frame" x="16" y="130" width="64.333333333333314" height="105"/>
+                            <rect key="frame" x="16" y="97" width="64.333333333333329" height="105"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-U2-QNA">
                                     <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="105"/>
@@ -193,6 +196,7 @@
                 <outlet property="animationView" destination="CgY-49-K8B" id="8eh-Ll-Rhh"/>
                 <outlet property="ballBtn" destination="FKJ-rM-lir" id="90g-lD-xjT"/>
                 <outlet property="dateLabel" destination="qyf-Vm-tu6" id="fnf-2S-uYq"/>
+                <outlet property="dateStackView" destination="9aZ-3f-PSh" id="Kyb-PC-EWD"/>
                 <outlet property="serverLabel" destination="Y2V-Vh-iX6" id="St4-9K-6uX"/>
                 <outlet property="settingsButton" destination="rxw-Hq-cQS" id="DY0-b2-36f"/>
                 <outlet property="statusLabel" destination="qlX-wr-J8z" id="Eka-xF-3o8"/>

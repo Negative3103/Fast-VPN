@@ -16,6 +16,7 @@ final class VPNView: UIView {
     @IBOutlet weak var accessLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var ballBtn: UIButton!
+    @IBOutlet weak var dateStackView: UIStackView!
     @IBOutlet weak var animationView: UIView! {
         didSet {
             animationView.layer.cornerRadius = animationView.frame.width / 2

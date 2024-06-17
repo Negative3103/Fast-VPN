@@ -28,6 +28,14 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     //MARK: - Attrbiutes
     private var shouldAnimate = false
     private let vpn = OutlineVpn.shared
+    var timer: Timer?
+    private var serverModel: ServerModel? {
+        didSet {
+            guard let serverModel = serverModel else { return }
+            UserDefaults.standard.setVpnServer(server: serverModel.server ?? "")
+            view().serverLabel.text = serverModel.server
+        }
+    }
     
     //MARK: - Actions
     @IBAction func connectAction(_ sender: UIButton) {
@@ -53,8 +61,11 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         Haptic.impact(.soft).generate()
         showAlertDestructive(message: "deleteCurrentUrl".localized, buttonTitle: "delete".localized) { [weak self] in
             guard let `self` = self else { return }
+            timer?.invalidate()
             UserDefaults.standard.removeVpnKey()
             UserDefaults.standard.removeVpnServer()
+            serverModel = nil
+            view().dateStackView.isHidden = true
             vpn.stop("0")
             setupButtonStatus()
         }
@@ -70,22 +81,48 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         super.viewDidLoad()
         appearanceSettings()
         setupButtonStatus()
+        getTariffInfo()
+        
+        guard UserDefaults.standard.getVpnKey() == nil else { return }
+        registerTimer()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timer?.invalidate()
+    }
+
 }
 
 //MARK: - Networking
 extension VPNViewController: VPNViewModelProtocol {
     func didFinishFetch(configJson: ShadowSocksData) {
-        vpn.start("0", configJson: configJson.returnJSON()) { [weak self] errorCode in
-            guard let `self` = self else { return }
-            if errorCode == .noError {
-                UserDefaults.standard.setVpnServer(server: configJson.host ?? "")
-                Haptic.impact(.soft).generate()
-                setupButtonStatus()
-            } else {
-                stopAnimation()
-                showErrorAlert()
-            }
+        connect(configJson: configJson.returnJSON())
+        UserDefaults.standard.setVpnServer(server: configJson.host ?? "")
+    }
+    
+    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?) {
+        
+        self.serverModel = server
+        
+        guard let endDate = endDate else {
+            view().dateStackView.isHidden = true
+            return }
+        view().dateStackView.isHidden = false
+        let isoDateFormatter = DateFormatter()
+        isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+        isoDateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        
+        if let date = isoDateFormatter.date(from: endDate) {
+            let newDateFormatter = DateFormatter()
+            newDateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+            newDateFormatter.locale = Locale.current
+            newDateFormatter.timeZone = TimeZone.current
+            let newDateString = newDateFormatter.string(from: date)
+            view().dateLabel.text = newDateString
+        } else {
+            print("Невозможно преобразовать строку даты")
         }
     }
 }
@@ -102,24 +139,48 @@ extension VPNViewController {
         view().animate(animation: .connected, viewController: self)
     }
     
-    @objc private func presentAddView() {
-        coordinator?.presentAddView(viewController: self)
+    private func registerTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.getTariffInfo), userInfo: nil, repeats: true)
     }
     
-    @objc func connectVpn() {
-        guard let key = UserDefaults.standard.getVpnKey() else {
-            showErrorAlert(message: "enterKey".localized)
-            return
-        }
-        parseSSURl(url: key)
+    @objc private func getTariffInfo() {
+        viewModel.getServerInfo()
     }
     
-    private func parseSSURl(url: String) {
+    private func connect(configJson: [String: Any]) {
         guard !vpn.isActive("0") else {
             vpn.stop("0")
             setupButtonStatus()
             return }
         startAnimation()
+        vpn.start("0", configJson: configJson) { [weak self] errorCode in
+            guard let `self` = self else { return }
+            if errorCode == .noError {
+                Haptic.impact(.soft).generate()
+                setupButtonStatus()
+            } else {
+                stopAnimation()
+                showErrorAlert()
+            }
+        }
+    }
+    
+    @objc private func presentAddView() {
+        coordinator?.presentAddView(viewController: self)
+    }
+    
+    @objc func connectVpn() {
+        guard let serverModel = serverModel else { 
+            guard let key = UserDefaults.standard.getVpnKey() else {
+                showErrorAlert(message: "enterKey".localized)
+                return
+            }
+            parseSSURl(url: key)
+            return }
+        connect(configJson: serverModel.returnJSON())
+    }
+    
+    private func parseSSURl(url: String) {
         let fetchUrl = url.replacingOccurrences(of: "ssconf://", with: "https://")
         viewModel.connect(url: fetchUrl)
     }

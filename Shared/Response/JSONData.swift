@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct JSONData<T: Decodable>: Decodable {
+    var data: T?
+    var server: String?
+    var tokenEndDate: String?
+    var message: String?
+}

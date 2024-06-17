@@ -19,6 +19,7 @@ disconnected = "Отключен";
 deleteCurrentUrl = "Удалить текущую ссылку";
 enterKey = "Для подключения добавьте ключ";
 enterValidKey = "Введите действительную ссылку";
+tariffEndDate = "Дата окончания подписки";
 
 //MARK: - Buttons
 delete = "Удалить";
