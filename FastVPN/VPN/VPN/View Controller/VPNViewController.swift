@@ -22,17 +22,18 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     typealias RootView = VPNView
     
     //MARK: - Services
+    internal let customSpinnerView = CustomSpinnerView()
     private let viewModel = VPNViewModel()
     internal var coordinator: VPNCoordinator?
     
     //MARK: - Attrbiutes
     private var shouldAnimate = false
     private let vpn = OutlineVpn.shared
-    var timer: Timer?
     private var serverModel: ServerModel? {
         didSet {
             guard let serverModel = serverModel else { return }
             UserDefaults.standard.setVpnServer(server: serverModel.server ?? "")
+            UserDefaults.standard.setHasServer(hasServer: true)
             view().serverLabel.text = serverModel.server
         }
     }
@@ -53,7 +54,11 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     @IBAction func settingsAction(_ sender: UIButton) {
         sender.showAnimation()
         Haptic.impact(.soft).generate()
-        openURL(urlString: MainConstants.tgSettings.rawValue + (UIDevice.current.identifierForVendor?.uuidString ?? ""))
+        
+        guard UserDefaults.standard.isHasServer() else {
+            openURL(urlString: MainConstants.tgSettings.rawValue + (UIDevice.current.identifierForVendor?.uuidString ?? ""))
+            return }
+        viewModel.getServerInfo()
     }
     
     @IBAction func deleteAction(_ sender: UIButton) {
@@ -61,7 +66,6 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         Haptic.impact(.soft).generate()
         showAlertDestructive(message: "deleteCurrentUrl".localized, buttonTitle: "delete".localized) { [weak self] in
             guard let `self` = self else { return }
-            timer?.invalidate()
             UserDefaults.standard.removeVpnKey()
             UserDefaults.standard.removeVpnServer()
             serverModel = nil
@@ -81,15 +85,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         super.viewDidLoad()
         appearanceSettings()
         setupButtonStatus()
-        getTariffInfo()
-        
-        guard UserDefaults.standard.getVpnKey() == nil else { return }
-        registerTimer()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        timer?.invalidate()
+        viewModel.getServerInfo()
     }
 
 }
@@ -101,28 +97,35 @@ extension VPNViewController: VPNViewModelProtocol {
         UserDefaults.standard.setVpnServer(server: configJson.host ?? "")
     }
     
-    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?) {
+    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {
         
-        self.serverModel = server
+        if let server = server {
+            self.serverModel = server
+        }
         
-        guard let endDate = endDate else {
-            view().dateStackView.isHidden = true
-            return }
-        view().dateStackView.isHidden = false
-        let isoDateFormatter = DateFormatter()
-        isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-        isoDateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        if let _ = message {
+            UserDefaults.standard.setHasServer(hasServer: false)
+        }
         
-        if let date = isoDateFormatter.date(from: endDate) {
-            let newDateFormatter = DateFormatter()
-            newDateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
-            newDateFormatter.locale = Locale.current
-            newDateFormatter.timeZone = TimeZone.current
-            let newDateString = newDateFormatter.string(from: date)
-            view().dateLabel.text = newDateString
+        if let endDate = endDate {
+            view().dateStackView.isHidden = false
+            let isoDateFormatter = DateFormatter()
+            isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+            isoDateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            
+            if let date = isoDateFormatter.date(from: endDate) {
+                let newDateFormatter = DateFormatter()
+                newDateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+                newDateFormatter.locale = Locale.current
+                newDateFormatter.timeZone = TimeZone.current
+                let newDateString = newDateFormatter.string(from: date)
+                view().dateLabel.text = newDateString
+            } else {
+                print("Невозможно преобразовать строку даты")
+            }
         } else {
-            print("Невозможно преобразовать строку даты")
+            view().dateStackView.isHidden = true
         }
     }
 }
@@ -137,14 +140,6 @@ extension VPNViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
         
         view().animate(animation: .connected, viewController: self)
-    }
-    
-    private func registerTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.getTariffInfo), userInfo: nil, repeats: true)
-    }
-    
-    @objc private func getTariffInfo() {
-        viewModel.getServerInfo()
     }
     
     private func connect(configJson: [String: Any]) {
@@ -188,7 +183,7 @@ extension VPNViewController {
     private func setupButtonStatus() {
         let active = vpn.isActive("0")
         self.shouldAnimate = active
-        UIView.transition(with: view(), duration: 1.3, options: .transitionCrossDissolve) {
+        UIView.transition(with: view(), duration: 0.5, options: .transitionCrossDissolve) {
             self.view().ballBtn.isHidden = active
             self.view().animationView.isHidden = !active
         }

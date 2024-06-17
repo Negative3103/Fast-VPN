@@ -16,6 +16,7 @@ enum UserDefaultsKeys: String {
     case localization
     case vpnKey
     case server
+    case hasServer
 }
 
 extension UserDefaults {
@@ -49,5 +50,17 @@ extension UserDefaults {
     
     func removeVpnServer() {
         removeObject(forKey: UserDefaultsKeys.server.rawValue)
+    }
+    
+    func setHasServer(hasServer: Bool) {
+        set(hasServer, forKey: UserDefaultsKeys.hasServer.rawValue)
+    }
+    
+    func isHasServer() -> Bool {
+        return bool(forKey: UserDefaultsKeys.hasServer.rawValue) 
+    }
+    
+    func removeHasServer() {
+        return removeObject(forKey: UserDefaultsKeys.hasServer.rawValue)
     }
 }

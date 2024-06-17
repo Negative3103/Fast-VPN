@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-protocol VPNViewModelProtocol: NSObject {
+protocol VPNViewModelProtocol: ViewModelProtocol {
     func didFinishFetch(configJson: ShadowSocksData)
-    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?)
+    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?, message: String?)
 }
 
 final class VPNViewModel {
@@ -44,6 +44,7 @@ final class VPNViewModel {
     }
     
     internal func getServerInfo() {
+        delegate?.showActivityIndicator()
         JSONDownloader.shared.jsonTask(url: EndPoints.server.rawValue + uuid, requestMethod: .get, completionHandler: { [weak self]  (result) in
             guard let self = self else { return }
             switch result {
@@ -52,11 +53,12 @@ final class VPNViewModel {
             case .Success(let json):
                 do {
                     let fetchedData = try CustomDecoder().decode(JSONData<ServerModel>.self, from: json)
-                    self.delegate?.didFinishFetch(server: fetchedData.data, endDate: fetchedData.tokenEndDate, serverName: fetchedData.server)
+                    self.delegate?.didFinishFetch(server: fetchedData.data, endDate: fetchedData.tokenEndDate, serverName: fetchedData.server, message: fetchedData.message)
                 } catch {
                     print(APIError.invalidData)
                 }
             }
+            self.delegate?.hideActivityIndicator()
         })
     }
 }
