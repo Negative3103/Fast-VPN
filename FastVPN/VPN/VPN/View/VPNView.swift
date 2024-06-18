@@ -57,4 +57,11 @@ final class VPNView: UIView {
         
         loadingView.play()
     }
+    
+    //MARK: - Lifecycles
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        dateStackView.isHidden = !UserDefaults.standard.isFromRestrictedCountry()
+        settingsButton.isHidden = !UserDefaults.standard.isFromRestrictedCountry()
+    }
 }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Shield Network.png",
+      "filename" : "shield 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Shield Network@2x.png",
+      "filename" : "shield 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Shield Network@3x.png",
+      "filename" : "shield 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

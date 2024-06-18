@@ -103,82 +103,35 @@
                                 <constraint firstAttribute="width" secondItem="CgY-49-K8B" secondAttribute="height" multiplier="1:1" id="nX5-iF-JYa"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXJ-mb-Ree">
-                            <rect key="frame" x="16" y="542.66666666666663" width="175" height="29"/>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                            <color key="tintColor" name="black"/>
-                            <state key="normal" title="Удалить текущую ссылку">
-                                <color key="titleColor" name="black"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="deleteCurrentUrl"/>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="deleteAction:" destination="-1" eventType="touchUpInside" id="v14-Ab-Spm"/>
-                            </connections>
-                        </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fNK-iB-ZC8">
-                            <rect key="frame" x="16" y="97" width="64.333333333333329" height="105"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="TgN-U2-QNA">
-                                    <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="105"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сервер:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2G-T9-ZhO">
-                                            <rect key="frame" x="0.0" y="0.0" width="59.333333333333336" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="textColor" name="gray"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="server"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I9Z-bI-rvv">
-                                            <rect key="frame" x="0.0" y="55" width="59.333333333333336" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="textColor" name="gray"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="status"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mcv-mQ-oKS">
-                                    <rect key="frame" x="64.333333333333329" y="0.0" width="0.0" height="105"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2V-Vh-iX6">
-                                            <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="textColor" name="black"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlX-wr-J8z">
-                                            <rect key="frame" x="0.0" y="55" width="0.0" height="50"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                            <color key="textColor" name="black"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlX-wr-J8z">
+                            <rect key="frame" x="215" y="532.66666666666663" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                            <color key="textColor" name="black"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2V-Vh-iX6">
+                            <rect key="frame" x="16" y="97" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                            <color key="textColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.029999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" name="mainBackground"/>
                     <constraints>
-                        <constraint firstItem="fNK-iB-ZC8" firstAttribute="leading" secondItem="sBe-Mk-BGr" secondAttribute="leading" constant="16" id="1sy-oe-Vr8"/>
                         <constraint firstAttribute="trailing" secondItem="CgY-49-K8B" secondAttribute="trailing" constant="52" id="27E-3u-Qye"/>
+                        <constraint firstItem="Y2V-Vh-iX6" firstAttribute="leading" secondItem="sBe-Mk-BGr" secondAttribute="leading" constant="16" id="4PF-Kt-LYu"/>
                         <constraint firstItem="9aZ-3f-PSh" firstAttribute="top" secondItem="sBe-Mk-BGr" secondAttribute="top" id="8NO-vT-Myo"/>
                         <constraint firstItem="CgY-49-K8B" firstAttribute="centerY" secondItem="FKJ-rM-lir" secondAttribute="centerY" id="Ayq-Q5-lua"/>
                         <constraint firstAttribute="trailing" secondItem="EOh-f9-p0q" secondAttribute="trailing" constant="16" id="Ds1-YX-jEA"/>
+                        <constraint firstItem="Y2V-Vh-iX6" firstAttribute="top" secondItem="9aZ-3f-PSh" secondAttribute="bottom" constant="30" id="E5c-U9-2ar"/>
+                        <constraint firstItem="qlX-wr-J8z" firstAttribute="centerX" secondItem="sBe-Mk-BGr" secondAttribute="centerX" id="FcP-Px-mcw"/>
                         <constraint firstItem="9aZ-3f-PSh" firstAttribute="leading" secondItem="sBe-Mk-BGr" secondAttribute="leading" constant="16" id="LDh-mO-LeO"/>
                         <constraint firstAttribute="trailing" secondItem="9aZ-3f-PSh" secondAttribute="trailing" constant="16" id="YRf-69-7P3"/>
                         <constraint firstItem="FKJ-rM-lir" firstAttribute="centerX" secondItem="sBe-Mk-BGr" secondAttribute="centerX" id="Zsf-td-jf1"/>
                         <constraint firstItem="FKJ-rM-lir" firstAttribute="centerY" secondItem="sBe-Mk-BGr" secondAttribute="centerY" constant="-50" id="b7f-G6-O8d"/>
-                        <constraint firstItem="fNK-iB-ZC8" firstAttribute="top" secondItem="9aZ-3f-PSh" secondAttribute="bottom" constant="30" id="bCp-GR-5P5"/>
+                        <constraint firstItem="qlX-wr-J8z" firstAttribute="bottom" secondItem="CgY-49-K8B" secondAttribute="bottom" id="iNU-B8-hop"/>
                         <constraint firstItem="EOh-f9-p0q" firstAttribute="leading" secondItem="sBe-Mk-BGr" secondAttribute="leading" constant="16" id="mVq-87-l0b"/>
-                        <constraint firstItem="tXJ-mb-Ree" firstAttribute="leading" secondItem="sBe-Mk-BGr" secondAttribute="leading" constant="16" id="mgt-tA-YKZ"/>
                         <constraint firstAttribute="bottom" secondItem="EOh-f9-p0q" secondAttribute="bottom" constant="20" id="nkT-sO-hHc"/>
-                        <constraint firstItem="tXJ-mb-Ree" firstAttribute="top" secondItem="CgY-49-K8B" secondAttribute="bottom" constant="10" id="sRZ-aD-Bka"/>
                         <constraint firstItem="CgY-49-K8B" firstAttribute="leading" secondItem="sBe-Mk-BGr" secondAttribute="leading" constant="52" id="xKa-Hp-mtJ"/>
                     </constraints>
                 </view>

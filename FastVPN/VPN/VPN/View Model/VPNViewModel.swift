@@ -61,4 +61,44 @@ final class VPNViewModel {
             self.delegate?.hideActivityIndicator()
         })
     }
+    
+    func fetchIPAddress(completion: @escaping (String?) -> Void) {
+        guard let url = URL(string: "https://api64.ipify.org?format=json") else {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
+            
+            if let ipResponse = try? JSONDecoder().decode(IPResponse.self, from: data) {
+                completion(ipResponse.ip)
+            } else {
+                completion(nil)
+            }
+        }.resume()
+    }
+    
+    func fetchLocation(ip: String, completion: @escaping (String?) -> Void) {
+        guard let url = URL(string: "https://ipapi.co/\(ip)/json/") else {
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
+            
+            if let locationResponse = try? JSONDecoder().decode(LocationResponse.self, from: data) {
+                completion(locationResponse.country)
+            } else {
+                completion(nil)
+            }
+        }.resume()
+    }
 }

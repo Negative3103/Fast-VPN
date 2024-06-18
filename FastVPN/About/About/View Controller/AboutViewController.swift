@@ -32,8 +32,16 @@ final class AboutViewController: UIViewController, ViewSpecificController, Alert
     @IBAction func infoButtonActions(_ sender: UIButton) {
         Haptic.impact(.soft).generate()
         switch sender.tag {
-        case 0,1:
+        case 0:
             openURL(urlString: MainConstants.tgSupport.rawValue)
+        case 1:
+            sender.showAnimation()
+            Haptic.impact(.soft).generate()
+            showAlertDestructive(message: "deleteCurrentUrl".localized, buttonTitle: "delete".localized) {
+                Notification.Name.deleteUrl.post()
+                Haptic.impact(.soft).generate()
+                self.showSuccessAlert()
+            }
         case 2:
             openMail()
         case 3:
@@ -113,7 +121,7 @@ extension AboutViewController: MFMailComposeViewControllerDelegate {
     }
     
     internal func openMail() {
-        let recipientEmail = "Support@rapiddevops.am"
+        let recipientEmail = "support@rapiddevops.am"
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self

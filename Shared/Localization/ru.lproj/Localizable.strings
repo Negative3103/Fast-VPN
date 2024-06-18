@@ -16,7 +16,7 @@ server = "Сервер:";
 status = "Статус:";
 connected = "Подключен";
 disconnected = "Отключен";
-deleteCurrentUrl = "Удалить текущую ссылку";
+deleteCurrentUrl = "Удалить текущую подписку";
 enterKey = "Для подключения добавьте ключ";
 enterValidKey = "Введите действительную ссылку";
 tariffEndDate = "Дата окончания подписки";
@@ -30,13 +30,14 @@ add = "Добавить";
 //MARK: - About
 version = "Версия";
 chatSupport = "Чат поддержки";
-emailSupport = "Email поддержки: Support@rapiddevops.am";
+emailSupport = "Email поддержки: support@rapiddevops.am";
 privacy = "Конфиденциальность";
 dataCollection = "Сбор данных";
 termOfUse = "Условия Использования";
 licenses = "Лицензии";
 aboutText = "Быстрй VPN основан на платформе Outline, разработанной командой Jigsaw. Это программа с открытым исходным кодом, использующая протокол Shadowsocks.";
 language = "Изменить язык";
+deleteCurrentSubs = "Удалить текущую подписку";
 
 //MARK: - Add key
 keyTitle = "Добавление ключа доступа";

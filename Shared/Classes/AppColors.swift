@@ -11,4 +11,5 @@ enum AppColors: String {
     case black
     case mainBackground
     case gray
+    case green
 }

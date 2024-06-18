@@ -16,7 +16,7 @@ server = "Server:";
 status = "Status:";
 connected = "Connected";
 disconnected = "Disconnected";
-deleteCurrentUrl = "Delete current link";
+deleteCurrentUrl = "Delete current subscription";
 enterKey = "Add a key to connect";
 enterValidKey = "Enter a valid link";
 tariffEndDate = "Subscription end date";
@@ -30,13 +30,14 @@ add = "Add";
 //MARK: - About
 version = "Version";
 chatSupport = "Support Chat";
-emailSupport = "Support email: Support@rapiddevops.am";
+emailSupport = "Support email: support@rapiddevops.am";
 privacy = "Privacy";
 dataCollection = "Data Collection";
 termOfUse = "Terms of Use";
 licenses = "Licenses";
 aboutText = "Fast VPN is based on the Outline platform developed by the Jigsaw team. It is an open source program that uses the Shadowsocks protocol.";
 language = "Change language";
+deleteCurrentSubs = "Delete current subscription";
 
 //MARK: - Add key
 keyTitle = "Adding an access key";

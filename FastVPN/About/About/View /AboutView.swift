@@ -21,4 +21,10 @@ final class AboutView: CustomView {
             views.forEach({ $0.layer.cornerRadius = 10 })
         }
     }
+    
+    //MARK: - Lifecycles
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        views[1].isHidden = !UserDefaults.standard.isFromRestrictedCountry()
+    }
 }

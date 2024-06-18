@@ -7,6 +7,7 @@
 
 import UIKit
 import Lottie
+import Haptica
 
 enum LottieAnimation: String {
     case lightning
@@ -19,12 +20,14 @@ final class LaunchScreenViewController: UIViewController, ViewSpecificController
     typealias RootView = LaunchScreenView
     
     //MARK: - Services
+    private let viewModel = VPNViewModel()
     
     //MARK: - Attributes
     
     //MARK: - Lifecycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        checkUserLocation()
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -32,7 +35,10 @@ final class LaunchScreenViewController: UIViewController, ViewSpecificController
         super.viewDidLoad()
         appearanceSettings()
         view().animate { _ in
-            self.presentTabBarVC()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+                Haptic.impact(.soft).generate()
+                self.presentTabBarVC()
+            }
         }
     }
     
@@ -54,5 +60,28 @@ extension LaunchScreenViewController {
         tabBarVC.modalPresentationStyle = .fullScreen
         tabBarVC.modalTransitionStyle = .crossDissolve
         self.present(tabBarVC, animated: true)
+    }
+}
+
+//MARK: - Check Ip-Address
+extension LaunchScreenViewController {
+    private func saveUserLocationStatus(isFromRestrictedCountry: Bool) {
+        UserDefaults.standard.isFromRestrictedCountry(isFromRestrictedCountry: isFromRestrictedCountry)
+    }
+    
+    private func checkUserLocation() {
+        viewModel.fetchIPAddress { ip in
+            guard let ip = ip else {
+                self.saveUserLocationStatus(isFromRestrictedCountry: false)
+                return
+            }
+            
+            self.viewModel.fetchLocation(ip: ip) { country in
+                let restrictedCountries = ["RU", "IR"]
+                guard let country = country else { return }
+                let isFromRestrictedCountry = restrictedCountries.contains(country)
+                self.saveUserLocationStatus(isFromRestrictedCountry: isFromRestrictedCountry)
+            }
+        }
     }
 }

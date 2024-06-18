@@ -64,7 +64,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LAG-qx-5IZ">
                                                     <rect key="frame" x="10" y="15" width="341" height="20"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat" translatesAutoresizingMaskIntoConstraints="NO" id="6wL-RG-qzr">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tgBlue" translatesAutoresizingMaskIntoConstraints="NO" id="6wL-RG-qzr">
                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="0J0-Fm-hJ0"/>
@@ -102,48 +102,8 @@
                                                 <constraint firstAttribute="bottom" secondItem="QCc-dh-KWY" secondAttribute="bottom" id="zZD-hN-dzN"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-cK-P6J">
-                                            <rect key="frame" x="0.0" y="60" width="361" height="50"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yso-Gu-H5C">
-                                                    <rect key="frame" x="10" y="15" width="341" height="20"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tgBlue" translatesAutoresizingMaskIntoConstraints="NO" id="MeG-5p-PkC">
-                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="chN-hf-Tav"/>
-                                                                <constraint firstAttribute="width" constant="20" id="jvi-0N-310"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telegram: @gogi_mogi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-Ih-LoO">
-                                                            <rect key="frame" x="30" y="0.0" width="311" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
-                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPv-Al-JKD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
-                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <connections>
-                                                        <action selector="infoButtonActions:" destination="-1" eventType="touchUpInside" id="sPP-ZC-JpA"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="QPv-Al-JKD" secondAttribute="trailing" id="5cU-tU-KK2"/>
-                                                <constraint firstItem="QPv-Al-JKD" firstAttribute="leading" secondItem="uSc-cK-P6J" secondAttribute="leading" id="7Ul-VT-Uab"/>
-                                                <constraint firstItem="yso-Gu-H5C" firstAttribute="leading" secondItem="uSc-cK-P6J" secondAttribute="leading" constant="10" id="VzG-Cb-LaG"/>
-                                                <constraint firstItem="yso-Gu-H5C" firstAttribute="centerY" secondItem="uSc-cK-P6J" secondAttribute="centerY" id="ZKM-jH-5Qs"/>
-                                                <constraint firstItem="QPv-Al-JKD" firstAttribute="top" secondItem="uSc-cK-P6J" secondAttribute="top" id="eIW-bM-Sm0"/>
-                                                <constraint firstAttribute="bottom" secondItem="QPv-Al-JKD" secondAttribute="bottom" id="ihP-u2-Hf5"/>
-                                                <constraint firstAttribute="trailing" secondItem="yso-Gu-H5C" secondAttribute="trailing" constant="10" id="kSD-G5-Ag0"/>
-                                            </constraints>
-                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvS-Et-V0w">
-                                            <rect key="frame" x="0.0" y="120" width="361" height="50"/>
+                                            <rect key="frame" x="0.0" y="60" width="361" height="50"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jKE-JU-kn0">
                                                     <rect key="frame" x="10" y="15" width="341" height="20"/>
@@ -155,7 +115,7 @@
                                                                 <constraint firstAttribute="height" constant="20" id="iCd-YA-RrQ"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email поддержки: Support@rapiddevops.am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UQ4-uj-FBE">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email поддержки: support@rapiddevops.am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UQ4-uj-FBE">
                                                             <rect key="frame" x="30" y="0.0" width="311" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
@@ -185,6 +145,50 @@
                                                 <constraint firstAttribute="bottom" secondItem="jsK-t3-hUa" secondAttribute="bottom" id="opW-pA-yPa"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-cK-P6J">
+                                            <rect key="frame" x="0.0" y="120" width="361" height="50"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yso-Gu-H5C">
+                                                    <rect key="frame" x="10" y="15" width="341" height="20"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MeG-5p-PkC">
+                                                            <rect key="frame" x="0.0" y="1.9999999999999982" width="20" height="16"/>
+                                                            <color key="tintColor" name="black"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="chN-hf-Tav"/>
+                                                                <constraint firstAttribute="width" constant="20" id="jvi-0N-310"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Удалить текущую подписку" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-Ih-LoO">
+                                                            <rect key="frame" x="30" y="0.0" width="311" height="20"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="deleteCurrentSubs"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QPv-Al-JKD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <connections>
+                                                        <action selector="infoButtonActions:" destination="-1" eventType="touchUpInside" id="sPP-ZC-JpA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="QPv-Al-JKD" secondAttribute="trailing" id="5cU-tU-KK2"/>
+                                                <constraint firstItem="QPv-Al-JKD" firstAttribute="leading" secondItem="uSc-cK-P6J" secondAttribute="leading" id="7Ul-VT-Uab"/>
+                                                <constraint firstItem="yso-Gu-H5C" firstAttribute="leading" secondItem="uSc-cK-P6J" secondAttribute="leading" constant="10" id="VzG-Cb-LaG"/>
+                                                <constraint firstItem="yso-Gu-H5C" firstAttribute="centerY" secondItem="uSc-cK-P6J" secondAttribute="centerY" id="ZKM-jH-5Qs"/>
+                                                <constraint firstItem="QPv-Al-JKD" firstAttribute="top" secondItem="uSc-cK-P6J" secondAttribute="top" id="eIW-bM-Sm0"/>
+                                                <constraint firstAttribute="bottom" secondItem="QPv-Al-JKD" secondAttribute="bottom" id="ihP-u2-Hf5"/>
+                                                <constraint firstAttribute="trailing" secondItem="yso-Gu-H5C" secondAttribute="trailing" constant="10" id="kSD-G5-Ag0"/>
+                                            </constraints>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6c6-Ei-MIL">
                                             <rect key="frame" x="0.0" y="180" width="361" height="50"/>
                                             <subviews>
@@ -201,7 +205,7 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изменить язык" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeA-ip-gHT">
                                                             <rect key="frame" x="30" y="0.0" width="311" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -436,7 +440,7 @@
         </view>
     </objects>
     <resources>
-        <image name="chat" width="20" height="20"/>
+        <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="email" width="20" height="20"/>
         <image name="global" width="18" height="18.333333969116211"/>
         <image name="logo" width="30" height="30"/>

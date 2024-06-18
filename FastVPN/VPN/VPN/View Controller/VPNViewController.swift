@@ -61,20 +61,6 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         viewModel.getServerInfo()
     }
     
-    @IBAction func deleteAction(_ sender: UIButton) {
-        sender.showAnimation()
-        Haptic.impact(.soft).generate()
-        showAlertDestructive(message: "deleteCurrentUrl".localized, buttonTitle: "delete".localized) { [weak self] in
-            guard let `self` = self else { return }
-            UserDefaults.standard.removeVpnKey()
-            UserDefaults.standard.removeVpnServer()
-            serverModel = nil
-            view().dateStackView.isHidden = true
-            vpn.stop("0")
-            setupButtonStatus()
-        }
-    }
-    
     //MARK: - Lifecycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -85,6 +71,8 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         super.viewDidLoad()
         appearanceSettings()
         setupButtonStatus()
+        
+        guard UserDefaults.standard.isFromRestrictedCountry() else { return }
         viewModel.getServerInfo()
     }
 
@@ -137,9 +125,19 @@ extension VPNViewController {
         navigationItem.title = "fastVPN".localized
         navigationController?.navigationBar.installBlurEffect()
         view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
+        view().animate(animation: .connected, viewController: self)
+        
+        guard UserDefaults.standard.isFromRestrictedCountry() else { return }
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
         
-        view().animate(animation: .connected, viewController: self)
+        Notification.Name.deleteUrl.onPost { _ in
+            UserDefaults.standard.removeVpnKey()
+            UserDefaults.standard.removeVpnServer()
+            self.view().dateStackView.isHidden = true
+            self.serverModel = nil
+            self.vpn.stop("0")
+            self.setupButtonStatus()
+        }
     }
     
     private func connect(configJson: [String: Any]) {
@@ -165,7 +163,11 @@ extension VPNViewController {
     }
     
     @objc func connectVpn() {
-        guard let serverModel = serverModel else { 
+        guard UserDefaults.standard.isFromRestrictedCountry() else {
+            parseSSURl(url: "ssconf://bystrivpn.ru/outline/config/5a223f65-8b14-4e0b-b485-2a367d2d9da9")
+            return }
+        
+        guard let serverModel = serverModel else {
             guard let key = UserDefaults.standard.getVpnKey() else {
                 showErrorAlert(message: "enterKey".localized)
                 return
@@ -188,7 +190,7 @@ extension VPNViewController {
             self.view().animationView.isHidden = !active
         }
         view().statusLabel.text = active ? "connected".localized : "disconnected".localized
-        view().statusLabel.textColor = active ? .green : .red
+        view().statusLabel.textColor = active ? .appColor(.green) : .red
         view().serverLabel.text = UserDefaults.standard.getVpnServer()
         stopAnimation()
     }

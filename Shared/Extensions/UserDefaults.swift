@@ -17,6 +17,7 @@ enum UserDefaultsKeys: String {
     case vpnKey
     case server
     case hasServer
+    case isFromRestrictedCountry
 }
 
 extension UserDefaults {
@@ -61,6 +62,14 @@ extension UserDefaults {
     }
     
     func removeHasServer() {
-        return removeObject(forKey: UserDefaultsKeys.hasServer.rawValue)
+        removeObject(forKey: UserDefaultsKeys.hasServer.rawValue)
+    }
+    
+    func isFromRestrictedCountry(isFromRestrictedCountry: Bool) {
+        set(isFromRestrictedCountry, forKey: UserDefaultsKeys.isFromRestrictedCountry.rawValue)
+    }
+    
+    func isFromRestrictedCountry() -> Bool {
+        return bool(forKey: UserDefaultsKeys.isFromRestrictedCountry.rawValue)
     }
 }
