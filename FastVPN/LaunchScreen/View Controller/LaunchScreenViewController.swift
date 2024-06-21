@@ -27,6 +27,7 @@ final class LaunchScreenViewController: UIViewController, ViewSpecificController
     //MARK: - Lifecycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard !(UserDefaults.standard.isChecked() ?? false) else { return }
         checkUserLocation()
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -81,6 +82,7 @@ extension LaunchScreenViewController {
                 guard let country = country else { return }
                 let isFromRestrictedCountry = restrictedCountries.contains(country)
                 self.saveUserLocationStatus(isFromRestrictedCountry: isFromRestrictedCountry)
+                UserDefaults.standard.setIsChecked(isChecked: true)
             }
         }
     }

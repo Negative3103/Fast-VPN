@@ -70,10 +70,14 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
-        setupButtonStatus()
         
         guard UserDefaults.standard.isFromRestrictedCountry() else { return }
         viewModel.getServerInfo()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkStatus()
     }
 
 }
@@ -153,7 +157,6 @@ extension VPNViewController {
                 setupButtonStatus()
             } else {
                 stopAnimation()
-                showErrorAlert()
             }
         }
     }
@@ -193,6 +196,16 @@ extension VPNViewController {
         view().statusLabel.textColor = active ? .appColor(.green) : .red
         view().serverLabel.text = UserDefaults.standard.getVpnServer()
         stopAnimation()
+    }
+    
+    private func checkStatus() {
+        let active = vpn.isActive("0")
+        self.shouldAnimate = active
+        view().ballBtn.isHidden = active
+        view().animationView.isHidden = !active
+        view().statusLabel.text = active ? "connected".localized : "disconnected".localized
+        view().statusLabel.textColor = active ? .appColor(.green) : .red
+        view().serverLabel.text = UserDefaults.standard.getVpnServer()
     }
     
     private func startAnimation() {

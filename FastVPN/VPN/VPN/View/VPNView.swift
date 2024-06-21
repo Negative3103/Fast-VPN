@@ -7,6 +7,8 @@
 
 import UIKit
 import Lottie
+import DeviceKit
+import SnapKit
 
 final class VPNView: UIView {
     
@@ -17,6 +19,7 @@ final class VPNView: UIView {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var ballBtn: UIButton!
     @IBOutlet weak var dateStackView: UIStackView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var animationView: UIView! {
         didSet {
             animationView.layer.cornerRadius = animationView.frame.width / 2

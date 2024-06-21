@@ -23,6 +23,9 @@
 		D10750152C1CCAF900026F0A /* conditions.docx in Resources */ = {isa = PBXBuildFile; fileRef = D10750112C1CCAF900026F0A /* conditions.docx */; };
 		D13F0F512C218B71006CD24E /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F0F502C218B71006CD24E /* NotificationName.swift */; };
 		D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */; };
+		D1442D6F2C2554B10066FC39 /* AlertLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1442D6E2C2554B10066FC39 /* AlertLogger.swift */; };
+		D1442D782C255D0F0066FC39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1442D7A2C255D0F0066FC39 /* InfoPlist.strings */; };
+		D15C90902C22EF1300CEEB98 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = D15C908F2C22EF1300CEEB98 /* DeviceKit */; };
 		D17685332C1F51D8005C59D6 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17685322C1F51D8005C59D6 /* ServerModel.swift */; };
 		D17685352C1F52C3005C59D6 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17685342C1F52C3005C59D6 /* EndPoints.swift */; };
 		D17685372C1F5317005C59D6 /* CustomDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17685362C1F5316005C59D6 /* CustomDecoder.swift */; };
@@ -120,6 +123,11 @@
 		D10750102C1CCAF900026F0A /* dataCollection.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = dataCollection.docx; path = ../../../../Downloads/dataCollection.docx; sourceTree = "<group>"; };
 		D10750112C1CCAF900026F0A /* conditions.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = conditions.docx; path = ../../../../Downloads/conditions.docx; sourceTree = "<group>"; };
 		D13F0F502C218B71006CD24E /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		D1442D6E2C2554B10066FC39 /* AlertLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertLogger.swift; sourceTree = "<group>"; };
+		D1442D702C25576E0066FC39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		D1442D752C255BDE0066FC39 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/Info.plist; sourceTree = "<group>"; };
+		D1442D792C255D0F0066FC39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D1442D7B2C255D100066FC39 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D17685322C1F51D8005C59D6 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		D17685342C1F52C3005C59D6 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		D17685362C1F5316005C59D6 /* CustomDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecoder.swift; sourceTree = "<group>"; };
@@ -148,7 +156,6 @@
 		D1C6E1CE2C1C2F94006935CD /* FastVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D1C6E1DF2C1C2F96006935CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1C6E1F12C1C300F006935CD /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D1C6E1F32C1C301A006935CD /* ViewSpecificController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSpecificController.swift; sourceTree = "<group>"; };
 		D1C6E1F52C1C3027006935CD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -191,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1074FFB2C1CB20E00026F0A /* OutlineAppleLib in Frameworks */,
+				D15C90902C22EF1300CEEB98 /* DeviceKit in Frameworks */,
 				D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */,
 				D1074FF82C1CB1F600026F0A /* SwiftMessages in Frameworks */,
 				D196B4782C1D9DC900EC7038 /* SnapKit in Frameworks */,
@@ -368,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				D1BE86302C1EDD5000332CA2 /* Localizable.strings */,
+				D1442D7A2C255D0F0066FC39 /* InfoPlist.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -403,7 +412,7 @@
 				D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */,
 				D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */,
 				D1A904A32C1F0FB900971B97 /* LaunchScreen.storyboard */,
-				D1C6E1DF2C1C2F96006935CD /* Info.plist */,
+				D1442D712C25576E0066FC39 /* Info.plist */,
 			);
 			path = FastVPN;
 			sourceTree = "<group>";
@@ -432,6 +441,7 @@
 				D107500B2C1CC1D200026F0A /* MainConstants.swift */,
 				D18B84C12C1EFEB7006B72C7 /* Symbols.swift */,
 				D19FAE692C2029B000F8D5FF /* CustomSpinnerView.swift */,
+				D1442D6E2C2554B10066FC39 /* AlertLogger.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -596,6 +606,7 @@
 				D1074FFC2C1CB20E00026F0A /* OutlineLauncher */,
 				D196B4712C1D985600EC7038 /* Lottie */,
 				D196B4772C1D9DC900EC7038 /* SnapKit */,
+				D15C908F2C22EF1300CEEB98 /* DeviceKit */,
 			);
 			productName = FastVPN;
 			productReference = D1C6E1CE2C1C2F94006935CD /* FastVPN.app */;
@@ -655,6 +666,7 @@
 				D1074FF92C1CB20E00026F0A /* XCRemoteSwiftPackageReference "Outline-SPM" */,
 				D196B4702C1D985600EC7038 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				D196B4762C1D9DC900EC7038 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				D15C908E2C22EF1300CEEB98 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 			);
 			productRefGroup = D1C6E1CF2C1C2F94006935CD /* Products */;
 			projectDirPath = "";
@@ -675,6 +687,7 @@
 				D1BE862E2C1EDD5000332CA2 /* Localizable.strings in Resources */,
 				D18B84D12C1F002C006B72C7 /* LanguageView.xib in Resources */,
 				D196B46F2C1D91E900EC7038 /* LaunchScreenView.xib in Resources */,
+				D1442D782C255D0F0066FC39 /* InfoPlist.strings in Resources */,
 				D10750132C1CCAF900026F0A /* politicy.docx in Resources */,
 				D1C6E23D2C1C3672006935CD /* AboutView.xib in Resources */,
 				D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */,
@@ -733,6 +746,7 @@
 				D18B84CB2C1F0011006B72C7 /* LanguageDataProvider.swift in Sources */,
 				D10750062C1CBA6600026F0A /* HighlightButton.swift in Sources */,
 				D1C6E21B2C1C349E006935CD /* UIImage.swift in Sources */,
+				D1442D6F2C2554B10066FC39 /* AlertLogger.swift in Sources */,
 				D1C6E1FD2C1C3071006935CD /* UIView.swift in Sources */,
 				D1C6E2312C1C360A006935CD /* VPNViewController.swift in Sources */,
 				D1C6E1F22C1C300F006935CD /* Coordinator.swift in Sources */,
@@ -774,6 +788,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D1442D712C25576E0066FC39 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1442D702C25576E0066FC39 /* en */,
+				D1442D752C255BDE0066FC39 /* ru */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		D1442D7A2C255D0F0066FC39 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1442D792C255D0F0066FC39 /* en */,
+				D1442D7B2C255D100066FC39 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		D1BE86302C1EDD5000332CA2 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -915,31 +947,32 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FastVPN/Info.plist;
+				INFOPLIST_FILE = FastVPN/en.lproj/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -951,31 +984,32 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FastVPN/Info.plist;
+				INFOPLIST_FILE = FastVPN/en.lproj/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				INFOPLIST_PREPROCESS = NO;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1002,10 +1036,10 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1032,10 +1066,10 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1096,6 +1130,14 @@
 				kind = branch;
 			};
 		};
+		D15C908E2C22EF1300CEEB98 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
 		D196B4702C1D985600EC7038 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
@@ -1134,6 +1176,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D1074FF92C1CB20E00026F0A /* XCRemoteSwiftPackageReference "Outline-SPM" */;
 			productName = OutlineLauncher;
+		};
+		D15C908F2C22EF1300CEEB98 /* DeviceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D15C908E2C22EF1300CEEB98 /* XCRemoteSwiftPackageReference "DeviceKit" */;
+			productName = DeviceKit;
 		};
 		D196B4712C1D985600EC7038 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

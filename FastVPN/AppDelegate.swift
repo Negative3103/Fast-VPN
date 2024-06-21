@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CocoaLumberjackSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     internal var orientationLock = UIInterfaceOrientationMask.portrait
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        DDLog.add(DDOSLogger.sharedInstance)
+        DDLog.add(AlertLogger.sharedInstance)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .appColor(.mainBackground)
