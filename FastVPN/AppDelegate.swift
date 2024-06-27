@@ -31,5 +31,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return orientationLock
     }
 
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            let url = userActivity.webpageURL?.absoluteString
+            let lastDigits = url?.components(separatedBy: "/").last ?? ""
+            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+                Notification.Name.universalLink.post(object: Int(lastDigits))
+            }
+        }
+        return true
+    }
+    
 }
 

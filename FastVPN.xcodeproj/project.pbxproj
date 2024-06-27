@@ -49,6 +49,7 @@
 		D196B4782C1D9DC900EC7038 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D196B4772C1D9DC900EC7038 /* SnapKit */; };
 		D19FAE6A2C2029B000F8D5FF /* CustomSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FAE692C2029B000F8D5FF /* CustomSpinnerView.swift */; };
 		D19FAE6C2C2029CC00F8D5FF /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FAE6B2C2029CC00F8D5FF /* ViewModelProtocol.swift */; };
+		D1A8001A2C2932D900C22792 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1A904A32C1F0FB900971B97 /* LaunchScreen.storyboard */; };
 		D1BE862E2C1EDD5000332CA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1BE86302C1EDD5000332CA2 /* Localizable.strings */; };
 		D1BE86332C1EE29100332CA2 /* connected.json in Resources */ = {isa = PBXBuildFile; fileRef = D1BE86322C1EE29100332CA2 /* connected.json */; };
 		D1C6E1D22C1C2F94006935CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */; };
@@ -692,6 +693,7 @@
 				D1C6E23D2C1C3672006935CD /* AboutView.xib in Resources */,
 				D1C6E1DB2C1C2F96006935CD /* Assets.xcassets in Resources */,
 				D196B4662C1D833F00EC7038 /* AddKeyView.xib in Resources */,
+				D1A8001A2C2932D900C22792 /* LaunchScreen.storyboard in Resources */,
 				D18B84D52C1F003D006B72C7 /* LanguageCollectionViewCell.xib in Resources */,
 				D1BE86332C1EE29100332CA2 /* connected.json in Resources */,
 				D196B4752C1D9CC700EC7038 /* lightning.json in Resources */,

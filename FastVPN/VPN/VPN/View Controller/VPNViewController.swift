@@ -170,6 +170,7 @@ extension VPNViewController {
             parseSSURl(url: "ssconf://bystrivpn.ru/outline/config/5a223f65-8b14-4e0b-b485-2a367d2d9da9")
             return }
         
+        viewModel.getServerInfo()
         guard let serverModel = serverModel else {
             guard let key = UserDefaults.standard.getVpnKey() else {
                 showErrorAlert(message: "enterKey".localized)
