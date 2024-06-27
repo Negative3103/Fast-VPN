@@ -13,3 +13,10 @@ struct JSONData<T: Decodable>: Decodable {
     var tokenEndDate: String?
     var message: String?
 }
+
+struct JSONDataRegistration<T: Decodable>: Decodable {
+    var token: T?
+    var server: String?
+    var tokenEndDate: String?
+    var message: String?
+}

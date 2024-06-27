@@ -9,4 +9,5 @@ import Foundation
 
 enum EndPoints: String {
     case server = "https://bystrivpn.ru/outline/app/"
+    case registration = "https://bystrivpn.ru/outline/registration"
 }

@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let url = userActivity.webpageURL?.absoluteString
             let lastDigits = url?.components(separatedBy: "/").last ?? ""
             Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-                Notification.Name.universalLink.post(object: Int(lastDigits))
+                Notification.Name.universalLink.post(object: String(lastDigits))
             }
         }
         return true

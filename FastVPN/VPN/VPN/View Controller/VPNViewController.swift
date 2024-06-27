@@ -89,6 +89,40 @@ extension VPNViewController: VPNViewModelProtocol {
         UserDefaults.standard.setVpnServer(server: configJson.host ?? "")
     }
     
+    func didFinishFetchRegistration(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {
+        if let server = server {
+            self.serverModel = server
+        }
+        
+        if let _ = message {
+            UserDefaults.standard.setHasServer(hasServer: false)
+        }
+        
+        if let endDate = endDate {
+            view().dateStackView.isHidden = false
+            let isoDateFormatter = DateFormatter()
+            isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
+            isoDateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            
+            if let date = isoDateFormatter.date(from: endDate) {
+                let newDateFormatter = DateFormatter()
+                newDateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
+                newDateFormatter.locale = Locale.current
+                newDateFormatter.timeZone = TimeZone.current
+                let newDateString = newDateFormatter.string(from: date)
+                view().dateLabel.text = newDateString
+            } else {
+                print("Невозможно преобразовать строку даты")
+            }
+        } else {
+            view().dateStackView.isHidden = true
+        }
+        
+        guard let server = server else { return }
+        connect(configJson: server.returnJSON())
+    }
+    
     func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {
         
         if let server = server {
@@ -141,6 +175,11 @@ extension VPNViewController {
             self.serverModel = nil
             self.vpn.stop("0")
             self.setupButtonStatus()
+        }
+        
+        Notification.Name.universalLink.onPost { [weak self] clientID in
+            guard let clientID = clientID.object as? String else { return }
+            self?.viewModel.registration(clientId: clientID)
         }
     }
     

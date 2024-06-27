@@ -11,6 +11,7 @@ import UIKit
 protocol VPNViewModelProtocol: ViewModelProtocol {
     func didFinishFetch(configJson: ShadowSocksData)
     func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?, message: String?)
+    func didFinishFetchRegistration(server: ServerModel?, endDate: String?, serverName: String?, message: String?)
 }
 
 final class VPNViewModel {
@@ -54,6 +55,31 @@ final class VPNViewModel {
                 do {
                     let fetchedData = try CustomDecoder().decode(JSONData<ServerModel>.self, from: json)
                     self.delegate?.didFinishFetch(server: fetchedData.data, endDate: fetchedData.tokenEndDate, serverName: fetchedData.server, message: fetchedData.message)
+                } catch {
+                    print(APIError.invalidData)
+                }
+            }
+            self.delegate?.hideActivityIndicator()
+        })
+    }
+    
+    internal func registration(clientId: String) {
+        
+        var params: [String: Any] = [
+            "appUuid" : uuid,
+            "clientId" : clientId
+        ]
+        
+        delegate?.showActivityIndicator()
+        JSONDownloader.shared.jsonTask(url: EndPoints.registration.rawValue, requestMethod: .post, parameters: params, completionHandler: { [weak self]  (result) in
+            guard let self = self else { return }
+            switch result {
+            case .Error(let error):
+                print(error)
+            case .Success(let json):
+                do {
+                    let fetchedData = try CustomDecoder().decode(JSONDataRegistration<ServerModel>.self, from: json)
+                    self.delegate?.didFinishFetchRegistration(server: fetchedData.token, endDate: fetchedData.tokenEndDate, serverName: fetchedData.server, message: fetchedData.message)
                 } catch {
                     print(APIError.invalidData)
                 }
