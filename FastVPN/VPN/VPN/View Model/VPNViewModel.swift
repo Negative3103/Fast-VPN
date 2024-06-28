@@ -53,8 +53,8 @@ final class VPNViewModel {
                 print(error)
             case .Success(let json):
                 do {
-                    let fetchedData = try CustomDecoder().decode(JSONData<ServerModel>.self, from: json)
-                    self.delegate?.didFinishFetch(server: fetchedData.data, endDate: fetchedData.tokenEndDate, serverName: fetchedData.server, message: fetchedData.message)
+                    let fetchedData = try CustomDecoder().decode(JSONDataRegistration<ServerModel>.self, from: json)
+                    self.delegate?.didFinishFetch(server: fetchedData.token, endDate: fetchedData.tokenEndDate, serverName: fetchedData.server, message: fetchedData.message)
                 } catch {
                     print(APIError.invalidData)
                 }

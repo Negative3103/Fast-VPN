@@ -21,6 +21,7 @@
 		D10750132C1CCAF900026F0A /* politicy.docx in Resources */ = {isa = PBXBuildFile; fileRef = D107500F2C1CCAF900026F0A /* politicy.docx */; };
 		D10750142C1CCAF900026F0A /* dataCollection.docx in Resources */ = {isa = PBXBuildFile; fileRef = D10750102C1CCAF900026F0A /* dataCollection.docx */; };
 		D10750152C1CCAF900026F0A /* conditions.docx in Resources */ = {isa = PBXBuildFile; fileRef = D10750112C1CCAF900026F0A /* conditions.docx */; };
+		D137AEBF2C2EE58000966F6C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137AEBE2C2EE58000966F6C /* String.swift */; };
 		D13F0F512C218B71006CD24E /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13F0F502C218B71006CD24E /* NotificationName.swift */; };
 		D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */; };
 		D1442D6F2C2554B10066FC39 /* AlertLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1442D6E2C2554B10066FC39 /* AlertLogger.swift */; };
@@ -123,6 +124,7 @@
 		D107500F2C1CCAF900026F0A /* politicy.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = politicy.docx; path = ../../../../Downloads/politicy.docx; sourceTree = "<group>"; };
 		D10750102C1CCAF900026F0A /* dataCollection.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = dataCollection.docx; path = ../../../../Downloads/dataCollection.docx; sourceTree = "<group>"; };
 		D10750112C1CCAF900026F0A /* conditions.docx */ = {isa = PBXFileReference; lastKnownFileType = file; name = conditions.docx; path = ../../../../Downloads/conditions.docx; sourceTree = "<group>"; };
+		D137AEBE2C2EE58000966F6C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D13F0F502C218B71006CD24E /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		D1442D6E2C2554B10066FC39 /* AlertLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertLogger.swift; sourceTree = "<group>"; };
 		D1442D702C25576E0066FC39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
@@ -454,6 +456,7 @@
 				D10750052C1CBA6600026F0A /* HighlightButton.swift */,
 				D10750072C1CBA8200026F0A /* UINavigationBar.swift */,
 				D1C6E2002C1C30A3006935CD /* Bundle.swift */,
+				D137AEBE2C2EE58000966F6C /* String.swift */,
 				D17685342C1F52C3005C59D6 /* EndPoints.swift */,
 				D10750092C1CC1A000026F0A /* UIViewController.swift */,
 				D1C6E2182C1C3494006935CD /* UIColor.swift */,
@@ -731,6 +734,7 @@
 				D107500A2C1CC1A000026F0A /* UIViewController.swift in Sources */,
 				D1C6E21F2C1C3510006935CD /* AppImages.swift in Sources */,
 				D18B84C22C1EFEB7006B72C7 /* Symbols.swift in Sources */,
+				D137AEBF2C2EE58000966F6C /* String.swift in Sources */,
 				D18B84CD2C1F001A006B72C7 /* LanguageViewController.swift in Sources */,
 				D196B46B2C1D91E200EC7038 /* LaunchScreenViewController.swift in Sources */,
 				D1C6E2372C1C361D006935CD /* CustomView.swift in Sources */,
@@ -949,7 +953,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FastVPN/en.lproj/Info.plist;
@@ -965,7 +969,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -986,7 +990,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FastVPN/en.lproj/Info.plist;
@@ -1002,7 +1006,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -94,27 +94,14 @@ extension VPNViewController: VPNViewModelProtocol {
             self.serverModel = server
         }
         
-        if let _ = message {
+        if let message = message {
             UserDefaults.standard.setHasServer(hasServer: false)
+            showErrorAlert(message: message)
         }
         
         if let endDate = endDate {
             view().dateStackView.isHidden = false
-            let isoDateFormatter = DateFormatter()
-            isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-            isoDateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-            
-            if let date = isoDateFormatter.date(from: endDate) {
-                let newDateFormatter = DateFormatter()
-                newDateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
-                newDateFormatter.locale = Locale.current
-                newDateFormatter.timeZone = TimeZone.current
-                let newDateString = newDateFormatter.string(from: date)
-                view().dateLabel.text = newDateString
-            } else {
-                print("Невозможно преобразовать строку даты")
-            }
+            view().dateLabel.text = endDate.changeTimeFormat(from: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS", to: "yyyy.MM.dd HH:mm")
         } else {
             view().dateStackView.isHidden = true
         }
@@ -135,21 +122,7 @@ extension VPNViewController: VPNViewModelProtocol {
         
         if let endDate = endDate {
             view().dateStackView.isHidden = false
-            let isoDateFormatter = DateFormatter()
-            isoDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
-            isoDateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            isoDateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-            
-            if let date = isoDateFormatter.date(from: endDate) {
-                let newDateFormatter = DateFormatter()
-                newDateFormatter.dateFormat = "yyyy.MM.dd HH:mm"
-                newDateFormatter.locale = Locale.current
-                newDateFormatter.timeZone = TimeZone.current
-                let newDateString = newDateFormatter.string(from: date)
-                view().dateLabel.text = newDateString
-            } else {
-                print("Невозможно преобразовать строку даты")
-            }
+            view().dateLabel.text = endDate.changeTimeFormat(from: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS", to: "yyyy.MM.dd HH:mm")
         } else {
             view().dateStackView.isHidden = true
         }
@@ -212,6 +185,8 @@ extension VPNViewController {
         viewModel.getServerInfo()
         guard let serverModel = serverModel else {
             guard let key = UserDefaults.standard.getVpnKey() else {
+                vpn.stop("0")
+                checkStatus()
                 showErrorAlert(message: "enterKey".localized)
                 return
             }

@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
             let url = userActivity.webpageURL?.absoluteString
             let lastDigits = url?.components(separatedBy: "/").last ?? ""
-            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+            Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { _ in
                 Notification.Name.universalLink.post(object: String(lastDigits))
             }
         }
