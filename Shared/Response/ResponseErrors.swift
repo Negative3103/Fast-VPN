@@ -5,6 +5,10 @@
 //  Created by Хасан Давронбеков on 15/06/24.
 //
 
+enum VersionError: Error {
+    case invalidResponse, invalidBundleInfo
+}
+
 enum Result<T> {
     case Success(T)
     case Error(APIError, String? = nil)

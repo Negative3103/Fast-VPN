@@ -27,7 +27,6 @@ final class LaunchScreenViewController: UIViewController, ViewSpecificController
     //MARK: - Lifecycles
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard !(UserDefaults.standard.isChecked() ?? false) else { return }
         checkUserLocation()
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
@@ -35,12 +34,7 @@ final class LaunchScreenViewController: UIViewController, ViewSpecificController
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
-        view().animate { _ in
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-                Haptic.impact(.soft).generate()
-                self.presentTabBarVC()
-            }
-        }
+        view().animate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -78,11 +72,16 @@ extension LaunchScreenViewController {
             }
             
             self.viewModel.fetchLocation(ip: ip) { country in
-                let restrictedCountries = ["RU", "IR"]
+                let restrictedCountries = ["RU", "IR", "UZ"]
                 guard let country = country else { return }
                 let isFromRestrictedCountry = restrictedCountries.contains(country)
                 self.saveUserLocationStatus(isFromRestrictedCountry: isFromRestrictedCountry)
                 UserDefaults.standard.setIsChecked(isChecked: true)
+                
+                DispatchQueue.main.async {
+                    Haptic.impact(.soft).generate()
+                    self.presentTabBarVC()
+                }
             }
         }
     }

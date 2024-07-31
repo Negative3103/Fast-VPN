@@ -75,6 +75,7 @@
 		D1C6E2392C1C3656006935CD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E2382C1C3656006935CD /* AboutViewController.swift */; };
 		D1C6E23B2C1C365F006935CD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E23A2C1C365F006935CD /* AboutView.swift */; };
 		D1C6E23D2C1C3672006935CD /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E23C2C1C3672006935CD /* AboutView.xib */; };
+		D1CC862C2C5A109E006E4F18 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC862B2C5A109E006E4F18 /* UIApplication.swift */; };
 		D1F182EB2C1DE18700B9833D /* HTTPRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EA2C1DE18700B9833D /* HTTPRequestMethod.swift */; };
 		D1F182ED2C1DE19900B9833D /* ResponseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EC2C1DE19900B9833D /* ResponseErrors.swift */; };
 		D1F182EF2C1DE1AC00B9833D /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EE2C1DE1AC00B9833D /* JSONData.swift */; };
@@ -181,6 +182,7 @@
 		D1C6E23A2C1C365F006935CD /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		D1C6E23C2C1C3672006935CD /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		D1C6E23E2C1C37DF006935CD /* FastVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FastVPN.entitlements; sourceTree = "<group>"; };
+		D1CC862B2C5A109E006E4F18 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		D1F182EA2C1DE18700B9833D /* HTTPRequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethod.swift; sourceTree = "<group>"; };
 		D1F182EC2C1DE19900B9833D /* ResponseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseErrors.swift; sourceTree = "<group>"; };
 		D1F182EE2C1DE1AC00B9833D /* JSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				D1C6E1FC2C1C3071006935CD /* UIView.swift */,
+				D1CC862B2C5A109E006E4F18 /* UIApplication.swift */,
 				D10750052C1CBA6600026F0A /* HighlightButton.swift */,
 				D10750072C1CBA8200026F0A /* UINavigationBar.swift */,
 				D1C6E2002C1C30A3006935CD /* Bundle.swift */,
@@ -740,6 +743,7 @@
 				D1C6E2372C1C361D006935CD /* CustomView.swift in Sources */,
 				D17685332C1F51D8005C59D6 /* ServerModel.swift in Sources */,
 				D1F86F5D2C20A363004C0076 /* IPResponse.swift in Sources */,
+				D1CC862C2C5A109E006E4F18 /* UIApplication.swift in Sources */,
 				D1C6E23B2C1C365F006935CD /* AboutView.swift in Sources */,
 				D18B84C02C1EFADF006B72C7 /* LocalizationManager.swift in Sources */,
 				D1F182F32C1DE26E00B9833D /* Headers.swift in Sources */,

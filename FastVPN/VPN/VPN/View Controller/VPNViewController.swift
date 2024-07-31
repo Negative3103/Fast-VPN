@@ -70,6 +70,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
+        checkUpdate()
         
         guard UserDefaults.standard.isFromRestrictedCountry() else { return }
         viewModel.getServerInfo()
@@ -77,6 +78,11 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        checkStatus()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         checkStatus()
     }
 
@@ -213,7 +219,7 @@ extension VPNViewController {
         stopAnimation()
     }
     
-    private func checkStatus() {
+    internal func checkStatus() {
         let active = vpn.isActive("0")
         self.shouldAnimate = active
         view().ballBtn.isHidden = active
@@ -245,5 +251,56 @@ extension VPNViewController: AddKeyViewControllerDelegate {
             showErrorAlert(message: "enterValidKey".localized)
             return }
         connectVpn()
+    }
+}
+
+// MARK: - CheckToNewVersion
+extension VPNViewController {
+    func checkUpdate() {
+        DispatchQueue.global().async {
+            do {
+                let update = try self.isUpdateAvailable()
+                DispatchQueue.main.async {
+                    if update {
+                        self.popupUpdateDialogue()
+                    }
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    func isUpdateAvailable() throws -> Bool {
+        guard let info = Bundle.main.infoDictionary,
+              let currentVersion = info["CFBundleShortVersionString"] as? String,
+              let url = URL(string: MainConstants.itunesPath.rawValue) else {
+            throw VersionError.invalidBundleInfo
+        }
+        
+        let data = try Data(contentsOf: url)
+        guard let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String: Any] else {
+            throw VersionError.invalidResponse
+        }
+        if let result = (json["results"] as? [Any])?.first as? [String: Any], let newVersion = result["version"] as? String {
+            return !(currentVersion >= newVersion)
+        }
+        throw VersionError.invalidResponse
+    }
+    
+    func popupUpdateDialogue() {
+        let alert = UIAlertController(title: "updateAvailable".localized, message: "updateMessage".localized, preferredStyle: UIAlertController.Style.alert)
+        
+        let updateAction = UIAlertAction(title: "update".localized, style: .default, handler: {(_ action: UIAlertAction) -> Void in
+            if let url = URL(string: MainConstants.appstorePath.rawValue),
+               UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        })
+        let nextTimeAction = UIAlertAction(title: "nextTime".localized, style: .default)
+        
+        alert.addAction(updateAction)
+        alert.addAction(nextTimeAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -42,5 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        guard let vc = (application.topViewController() as? VPNViewController) else { return }
+        vc.checkStatus()
+    }
+    
 }
 
