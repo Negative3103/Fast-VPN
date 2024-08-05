@@ -71,6 +71,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         super.viewDidLoad()
         appearanceSettings()
         checkUpdate()
+        showUpdateVC()
         
         guard UserDefaults.standard.isFromRestrictedCountry() else { return }
         viewModel.getServerInfo()
@@ -240,6 +241,11 @@ extension VPNViewController {
     
     private func stopAnimation() {
         view().ballBtn.layer.removeAnimation(forKey: "rotationAnimation")
+    }
+    
+    private func showUpdateVC() {
+        guard !UserDefaults.standard.updateIsShowed() else { return }
+        coordinator?.presentUpdateVC(viewController: self)
     }
 }
 

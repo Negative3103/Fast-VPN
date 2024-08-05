@@ -19,6 +19,7 @@ enum UserDefaultsKeys: String {
     case hasServer
     case isFromRestrictedCountry
     case isChecked
+    case update
 }
 
 extension UserDefaults {
@@ -80,5 +81,13 @@ extension UserDefaults {
     
     func isChecked() -> Bool? {
         return bool(forKey: UserDefaultsKeys.isChecked.rawValue)
+    }
+    
+    func updateIsShowed(update: Bool) {
+        set(update, forKey: UserDefaultsKeys.update.rawValue)
+    }
+    
+    func updateIsShowed() -> Bool {
+        return bool(forKey: UserDefaultsKeys.update.rawValue)
     }
 }

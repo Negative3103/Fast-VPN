@@ -26,6 +26,13 @@
 		D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C6E2082C1C33D7006935CD /* NetworkExtension.framework */; };
 		D1442D6F2C2554B10066FC39 /* AlertLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1442D6E2C2554B10066FC39 /* AlertLogger.swift */; };
 		D1442D782C255D0F0066FC39 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1442D7A2C255D0F0066FC39 /* InfoPlist.strings */; };
+		D150D6382C60AEAE0063D7B9 /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = D150D6372C60AEAE0063D7B9 /* SignalRClient */; };
+		D150D63B2C60AF6D0063D7B9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D150D63A2C60AF6D0063D7B9 /* FirebaseAnalytics */; };
+		D150D63D2C60AF6D0063D7B9 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = D150D63C2C60AF6D0063D7B9 /* FirebaseCrashlytics */; };
+		D150D63F2C60AF6D0063D7B9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D150D63E2C60AF6D0063D7B9 /* FirebaseFirestore */; };
+		D150D6412C60AF6D0063D7B9 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = D150D6402C60AF6D0063D7B9 /* FirebaseInAppMessaging-Beta */; };
+		D150D6432C60AF6D0063D7B9 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = D150D6422C60AF6D0063D7B9 /* FirebaseMessaging */; };
+		D150D6452C60B11F0063D7B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D150D6442C60B11E0063D7B9 /* GoogleService-Info.plist */; };
 		D15C90902C22EF1300CEEB98 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = D15C908F2C22EF1300CEEB98 /* DeviceKit */; };
 		D17685332C1F51D8005C59D6 /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17685322C1F51D8005C59D6 /* ServerModel.swift */; };
 		D17685352C1F52C3005C59D6 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17685342C1F52C3005C59D6 /* EndPoints.swift */; };
@@ -76,6 +83,9 @@
 		D1C6E23B2C1C365F006935CD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6E23A2C1C365F006935CD /* AboutView.swift */; };
 		D1C6E23D2C1C3672006935CD /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1C6E23C2C1C3672006935CD /* AboutView.xib */; };
 		D1CC862C2C5A109E006E4F18 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC862B2C5A109E006E4F18 /* UIApplication.swift */; };
+		D1CC86312C5A1313006E4F18 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC86302C5A1313006E4F18 /* UpdateViewController.swift */; };
+		D1CC86332C5A1317006E4F18 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC86322C5A1317006E4F18 /* UpdateView.swift */; };
+		D1CC86352C5A131B006E4F18 /* UpdateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1CC86342C5A131B006E4F18 /* UpdateView.xib */; };
 		D1F182EB2C1DE18700B9833D /* HTTPRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EA2C1DE18700B9833D /* HTTPRequestMethod.swift */; };
 		D1F182ED2C1DE19900B9833D /* ResponseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EC2C1DE19900B9833D /* ResponseErrors.swift */; };
 		D1F182EF2C1DE1AC00B9833D /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EE2C1DE1AC00B9833D /* JSONData.swift */; };
@@ -132,6 +142,7 @@
 		D1442D752C255BDE0066FC39 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/Info.plist; sourceTree = "<group>"; };
 		D1442D792C255D0F0066FC39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D1442D7B2C255D100066FC39 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D150D6442C60B11E0063D7B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Documents/Fast VPN files/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D17685322C1F51D8005C59D6 /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		D17685342C1F52C3005C59D6 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		D17685362C1F5316005C59D6 /* CustomDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDecoder.swift; sourceTree = "<group>"; };
@@ -183,6 +194,9 @@
 		D1C6E23C2C1C3672006935CD /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutView.xib; sourceTree = "<group>"; };
 		D1C6E23E2C1C37DF006935CD /* FastVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FastVPN.entitlements; sourceTree = "<group>"; };
 		D1CC862B2C5A109E006E4F18 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		D1CC86302C5A1313006E4F18 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		D1CC86322C5A1317006E4F18 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
+		D1CC86342C5A131B006E4F18 /* UpdateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateView.xib; sourceTree = "<group>"; };
 		D1F182EA2C1DE18700B9833D /* HTTPRequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethod.swift; sourceTree = "<group>"; };
 		D1F182EC2C1DE19900B9833D /* ResponseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseErrors.swift; sourceTree = "<group>"; };
 		D1F182EE2C1DE1AC00B9833D /* JSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
@@ -202,13 +216,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D150D6412C60AF6D0063D7B9 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				D1074FFB2C1CB20E00026F0A /* OutlineAppleLib in Frameworks */,
+				D150D6432C60AF6D0063D7B9 /* FirebaseMessaging in Frameworks */,
 				D15C90902C22EF1300CEEB98 /* DeviceKit in Frameworks */,
 				D142F1842C1C4AE9003760A8 /* NetworkExtension.framework in Frameworks */,
 				D1074FF82C1CB1F600026F0A /* SwiftMessages in Frameworks */,
 				D196B4782C1D9DC900EC7038 /* SnapKit in Frameworks */,
+				D150D63F2C60AF6D0063D7B9 /* FirebaseFirestore in Frameworks */,
+				D150D63D2C60AF6D0063D7B9 /* FirebaseCrashlytics in Frameworks */,
+				D150D6382C60AEAE0063D7B9 /* SignalRClient in Frameworks */,
 				D1074FFD2C1CB20E00026F0A /* OutlineLauncher in Frameworks */,
 				D1074FF52C1CB1E300026F0A /* Haptica in Frameworks */,
+				D150D63B2C60AF6D0063D7B9 /* FirebaseAnalytics in Frameworks */,
 				D196B4722C1D985600EC7038 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +329,7 @@
 		D196B45D2C1D7F1C00EC7038 /* VPN */ = {
 			isa = PBXGroup;
 			children = (
+				D1C6E2282C1C35CA006935CD /* VPNCoordinator.swift */,
 				D1C6E22F2C1C35FF006935CD /* View Controller */,
 				D1C6E22E2C1C35FD006935CD /* View */,
 				D10750022C1CB69500026F0A /* View Model */,
@@ -417,6 +438,7 @@
 				D1C6E1D12C1C2F94006935CD /* AppDelegate.swift */,
 				D1C6E1DA2C1C2F96006935CD /* Assets.xcassets */,
 				D1A904A32C1F0FB900971B97 /* LaunchScreen.storyboard */,
+				D150D6442C60B11E0063D7B9 /* GoogleService-Info.plist */,
 				D1442D712C25576E0066FC39 /* Info.plist */,
 			);
 			path = FastVPN;
@@ -505,9 +527,9 @@
 		D1C6E2212C1C3565006935CD /* VPN */ = {
 			isa = PBXGroup;
 			children = (
-				D1C6E2282C1C35CA006935CD /* VPNCoordinator.swift */,
 				D196B45D2C1D7F1C00EC7038 /* VPN */,
 				D196B45E2C1D7F2800EC7038 /* AddKey */,
+				D1CC862D2C5A12F3006E4F18 /* Update */,
 			);
 			path = VPN;
 			sourceTree = "<group>";
@@ -550,6 +572,32 @@
 			isa = PBXGroup;
 			children = (
 				D1C6E2302C1C360A006935CD /* VPNViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		D1CC862D2C5A12F3006E4F18 /* Update */ = {
+			isa = PBXGroup;
+			children = (
+				D1CC862F2C5A1305006E4F18 /* View Controller */,
+				D1CC862E2C5A1301006E4F18 /* View */,
+			);
+			path = Update;
+			sourceTree = "<group>";
+		};
+		D1CC862E2C5A1301006E4F18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D1CC86322C5A1317006E4F18 /* UpdateView.swift */,
+				D1CC86342C5A131B006E4F18 /* UpdateView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D1CC862F2C5A1305006E4F18 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D1CC86302C5A1313006E4F18 /* UpdateViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -614,6 +662,12 @@
 				D196B4712C1D985600EC7038 /* Lottie */,
 				D196B4772C1D9DC900EC7038 /* SnapKit */,
 				D15C908F2C22EF1300CEEB98 /* DeviceKit */,
+				D150D6372C60AEAE0063D7B9 /* SignalRClient */,
+				D150D63A2C60AF6D0063D7B9 /* FirebaseAnalytics */,
+				D150D63C2C60AF6D0063D7B9 /* FirebaseCrashlytics */,
+				D150D63E2C60AF6D0063D7B9 /* FirebaseFirestore */,
+				D150D6402C60AF6D0063D7B9 /* FirebaseInAppMessaging-Beta */,
+				D150D6422C60AF6D0063D7B9 /* FirebaseMessaging */,
 			);
 			productName = FastVPN;
 			productReference = D1C6E1CE2C1C2F94006935CD /* FastVPN.app */;
@@ -674,6 +728,8 @@
 				D196B4702C1D985600EC7038 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				D196B4762C1D9DC900EC7038 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				D15C908E2C22EF1300CEEB98 /* XCRemoteSwiftPackageReference "DeviceKit" */,
+				D150D6362C60AEAE0063D7B9 /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */,
+				D150D6392C60AF6D0063D7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = D1C6E1CF2C1C2F94006935CD /* Products */;
 			projectDirPath = "";
@@ -701,8 +757,10 @@
 				D196B4662C1D833F00EC7038 /* AddKeyView.xib in Resources */,
 				D1A8001A2C2932D900C22792 /* LaunchScreen.storyboard in Resources */,
 				D18B84D52C1F003D006B72C7 /* LanguageCollectionViewCell.xib in Resources */,
+				D150D6452C60B11F0063D7B9 /* GoogleService-Info.plist in Resources */,
 				D1BE86332C1EE29100332CA2 /* connected.json in Resources */,
 				D196B4752C1D9CC700EC7038 /* lightning.json in Resources */,
+				D1CC86352C5A131B006E4F18 /* UpdateView.xib in Resources */,
 				D10750122C1CCAF900026F0A /* attribution.docx in Resources */,
 				D1C6E2352C1C360F006935CD /* VPNView.xib in Resources */,
 				D10750152C1CCAF900026F0A /* conditions.docx in Resources */,
@@ -770,6 +828,8 @@
 				D1F182FA2C1DE5F800B9833D /* ShadowSocksData.swift in Sources */,
 				D1C6E1F82C1C302F006935CD /* AlertViewController.swift in Sources */,
 				D1C6E1F42C1C301A006935CD /* ViewSpecificController.swift in Sources */,
+				D1CC86332C5A1317006E4F18 /* UpdateView.swift in Sources */,
+				D1CC86312C5A1313006E4F18 /* UpdateViewController.swift in Sources */,
 				D1F182F52C1DE2A200B9833D /* URLRequest.swift in Sources */,
 				D1C6E2292C1C35CA006935CD /* VPNCoordinator.swift in Sources */,
 				D1C6E22B2C1C35D3006935CD /* AboutCoordinator.swift in Sources */,
@@ -957,7 +1017,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FastVPN/en.lproj/Info.plist;
@@ -973,7 +1033,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -994,7 +1054,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FastVPN/en.lproj/Info.plist;
@@ -1010,7 +1070,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1140,6 +1200,22 @@
 				kind = branch;
 			};
 		};
+		D150D6362C60AEAE0063D7B9 /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/moozzyk/SignalR-Client-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.0;
+			};
+		};
+		D150D6392C60AF6D0063D7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		D15C908E2C22EF1300CEEB98 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
@@ -1186,6 +1262,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D1074FF92C1CB20E00026F0A /* XCRemoteSwiftPackageReference "Outline-SPM" */;
 			productName = OutlineLauncher;
+		};
+		D150D6372C60AEAE0063D7B9 /* SignalRClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D150D6362C60AEAE0063D7B9 /* XCRemoteSwiftPackageReference "SignalR-Client-Swift" */;
+			productName = SignalRClient;
+		};
+		D150D63A2C60AF6D0063D7B9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D150D6392C60AF6D0063D7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		D150D63C2C60AF6D0063D7B9 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D150D6392C60AF6D0063D7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		D150D63E2C60AF6D0063D7B9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D150D6392C60AF6D0063D7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		D150D6402C60AF6D0063D7B9 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D150D6392C60AF6D0063D7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		D150D6422C60AF6D0063D7B9 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D150D6392C60AF6D0063D7B9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		D15C908F2C22EF1300CEEB98 /* DeviceKit */ = {
 			isa = XCSwiftPackageProductDependency;

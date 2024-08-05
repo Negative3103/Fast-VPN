@@ -50,3 +50,8 @@ english = "English";
 
 //MARK: - Alert
 fill = "Fill in the field";
+
+//MARK: - Update
+updateTitle = "Worked on optimization";
+updateSubtitle = "Made improvements that improved the stability of the application";
+go = "Go!";
