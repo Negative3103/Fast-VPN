@@ -57,6 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         guard let vc = (application.topViewController() as? VPNViewController) else { return }
         vc.checkStatus()
+        vc.setMonitoring()
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        NetworkMonitor.shared.stopMonitoring()
     }
     
 }

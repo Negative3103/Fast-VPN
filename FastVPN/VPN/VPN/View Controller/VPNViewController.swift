@@ -28,6 +28,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     internal var coordinator: VPNCoordinator?
     
     //MARK: - Attrbiutes
+    private let monitor = NetworkMonitor.shared
     private var signalRManager = SignalRManager.signalRManager
     private var shouldAnimate = false
     private let vpn = OutlineVpn.shared
@@ -74,6 +75,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         appearanceSettings()
         checkUpdate()
         showUpdateVC()
+        setMonitoring()
 //        signalRManager.connect()
         
         guard UserDefaults.standard.isFromRestrictedCountry() else { return }
@@ -147,6 +149,26 @@ extension VPNViewController {
         
         Notification.Name.connectKey.onPost { [weak self] _ in
             self?.connectVpn()
+        }
+    }
+    
+    internal func setMonitoring() {
+        monitor.startMonitoring()
+        monitor.onConnectionTypeChanged = { connectionType in
+            DispatchQueue.main.async {
+                switch connectionType {
+                case .wifi, .cellular, .ethernet, .unknown:
+                    guard let serverModel = self.serverModel else { return }
+                    self.vpn.start("0", configJson: serverModel.returnJSON()) { [weak self] errorCode in
+                        guard let `self` = self else { return }
+                        if errorCode == .noError {
+                            Haptic.impact(.soft).generate()
+                            setupButtonStatus()
+                        }
+                        Notification.Name.getData.post()
+                    }
+                }
+            }
         }
     }
     

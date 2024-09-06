@@ -110,6 +110,7 @@
 		D1CC86312C5A1313006E4F18 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC86302C5A1313006E4F18 /* UpdateViewController.swift */; };
 		D1CC86332C5A1317006E4F18 /* UpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CC86322C5A1317006E4F18 /* UpdateView.swift */; };
 		D1CC86352C5A131B006E4F18 /* UpdateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1CC86342C5A131B006E4F18 /* UpdateView.xib */; };
+		D1DE37AD2C8AFB04002C6FBE /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DE37AC2C8AFB04002C6FBE /* NetworkMonitor.swift */; };
 		D1F182EB2C1DE18700B9833D /* HTTPRequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EA2C1DE18700B9833D /* HTTPRequestMethod.swift */; };
 		D1F182ED2C1DE19900B9833D /* ResponseErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EC2C1DE19900B9833D /* ResponseErrors.swift */; };
 		D1F182EF2C1DE1AC00B9833D /* JSONData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F182EE2C1DE1AC00B9833D /* JSONData.swift */; };
@@ -244,6 +245,7 @@
 		D1CC86302C5A1313006E4F18 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		D1CC86322C5A1317006E4F18 /* UpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateView.swift; sourceTree = "<group>"; };
 		D1CC86342C5A131B006E4F18 /* UpdateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateView.xib; sourceTree = "<group>"; };
+		D1DE37AC2C8AFB04002C6FBE /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		D1F182EA2C1DE18700B9833D /* HTTPRequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestMethod.swift; sourceTree = "<group>"; };
 		D1F182EC2C1DE19900B9833D /* ResponseErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseErrors.swift; sourceTree = "<group>"; };
 		D1F182EE2C1DE1AC00B9833D /* JSONData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONData.swift; sourceTree = "<group>"; };
@@ -667,6 +669,7 @@
 				D13C35662C8AC7A900368ADC /* CustomTableViewCell.swift */,
 				D1C6E21E2C1C3510006935CD /* AppImages.swift */,
 				D1C6E2362C1C361D006935CD /* CustomView.swift */,
+				D1DE37AC2C8AFB04002C6FBE /* NetworkMonitor.swift */,
 				D107500B2C1CC1D200026F0A /* MainConstants.swift */,
 				D18B84C12C1EFEB7006B72C7 /* Symbols.swift */,
 				D19FAE692C2029B000F8D5FF /* CustomSpinnerView.swift */,
@@ -996,6 +999,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18B84D72C1F01DE006B72C7 /* LanguageModel.swift in Sources */,
+				D1DE37AD2C8AFB04002C6FBE /* NetworkMonitor.swift in Sources */,
 				D1011ED12C6B36500053550C /* PaymentView.swift in Sources */,
 				D17685352C1F52C3005C59D6 /* EndPoints.swift in Sources */,
 				D10750042C1CB6A800026F0A /* VPNViewModel.swift in Sources */,
