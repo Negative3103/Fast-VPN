@@ -132,7 +132,7 @@ extension VPNViewController {
         viewModel.delegate = self
         navigationItem.title = "fastVPN".localized
         navigationController?.navigationBar.installBlurEffect()
-        view().animate(animation: .connected, viewController: self)
+        view().ballBtn.setImage(.appImage(.ballActiv), for: .normal)
         
         Notification.Name.deleteUrl.onPost { _ in
             UserDefaults.standard.removeVpnKey()
@@ -214,8 +214,7 @@ extension VPNViewController {
         let active = vpn.isActive("0")
         self.shouldAnimate = active
         UIView.transition(with: view(), duration: 0.5, options: .transitionCrossDissolve) {
-            self.view().ballBtn.isHidden = active
-            self.view().animationView.isHidden = !active
+            self.view().ballBtn.setImage(active ? .appImage(.ballActiv) : .appImage(.ballNoActiv), for: .normal)
         }
         view().serverLabel.text = UserDefaults.standard.getVpnServer()
     }
@@ -223,8 +222,7 @@ extension VPNViewController {
     internal func checkStatus() {
         let active = vpn.isActive("0")
         self.shouldAnimate = active
-        view().ballBtn.isHidden = active
-        view().animationView.isHidden = !active
+        view().ballBtn.setImage(active ? .appImage(.ballActiv) : .appImage(.ballNoActiv), for: .normal)
         view().serverLabel.text = UserDefaults.standard.getVpnServer()
     }
     

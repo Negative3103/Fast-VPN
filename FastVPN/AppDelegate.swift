@@ -11,6 +11,7 @@ import FirebaseAnalytics
 import FirebaseMessaging
 import UserNotifications
 import CocoaLumberjackSwift
+import BackgroundTasks
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -34,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Messaging.messaging().delegate = self
         registerForPushNotifications()
+        
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.fastVpn.networkMonitorTask", using: nil) { task in
+            self.handleNetworkMonitorTask(task: task as! BGProcessingTask)
+        }
 
         return true
     }
@@ -62,6 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         NetworkMonitor.shared.stopMonitoring()
+    }
+    
+    func handleNetworkMonitorTask(task: BGProcessingTask) {
+        task.expirationHandler = {
+            task.setTaskCompleted(success: false)
+        }
     }
     
 }
