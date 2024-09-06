@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TariffsTableViewCell" rowHeight="191" id="QnW-z5-NF2" customClass="TariffsTableViewCell" customModule="FastVPN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="191"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QnW-z5-NF2" id="0HJ-bz-SUR">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="191"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Жду Женю!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz5-2B-VeQ">
+                        <rect key="frame" x="20" y="11" width="353" height="169"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Lz5-2B-VeQ" firstAttribute="top" secondItem="0HJ-bz-SUR" secondAttribute="topMargin" id="7Jx-kw-qSP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Lz5-2B-VeQ" secondAttribute="trailing" id="Akv-ks-cYp"/>
+                    <constraint firstItem="Lz5-2B-VeQ" firstAttribute="leading" secondItem="0HJ-bz-SUR" secondAttribute="leadingMargin" id="M3K-md-cfU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Lz5-2B-VeQ" secondAttribute="bottom" id="pe3-Ck-rx8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="titleLabel" destination="Lz5-2B-VeQ" id="qib-Pq-XkO"/>
+            </connections>
+            <point key="canvasLocation" x="46.564885496183201" y="104.5774647887324"/>
+        </tableViewCell>
+    </objects>
+</document>

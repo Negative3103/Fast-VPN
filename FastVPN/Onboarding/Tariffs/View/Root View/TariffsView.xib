@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TariffsViewController" customModule="FastVPN" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="a8B-Z6-kxR" id="GHj-Hm-0Gu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="a8B-Z6-kxR" customClass="TariffsView" customModule="FastVPN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="wxv-mL-mfK">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="748"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SH-Na-I6f" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
+                    <rect key="frame" x="80" y="748" width="233" height="50"/>
+                    <color key="backgroundColor" name="newBlack"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="xWA-Lh-50D"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Далее"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                            <color key="value" name="newBlack50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                            <color key="value" name="newBlack"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="next"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="ZS3-Z4-RYd"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="MEY-H6-0pd"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="MEY-H6-0pd" firstAttribute="bottom" secondItem="9SH-Na-I6f" secondAttribute="bottom" constant="20" id="19C-hx-fR2"/>
+                <constraint firstItem="wxv-mL-mfK" firstAttribute="trailing" secondItem="MEY-H6-0pd" secondAttribute="trailing" id="5NL-AI-3bj"/>
+                <constraint firstItem="wxv-mL-mfK" firstAttribute="leading" secondItem="MEY-H6-0pd" secondAttribute="leading" id="G7U-c9-DbR"/>
+                <constraint firstItem="MEY-H6-0pd" firstAttribute="trailing" secondItem="9SH-Na-I6f" secondAttribute="trailing" constant="80" id="RkX-od-PPf"/>
+                <constraint firstItem="9SH-Na-I6f" firstAttribute="top" secondItem="wxv-mL-mfK" secondAttribute="bottom" id="Rtv-2q-psT"/>
+                <constraint firstItem="wxv-mL-mfK" firstAttribute="top" secondItem="a8B-Z6-kxR" secondAttribute="top" id="n0G-hq-f7v"/>
+                <constraint firstItem="9SH-Na-I6f" firstAttribute="leading" secondItem="MEY-H6-0pd" secondAttribute="leading" constant="80" id="vCF-bg-5Go"/>
+            </constraints>
+            <connections>
+                <outlet property="nextButton" destination="9SH-Na-I6f" id="gYD-AA-Ps5"/>
+                <outlet property="tableView" destination="wxv-mL-mfK" id="Zkf-ah-wlh"/>
+            </connections>
+            <point key="canvasLocation" x="278.62595419847327" y="-243.66197183098592"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="newBlack">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="newBlack50">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

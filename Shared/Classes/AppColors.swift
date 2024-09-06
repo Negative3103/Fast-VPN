@@ -12,4 +12,7 @@ enum AppColors: String {
     case mainBackground
     case gray
     case green
+    
+    //MARK: - New Colors
+    case newBlack
 }

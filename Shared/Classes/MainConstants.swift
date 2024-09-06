@@ -12,5 +12,7 @@ enum MainConstants: String {
     case tgSettings = "https://t.me/fastvpnrusbot?start=app"
     case appstorePath = "itms-apps://itunes.apple.com/us/app/fastVPN/6504282614"
     case itunesPath = "http://itunes.apple.com/lookup?id=6504282614"
+    case signalRUrl = "https://bystrivpn.ru/hubs/app"
+    case service = "com.rapid.fastvpn"
 }
 

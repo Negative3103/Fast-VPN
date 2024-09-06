@@ -108,9 +108,9 @@ extension UIView {
         }
     }
     
-    func setBorder(enable: Bool = true, borderWidth: CGFloat = 1.0) {
+    func setBorder(enable: Bool = true, borderWidth: CGFloat = 1.0, color: UIColor? = nil) {
         self.layer.masksToBounds = true
         self.layer.borderWidth = enable ? borderWidth : 0.0
-        self.layer.borderColor = enable ? UIColor.appColor(.black).cgColor : UIColor.clear.cgColor
+        self.layer.borderColor = enable ? color?.cgColor ?? UIColor.appColor(.black).cgColor : UIColor.clear.cgColor
     }
 }

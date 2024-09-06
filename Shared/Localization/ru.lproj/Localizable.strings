@@ -52,6 +52,19 @@ english = "English";
 fill = "Заполните поле";
 
 //MARK: - Update
-updateTitle = "Поработали над оптимизацией";
+updateTitle = "Что нового в обновлении?";
 updateSubtitle = "Сделали доработки, которые улучшили стабильность работы приложения";
 go = "Поехали!";
+
+//MARK: - New
+next = "Далее";
+fasterThanLightning = "Работает быстрее молнии";
+wontBlock = "Не заблокируют";
+doesntDischarge = "Не разряжает";
+paymentRF = "Принимает платежи из РФ";
+heatPhone = "Не нагревает телефон";
+fastSupport = "Быстрая техническая поддержка";
+newFastVpn = "БЫСТРЫЙ VPN";
+chooseTariff = "ВЫБЕРИТЕ ТАРИФ";
+choosePayment = "ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ";
+settingsWithTg = "НАСТРОИТЬ ЧЕРЕЗ ТЕЛЕГРАМ БОТ";

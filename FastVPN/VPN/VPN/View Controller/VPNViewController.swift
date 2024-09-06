@@ -15,6 +15,7 @@ import NetworkExtension
 import Sentry
 import SwiftMessages
 import Haptica
+import SignalRClient
 
 final class VPNViewController: UIViewController, ViewSpecificController, AlertViewController {
     
@@ -27,6 +28,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     internal var coordinator: VPNCoordinator?
     
     //MARK: - Attrbiutes
+    private var signalRManager = SignalRManager.signalRManager
     private var shouldAnimate = false
     private let vpn = OutlineVpn.shared
     private var serverModel: ServerModel? {
@@ -72,6 +74,7 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
         appearanceSettings()
         checkUpdate()
         showUpdateVC()
+//        signalRManager.connect()
         
         guard UserDefaults.standard.isFromRestrictedCountry() else { return }
         viewModel.getServerInfo()

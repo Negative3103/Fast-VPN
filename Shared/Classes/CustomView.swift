@@ -22,7 +22,7 @@ class CustomView: UIView {
     
     // MARK: - UI Setup
     private func setupBackgroundColor() {
-        backgroundColor = .appColor(.mainBackground)
+        backgroundColor = .appColor(.newBlack)
     }
     
 }

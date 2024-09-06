@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionsViewController" customModule="FastVPN" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="1th-vJ-bkf" id="xBT-cG-hrO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1th-vJ-bkf" customClass="DescriptionsView" customModule="FastVPN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="8hH-g5-R5n">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="597"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewLayout key="collectionViewLayout" id="DWe-PS-pjB" customClass="TagFlowLayout" customModule="FastVPN" customModuleProvider="target"/>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73m-l5-PHt" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
+                    <rect key="frame" x="80" y="597" width="215" height="50"/>
+                    <color key="backgroundColor" name="newBlack"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Yxh-J7-Dkm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Далее"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                            <color key="value" name="newBlack50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                            <color key="value" name="newBlack"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="next"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="zax-ak-XTw"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="IG3-K5-XuJ"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="8hH-g5-R5n" firstAttribute="trailing" secondItem="1th-vJ-bkf" secondAttribute="trailing" id="HrH-UD-bNe"/>
+                <constraint firstItem="IG3-K5-XuJ" firstAttribute="bottom" secondItem="73m-l5-PHt" secondAttribute="bottom" constant="20" id="IOm-Po-hWa"/>
+                <constraint firstItem="73m-l5-PHt" firstAttribute="top" secondItem="8hH-g5-R5n" secondAttribute="bottom" id="JUa-tX-JcH"/>
+                <constraint firstItem="IG3-K5-XuJ" firstAttribute="trailing" secondItem="73m-l5-PHt" secondAttribute="trailing" constant="80" id="Jkc-Uq-JGJ"/>
+                <constraint firstItem="8hH-g5-R5n" firstAttribute="leading" secondItem="1th-vJ-bkf" secondAttribute="leading" id="Lbw-Uz-mm2"/>
+                <constraint firstItem="73m-l5-PHt" firstAttribute="leading" secondItem="IG3-K5-XuJ" secondAttribute="leading" constant="80" id="MlD-V8-VWS"/>
+                <constraint firstItem="8hH-g5-R5n" firstAttribute="top" secondItem="1th-vJ-bkf" secondAttribute="top" id="PXU-dV-xPx"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="8hH-g5-R5n" id="jih-Yj-NB6"/>
+                <outlet property="nextButton" destination="73m-l5-PHt" id="Eep-PM-Cmn"/>
+            </connections>
+            <point key="canvasLocation" x="-148" y="-218.1409295352324"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="newBlack">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="newBlack50">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

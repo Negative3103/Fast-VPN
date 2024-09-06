@@ -50,6 +50,12 @@ extension LaunchScreenViewController {
         navigationController?.navigationBar.installBlurEffect()
     }
     
+    private func showOnboarding() {
+        guard let navigationController = navigationController else { return }
+        let onboardingCoordinator = OnboardingCoordinator(navigationController: navigationController)
+        onboardingCoordinator.start()
+    }
+    
     private func presentTabBarVC() {
         let tabBarVC = TabBarController()
         tabBarVC.modalPresentationStyle = .fullScreen
@@ -80,7 +86,7 @@ extension LaunchScreenViewController {
                 
                 DispatchQueue.main.async {
                     Haptic.impact(.soft).generate()
-                    self.presentTabBarVC()
+                    KeychainAccessCheck.isFirstLaunch() ? self.showOnboarding() : self.presentTabBarVC()
                 }
             }
         }

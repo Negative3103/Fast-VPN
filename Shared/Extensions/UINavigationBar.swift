@@ -10,7 +10,7 @@ import UIKit
 extension UINavigationBar {
     func installBlurEffect() {
         tintColor = .white
-        backgroundColor = .appColor(.black)
+        backgroundColor = .appColor(.newBlack)
         titleTextAttributes = [.foregroundColor: UIColor.white]
         largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)

@@ -52,6 +52,19 @@ english = "English";
 fill = "Fill in the field";
 
 //MARK: - Update
-updateTitle = "Worked on optimization";
+updateTitle = "What's new in the update?";
 updateSubtitle = "Made improvements that improved the stability of the application";
 go = "Go!";
+
+//MARK: - New
+next = "Next";
+fasterThanLightning = "Works faster than lightning";
+wontBlock = "Won't block";
+doesntDischarge = "Doesn't drain battery";
+paymentRF = "Accepts payments from Russia";
+heatPhone = "Doesn't heat up phone";
+fastSupport = "Fast technical support";
+newFastVpn = "FAST VPN";
+chooseTariff = "SELECT TARIFF";
+choosePayment = "SELECT PAYMENT METHOD";
+settingsWithTg = "SET UP VIA TELEGRAM BOT";

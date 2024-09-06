@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentViewController" customModule="FastVPN" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="KlW-ya-G65" id="ddL-QO-AqW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KlW-ya-G65" customClass="PaymentView" customModule="FastVPN" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaU-XR-MY1" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
+                    <rect key="frame" x="80" y="748" width="233" height="50"/>
+                    <color key="backgroundColor" name="newBlack"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="I1N-dE-Ykp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Далее"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                            <color key="value" name="newBlack50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                            <color key="value" name="newBlack"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="next"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="nextAction:" destination="-1" eventType="touchUpInside" id="UpN-iq-hK6"/>
+                    </connections>
+                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2gp-Lb-tk6">
+                    <rect key="frame" x="10" y="79" width="373" height="120"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7n-4V-NwF" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="373" height="50"/>
+                            <color key="backgroundColor" name="newBlack"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="NXZ-XZ-oIm"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                            <state key="normal" title="APPLE STORE" image="applelogo" catalog="system"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                                    <color key="value" name="newBlack50"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                    <color key="value" name="newBlack"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="appleButtonAction:" destination="-1" eventType="touchUpInside" id="Iio-xL-KB3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vpT-FT-mSA" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="70" width="373" height="50"/>
+                            <color key="backgroundColor" name="newBlack"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="Ytj-Qf-5af"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                            <state key="normal" title="НАСТРОИТЬ ЧЕРЕЗ ТЕЛЕГРАМ БОТ" image="telegram"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                                    <color key="value" name="newBlack50"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
+                                    <color key="value" name="newBlack"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="settingsWithTg"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tgButtonAction:" destination="-1" eventType="touchUpInside" id="Ild-CF-13m"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="BET-4m-95h"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BET-4m-95h" firstAttribute="bottom" secondItem="oaU-XR-MY1" secondAttribute="bottom" constant="20" id="70E-PG-DBm"/>
+                <constraint firstItem="oaU-XR-MY1" firstAttribute="leading" secondItem="BET-4m-95h" secondAttribute="leading" constant="80" id="DaI-VL-x7s"/>
+                <constraint firstItem="BET-4m-95h" firstAttribute="trailing" secondItem="2gp-Lb-tk6" secondAttribute="trailing" constant="10" id="WTa-r8-059"/>
+                <constraint firstItem="2gp-Lb-tk6" firstAttribute="top" secondItem="BET-4m-95h" secondAttribute="top" constant="20" id="eVZ-95-wMT"/>
+                <constraint firstItem="2gp-Lb-tk6" firstAttribute="leading" secondItem="BET-4m-95h" secondAttribute="leading" constant="10" id="sYA-qZ-BK1"/>
+                <constraint firstItem="BET-4m-95h" firstAttribute="trailing" secondItem="oaU-XR-MY1" secondAttribute="trailing" constant="80" id="w6p-ue-9As"/>
+            </constraints>
+            <connections>
+                <outlet property="appleButton" destination="e7n-4V-NwF" id="Huc-pJ-zHg"/>
+                <outlet property="nextButton" destination="oaU-XR-MY1" id="ZVy-H1-OCt"/>
+                <outlet property="tgButton" destination="vpT-FT-mSA" id="PYr-q5-99B"/>
+            </connections>
+            <point key="canvasLocation" x="297" y="-235"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="applelogo" catalog="system" width="105" height="128"/>
+        <image name="telegram" width="18" height="15"/>
+        <namedColor name="newBlack">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="newBlack50">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
