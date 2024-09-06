@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LanguageView: UIView {
+final class LanguageView: CustomView {
     
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView! {

@@ -27,19 +27,9 @@ final class LanguageViewController: UIViewController, ViewSpecificController, Al
     //MARK: - Actions
     
     //MARK: - Lifecycles
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
 }

@@ -10,16 +10,11 @@ import Lottie
 import DeviceKit
 import SnapKit
 
-final class VPNView: UIView {
+final class VPNView: CustomView {
     
     //MARK: - Outlets
     @IBOutlet weak var serverLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var accessLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var ballBtn: UIButton!
-    @IBOutlet weak var dateStackView: UIStackView!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var animationView: UIView! {
         didSet {
             animationView.layer.cornerRadius = animationView.frame.width / 2
@@ -27,21 +22,16 @@ final class VPNView: UIView {
     }
     @IBOutlet weak var supportButton: HighlightButton! {
         didSet {
-            supportButton.setBorder(enable: true, borderWidth: 2)
-            supportButton.layer.cornerRadius = 10
+            supportButton.setBorder(enable: true, borderWidth: 1.5, color: .white)
+            supportButton.layer.cornerRadius = 16
         }
     }
     @IBOutlet weak var settingsButton: HighlightButton! {
         didSet {
-            settingsButton.layer.cornerRadius = 10
+            settingsButton.setBorder(enable: true, borderWidth: 1.5, color: .white)
+            settingsButton.layer.cornerRadius = 16
         }
     }
-    lazy var addButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
-        button.setImage(.appImage(.plus), for: .normal)
-        button.tintColor = .white
-        return button
-    }()
     
     //MARK: - Other funcs
     func animate(animation: LottieAnimation, viewController: VPNViewController) {
@@ -64,7 +54,6 @@ final class VPNView: UIView {
     //MARK: - Lifecycles
     override func awakeFromNib() {
         super.awakeFromNib()
-        dateStackView.isHidden = !UserDefaults.standard.isFromRestrictedCountry()
         settingsButton.isHidden = !UserDefaults.standard.isFromRestrictedCountry()
     }
 }

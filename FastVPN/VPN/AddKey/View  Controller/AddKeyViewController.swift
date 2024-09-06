@@ -17,7 +17,7 @@ final class AddKeyViewController: UIViewController, ViewSpecificController, Aler
     typealias RootView = AddKeyView
     
     //MARK: - Services
-    internal var coordinator: VPNCoordinator?
+    internal var coordinator: AboutCoordinator?
     
     //MARK: - Attributes
     weak var delegate: AddKeyViewControllerDelegate?

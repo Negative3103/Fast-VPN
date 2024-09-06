@@ -23,11 +23,15 @@ final class LanguageCollectionViewCell: UICollectionViewCell {
     
     internal var didSelect: Bool = false {
         didSet {
-            titleLabel.textColor = didSelect ? .appColor(.black) : .appColor(.gray)
+            titleLabel.textColor = didSelect ? .white : .white.withAlphaComponent(0.7)
             checkImageView.image = didSelect ? UIImage(systemName: "checkmark.circle") : .appImage(.uncheck)
         }
     }
     
     //MARK: - Lifecycles
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.setBorder(enable: true, borderWidth: 1.5, color: .white)
+        self.layer.cornerRadius = 16
+    }
 }

@@ -86,7 +86,8 @@ extension LaunchScreenViewController {
                 
                 DispatchQueue.main.async {
                     Haptic.impact(.soft).generate()
-                    KeychainAccessCheck.isFirstLaunch() ? self.showOnboarding() : self.presentTabBarVC()
+//                    KeychainAccessCheck.isFirstLaunch() ? self.showOnboarding() : self.presentTabBarVC()
+                    self.presentTabBarVC()
                 }
             }
         }

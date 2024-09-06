@@ -42,8 +42,8 @@ extension TabBarController {
         self.delegate = self
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(astroButtonItemLongPressed(_:)))
         tabBar.addGestureRecognizer(longPressRecognizer)
-        tabBar.tintColor = UIColor.appColor(.black)
-        tabBar.backgroundColor = .white
+        tabBar.tintColor = .white
+        tabBar.backgroundColor = .appColor(.newBlack)
         tabBar.clipsToBounds = true
     }
         

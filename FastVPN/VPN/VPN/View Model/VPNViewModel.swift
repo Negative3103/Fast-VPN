@@ -14,6 +14,12 @@ protocol VPNViewModelProtocol: ViewModelProtocol {
     func didFinishFetchRegistration(server: ServerModel?, endDate: String?, serverName: String?, message: String?)
 }
 
+extension VPNViewModelProtocol {
+    func didFinishFetch(configJson: ShadowSocksData) {}
+    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {}
+    func didFinishFetchRegistration(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {}
+}
+
 final class VPNViewModel {
     
     // MARK: - Attributes
@@ -65,7 +71,7 @@ final class VPNViewModel {
     
     internal func registration(clientId: String) {
         
-        var params: [String: Any] = [
+        let params: [String: Any] = [
             "appUuid" : uuid,
             "clientId" : clientId
         ]

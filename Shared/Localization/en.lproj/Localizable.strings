@@ -11,7 +11,7 @@ vpn = "VPN";
 about = "About";
 
 //MARK: - VPN
-fastVPN = "Fast VPN";
+fastVPN = "⚡ FAST VPN ⚡";
 server = "Server:";
 status = "Status:";
 connected = "Connected";
@@ -19,7 +19,7 @@ disconnected = "Disconnected";
 deleteCurrentUrl = "Delete current subscription";
 enterKey = "Add a key to connect";
 enterValidKey = "Enter a valid link";
-tariffEndDate = "Subscription end date";
+tariffEndDate = "Subscription will expire";
 
 //MARK: - Buttons
 delete = "Delete";
@@ -68,3 +68,5 @@ newFastVpn = "FAST VPN";
 chooseTariff = "SELECT TARIFF";
 choosePayment = "SELECT PAYMENT METHOD";
 settingsWithTg = "SET UP VIA TELEGRAM BOT";
+buyWithoutAdd = "Buy a tariff without advertising";
+information = "INFORMATION";

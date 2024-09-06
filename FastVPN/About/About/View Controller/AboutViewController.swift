@@ -23,7 +23,9 @@ final class AboutViewController: UIViewController, ViewSpecificController, Alert
     typealias RootView = AboutView
     
     //MARK: - Services
+    private let viewModel = VPNViewModel()
     internal var coordinator: AboutCoordinator?
+    internal let customSpinnerView = CustomSpinnerView()
     
     //MARK: - Attributes
     private var fileType: FilesType? = .none
@@ -40,6 +42,7 @@ final class AboutViewController: UIViewController, ViewSpecificController, Alert
             showAlertDestructive(message: "deleteCurrentUrl".localized, buttonTitle: "delete".localized) {
                 Notification.Name.deleteUrl.post()
                 Haptic.impact(.soft).generate()
+                self.view().dateView.isHidden = true
                 self.showSuccessAlert()
             }
         case 2:
@@ -69,27 +72,64 @@ final class AboutViewController: UIViewController, ViewSpecificController, Alert
         openFile()
     }
     
-    //MARK: - Lifecycles
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+    @objc private func presentAddView() {
+        coordinator?.presentAddView(viewController: self)
     }
     
+    //MARK: - Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         appearanceSettings()
+        viewModel.getServerInfo()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
+
+}
+
+//MARK: - AddKeyPopUpViewControllerDelegate
+extension AboutViewController: AddKeyViewControllerDelegate {
+    func didFinishKey() {
+        Notification.Name.connectKey.post()
     }
 }
+
+//MARK: - Networking
+extension AboutViewController: VPNViewModelProtocol {
+    func didFinishFetchRegistration(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {
+        if let endDate = endDate {
+            view().dateView.isHidden = false
+            view().dateLabel.text = "tariffEndDate".localized + Symbols.space.rawValue + endDate.changeTimeFormat(from: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS", to: "yyyy.MM.dd HH:mm")
+        } else {
+            view().dateView.isHidden = true
+        }
+    }
+    
+    func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {
+        if let endDate = endDate {
+            view().dateView.isHidden = false
+            view().dateLabel.text = "tariffEndDate".localized + Symbols.space.rawValue + endDate.changeTimeFormat(from: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS", to: "yyyy.MM.dd HH:mm")
+        } else {
+            view().dateView.isHidden = true
+        }
+    }
+}
+
 
 //MARK: - Other funcs
 extension AboutViewController {
     private func appearanceSettings() {
+        viewModel.delegate = self
+        navigationItem.title = "information".localized
         navigationController?.navigationBar.installBlurEffect()
+        
+        Notification.Name.getData.onPost { [weak self] _ in self?.viewModel.getServerInfo() }
+        Notification.Name.universalLink.onPost { [weak self] clientID in
+            guard let clientID = clientID.object as? String else { return }
+            self?.viewModel.registration(clientId: clientID)
+        }
+
+        guard UserDefaults.standard.isFromRestrictedCountry() else { return }
+        view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
     }
     
     private func openFile() {

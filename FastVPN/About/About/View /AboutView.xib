@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,44 +18,23 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-1h-1te">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-1h-1te">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fWI-Ep-SW7">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="625.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="547"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3jO-a4-q6a">
-                                    <rect key="frame" x="16" y="0.0" width="223" height="30"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oR8-xz-1rf">
-                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="n1v-p3-uIG"/>
-                                                <constraint firstAttribute="height" constant="30" id="zFg-P8-onn"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Быстрый VPN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P10-xa-hqR">
-                                            <rect key="frame" x="40" y="0.0" width="183" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
-                                            <color key="textColor" name="black"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="fastVPN"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                    </subviews>
-                                </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-7K-EO4">
-                                    <rect key="frame" x="16" y="60" width="0.0" height="0.0"/>
+                                    <rect key="frame" x="16" y="20" width="0.0" height="0.0"/>
                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                    <color key="textColor" name="gray"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="version"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0hC-AJ-dwL">
-                                    <rect key="frame" x="16" y="76" width="361" height="230"/>
+                                    <rect key="frame" x="16" y="36" width="361" height="230"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KKE-3O-zo1">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
@@ -71,13 +49,13 @@
                                                                 <constraint firstAttribute="height" constant="20" id="ljM-Nk-QaZ"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чат поддержки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anI-JH-wGr">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поддержка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anI-JH-wGr">
                                                             <rect key="frame" x="30" y="0.0" width="311" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="chatSupport"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="support"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                     </subviews>
@@ -90,7 +68,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="0f3-n5-RvL"/>
                                                 <constraint firstItem="LAG-qx-5IZ" firstAttribute="centerY" secondItem="KKE-3O-zo1" secondAttribute="centerY" id="5Eg-Am-CyB"/>
@@ -110,6 +88,7 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email" translatesAutoresizingMaskIntoConstraints="NO" id="8d7-fG-hcZ">
                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="7tS-aV-wL3"/>
                                                                 <constraint firstAttribute="height" constant="20" id="iCd-YA-RrQ"/>
@@ -117,8 +96,8 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email поддержки: support@rapiddevops.am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="UQ4-uj-FBE">
                                                             <rect key="frame" x="30" y="0.0" width="311" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="emailSupport"/>
@@ -134,7 +113,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="jsK-t3-hUa" secondAttribute="trailing" id="FtX-FM-rbL"/>
                                                 <constraint firstItem="jKE-JU-kn0" firstAttribute="leading" secondItem="jvS-Et-V0w" secondAttribute="leading" constant="10" id="QGB-FJ-dbt"/>
@@ -153,7 +132,7 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creditcard" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="MeG-5p-PkC">
                                                             <rect key="frame" x="0.0" y="1.9999999999999982" width="20" height="16"/>
-                                                            <color key="tintColor" name="black"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="chN-hf-Tav"/>
                                                                 <constraint firstAttribute="width" constant="20" id="jvi-0N-310"/>
@@ -161,8 +140,8 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Удалить текущую подписку" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9e-Ih-LoO">
                                                             <rect key="frame" x="30" y="0.0" width="311" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="deleteCurrentSubs"/>
@@ -178,7 +157,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="QPv-Al-JKD" secondAttribute="trailing" id="5cU-tU-KK2"/>
                                                 <constraint firstItem="QPv-Al-JKD" firstAttribute="leading" secondItem="uSc-cK-P6J" secondAttribute="leading" id="7Ul-VT-Uab"/>
@@ -197,7 +176,7 @@
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="global" translatesAutoresizingMaskIntoConstraints="NO" id="ey0-q2-BOI">
                                                             <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
-                                                            <color key="tintColor" name="black"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="20" id="EUs-98-Jmf"/>
                                                                 <constraint firstAttribute="height" constant="20" id="haF-0d-mgK"/>
@@ -205,8 +184,8 @@
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Изменить язык" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeA-ip-gHT">
                                                             <rect key="frame" x="30" y="0.0" width="311" height="20"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="language"/>
@@ -222,7 +201,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="xpe-Z9-8sB" firstAttribute="centerY" secondItem="6c6-Ei-MIL" secondAttribute="centerY" id="VTF-Pi-uqj"/>
                                                 <constraint firstItem="Gjq-LK-Tv1" firstAttribute="leading" secondItem="6c6-Ei-MIL" secondAttribute="leading" id="XgD-9Z-XrF"/>
@@ -233,23 +212,35 @@
                                                 <constraint firstItem="Gjq-LK-Tv1" firstAttribute="top" secondItem="6c6-Ei-MIL" secondAttribute="top" id="xfD-9n-l5B"/>
                                             </constraints>
                                         </view>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-A9-dCB">
+                                            <rect key="frame" x="0.0" y="230" width="361" height="0.0"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-GW-Za0">
+                                                    <rect key="frame" x="10" y="-25" width="341" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCq-WL-7JF">
+                                                            <rect key="frame" x="0.0" y="0.0" width="341" height="50"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="hWW-GW-Za0" firstAttribute="leading" secondItem="LFr-A9-dCB" secondAttribute="leading" constant="10" id="4hW-QX-bTK"/>
+                                                <constraint firstAttribute="trailing" secondItem="hWW-GW-Za0" secondAttribute="trailing" constant="10" id="Eoc-mv-c1c"/>
+                                                <constraint firstItem="hWW-GW-Za0" firstAttribute="centerY" secondItem="LFr-A9-dCB" secondAttribute="centerY" id="llu-pV-fZb"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7P-PM-Wdy">
-                                    <rect key="frame" x="16" y="356" width="361" height="39.666666666666686"/>
-                                    <string key="text">Быстрй VPN основан на платформе Outline, разработанной командой Jigsaw. Это программа с открытым исходным кодом, использующая протокол Shadowsocks.</string>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
-                                    <color key="textColor" name="gray"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="aboutText"/>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kd-BU-jfm">
-                                    <rect key="frame" x="16" y="415.66666666666669" width="361" height="190.00000000000006"/>
+                                    <rect key="frame" x="16" y="316" width="361" height="211"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qrI-u8-tvM">
-                                            <rect key="frame" x="0.0" y="10" width="361" height="170"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="qrI-u8-tvM">
+                                            <rect key="frame" x="0.0" y="10" width="361" height="146"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbA-4u-at2">
                                                     <rect key="frame" x="0.0" y="0.0" width="361" height="35"/>
@@ -257,7 +248,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Конфиденциальность" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzk-GI-n1F">
                                                             <rect key="frame" x="10" y="0.0" width="341" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="privacy"/>
@@ -285,12 +276,12 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-FN-kOE">
-                                                    <rect key="frame" x="0.0" y="45" width="361" height="35"/>
+                                                    <rect key="frame" x="0.0" y="37" width="361" height="35"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сбор Данных" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BE1-1j-qQL">
                                                             <rect key="frame" x="10" y="0.0" width="341" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="dataCollection"/>
@@ -317,12 +308,12 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Hq-Cl-Qh8">
-                                                    <rect key="frame" x="0.0" y="89.999999999999943" width="361" height="35"/>
+                                                    <rect key="frame" x="0.0" y="74" width="361" height="35"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Условия Использования" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhM-aF-dKk">
                                                             <rect key="frame" x="10" y="0.0" width="341" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="termOfUse"/>
@@ -349,12 +340,12 @@
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ed5-j3-71t">
-                                                    <rect key="frame" x="0.0" y="134.99999999999994" width="361" height="35"/>
+                                                    <rect key="frame" x="0.0" y="111" width="361" height="35"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Лицензии" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryv-uh-0lo">
                                                             <rect key="frame" x="10" y="0.0" width="341" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <color key="textColor" name="black"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="licenses"/>
@@ -382,13 +373,29 @@
                                                 </view>
                                             </subviews>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7P-PM-Wdy">
+                                            <rect key="frame" x="10" y="166" width="341" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Nxi-Vk-cnC"/>
+                                            </constraints>
+                                            <string key="text">Быстрй VPN основан на платформе Outline, разработанной командой Jigsaw. Это программа с открытым исходным кодом, использующая протокол Shadowsocks.</string>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="aboutText"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </label>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="qrI-u8-tvM" firstAttribute="leading" secondItem="0kd-BU-jfm" secondAttribute="leading" id="8p9-a3-HYw"/>
+                                        <constraint firstAttribute="bottom" secondItem="R7P-PM-Wdy" secondAttribute="bottom" constant="5" id="ISg-Rj-2gw"/>
                                         <constraint firstAttribute="trailing" secondItem="qrI-u8-tvM" secondAttribute="trailing" id="Ita-Gd-1AL"/>
-                                        <constraint firstAttribute="bottom" secondItem="qrI-u8-tvM" secondAttribute="bottom" constant="10" id="gKl-ez-klf"/>
+                                        <constraint firstItem="R7P-PM-Wdy" firstAttribute="top" secondItem="qrI-u8-tvM" secondAttribute="bottom" constant="10" id="lya-fG-hIJ"/>
+                                        <constraint firstItem="R7P-PM-Wdy" firstAttribute="leading" secondItem="0kd-BU-jfm" secondAttribute="leading" constant="10" id="ogg-py-9qz"/>
                                         <constraint firstItem="qrI-u8-tvM" firstAttribute="top" secondItem="0kd-BU-jfm" secondAttribute="top" constant="10" id="rzQ-qe-Vdh"/>
+                                        <constraint firstAttribute="trailing" secondItem="R7P-PM-Wdy" secondAttribute="trailing" constant="10" id="xCI-YX-oYa"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -396,18 +403,13 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="0kd-BU-jfm" secondAttribute="trailing" constant="16" id="0n2-kd-M3u"/>
                                 <constraint firstAttribute="bottom" secondItem="0kd-BU-jfm" secondAttribute="bottom" constant="20" id="BZn-Sd-PD3"/>
-                                <constraint firstItem="3jO-a4-q6a" firstAttribute="top" secondItem="fWI-Ep-SW7" secondAttribute="top" id="DpE-gP-wVm"/>
                                 <constraint firstItem="0kd-BU-jfm" firstAttribute="leading" secondItem="fWI-Ep-SW7" secondAttribute="leading" constant="16" id="Eae-4Q-KM7"/>
-                                <constraint firstAttribute="trailing" secondItem="R7P-PM-Wdy" secondAttribute="trailing" constant="16" id="FPc-Ae-euV"/>
                                 <constraint firstItem="Dsv-7K-EO4" firstAttribute="leading" secondItem="fWI-Ep-SW7" secondAttribute="leading" constant="16" id="Fiv-0X-KJm"/>
-                                <constraint firstItem="3jO-a4-q6a" firstAttribute="leading" secondItem="fWI-Ep-SW7" secondAttribute="leading" constant="16" id="HSW-iR-7ju"/>
                                 <constraint firstAttribute="trailing" secondItem="0hC-AJ-dwL" secondAttribute="trailing" constant="16" id="MBV-St-W6M"/>
                                 <constraint firstItem="0hC-AJ-dwL" firstAttribute="leading" secondItem="fWI-Ep-SW7" secondAttribute="leading" constant="16" id="Md5-mC-CgA"/>
-                                <constraint firstItem="Dsv-7K-EO4" firstAttribute="top" secondItem="3jO-a4-q6a" secondAttribute="bottom" constant="30" id="ciO-8F-KsA"/>
                                 <constraint firstItem="0hC-AJ-dwL" firstAttribute="top" secondItem="Dsv-7K-EO4" secondAttribute="bottom" constant="16" id="f5n-ui-2VH"/>
-                                <constraint firstItem="R7P-PM-Wdy" firstAttribute="top" secondItem="0hC-AJ-dwL" secondAttribute="bottom" constant="50" id="jL8-Gi-AxV"/>
-                                <constraint firstItem="R7P-PM-Wdy" firstAttribute="leading" secondItem="fWI-Ep-SW7" secondAttribute="leading" constant="16" id="oMK-Tz-cIg"/>
-                                <constraint firstItem="0kd-BU-jfm" firstAttribute="top" secondItem="R7P-PM-Wdy" secondAttribute="bottom" constant="20" id="vDr-vX-YHP"/>
+                                <constraint firstItem="0kd-BU-jfm" firstAttribute="top" secondItem="0hC-AJ-dwL" secondAttribute="bottom" constant="50" id="fIO-ZR-ggu"/>
+                                <constraint firstItem="Dsv-7K-EO4" firstAttribute="top" secondItem="fWI-Ep-SW7" secondAttribute="top" constant="20" id="nJ1-9O-gAD"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -429,6 +431,8 @@
                 <constraint firstItem="Ky9-1h-1te" firstAttribute="leading" secondItem="V6f-Dq-hFN" secondAttribute="leading" id="YVT-76-wjj"/>
             </constraints>
             <connections>
+                <outlet property="dateLabel" destination="NCq-WL-7JF" id="6bn-Cd-Y1N"/>
+                <outlet property="dateView" destination="LFr-A9-dCB" id="Vfy-1N-EOW"/>
                 <outlet property="versionLabel" destination="Dsv-7K-EO4" id="LnW-0E-LmG"/>
                 <outletCollection property="views" destination="KKE-3O-zo1" collectionClass="NSMutableArray" id="dgz-as-a4J"/>
                 <outletCollection property="views" destination="uSc-cK-P6J" collectionClass="NSMutableArray" id="6dy-by-t6R"/>
@@ -443,13 +447,6 @@
         <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="email" width="20" height="20"/>
         <image name="global" width="18" height="18.333333969116211"/>
-        <image name="logo" width="30" height="30"/>
         <image name="tgBlue" width="20" height="20"/>
-        <namedColor name="black">
-            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray">
-            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

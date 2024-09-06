@@ -27,7 +27,7 @@ final class PaymentViewController: UIViewController, AlertViewController, ViewSp
     }
     
     @IBAction func nextAction(_ sedner: UIButton) {
-//        KeychainAccessCheck.saveFirstLaunch()
+        KeychainAccessCheck.saveFirstLaunch()
         presentTabBarVC()
     }
     

@@ -15,6 +15,8 @@ extension Notification.Name {
     static let deleteUrl = Notification.Name(rawValue: "deleteUrl")
     static let universalLink = Notification.Name(rawValue: "universalLink")
     static let startVPN = Notification.Name(rawValue: "startVPN")
+    static let connectKey = Notification.Name(rawValue: "connectKey")
+    static let getData = Notification.Name(rawValue: "getData")
 
     func post(object: Any? = nil, userInfo: [AnyHashable : Any]? = nil) {
         NotificationCenter.default.post(name: self, object: object, userInfo: userInfo)

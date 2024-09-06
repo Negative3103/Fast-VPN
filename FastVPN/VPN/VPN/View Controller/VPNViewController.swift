@@ -109,32 +109,17 @@ extension VPNViewController: VPNViewModelProtocol {
             showErrorAlert(message: message)
         }
         
-        if let endDate = endDate {
-            view().dateStackView.isHidden = false
-            view().dateLabel.text = endDate.changeTimeFormat(from: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS", to: "yyyy.MM.dd HH:mm")
-        } else {
-            view().dateStackView.isHidden = true
-        }
-        
         guard let server = server else { return }
         connect(configJson: server.returnJSON())
     }
     
     func didFinishFetch(server: ServerModel?, endDate: String?, serverName: String?, message: String?) {
-        
         if let server = server {
             self.serverModel = server
         }
         
         if let _ = message {
             UserDefaults.standard.setHasServer(hasServer: false)
-        }
-        
-        if let endDate = endDate {
-            view().dateStackView.isHidden = false
-            view().dateLabel.text = endDate.changeTimeFormat(from: "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS", to: "yyyy.MM.dd HH:mm")
-        } else {
-            view().dateStackView.isHidden = true
         }
     }
 }
@@ -145,16 +130,11 @@ extension VPNViewController {
         viewModel.delegate = self
         navigationItem.title = "fastVPN".localized
         navigationController?.navigationBar.installBlurEffect()
-        view().addButton.addTarget(self, action: #selector(presentAddView), for: .touchUpInside)
         view().animate(animation: .connected, viewController: self)
-        
-        guard UserDefaults.standard.isFromRestrictedCountry() else { return }
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: view().addButton)
         
         Notification.Name.deleteUrl.onPost { _ in
             UserDefaults.standard.removeVpnKey()
             UserDefaults.standard.removeVpnServer()
-            self.view().dateStackView.isHidden = true
             self.serverModel = nil
             self.vpn.stop("0")
             self.setupButtonStatus()
@@ -164,6 +144,10 @@ extension VPNViewController {
             guard let clientID = clientID.object as? String else { return }
             self?.viewModel.registration(clientId: clientID)
         }
+        
+        Notification.Name.connectKey.onPost { [weak self] _ in
+            self?.connectVpn()
+        }
     }
     
     private func connect(configJson: [String: Any]) {
@@ -171,20 +155,14 @@ extension VPNViewController {
             vpn.stop("0")
             setupButtonStatus()
             return }
-        startAnimation()
         vpn.start("0", configJson: configJson) { [weak self] errorCode in
             guard let `self` = self else { return }
             if errorCode == .noError {
                 Haptic.impact(.soft).generate()
                 setupButtonStatus()
-            } else {
-                stopAnimation()
             }
+            Notification.Name.getData.post()
         }
-    }
-    
-    @objc private func presentAddView() {
-        coordinator?.presentAddView(viewController: self)
     }
     
     @objc func connectVpn() {
@@ -217,10 +195,7 @@ extension VPNViewController {
             self.view().ballBtn.isHidden = active
             self.view().animationView.isHidden = !active
         }
-        view().statusLabel.text = active ? "connected".localized : "disconnected".localized
-        view().statusLabel.textColor = active ? .appColor(.green) : .red
         view().serverLabel.text = UserDefaults.standard.getVpnServer()
-        stopAnimation()
     }
     
     internal func checkStatus() {
@@ -228,38 +203,12 @@ extension VPNViewController {
         self.shouldAnimate = active
         view().ballBtn.isHidden = active
         view().animationView.isHidden = !active
-        view().statusLabel.text = active ? "connected".localized : "disconnected".localized
-        view().statusLabel.textColor = active ? .appColor(.green) : .red
         view().serverLabel.text = UserDefaults.standard.getVpnServer()
-    }
-    
-    private func startAnimation() {
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.toValue = NSNumber(value: Double.pi * 2)
-        rotationAnimation.duration = 1.0
-        rotationAnimation.isCumulative = true
-        rotationAnimation.repeatCount = Float.greatestFiniteMagnitude
-        view().ballBtn.layer.add(rotationAnimation, forKey: "rotationAnimation")
-    }
-    
-    private func stopAnimation() {
-        view().ballBtn.layer.removeAnimation(forKey: "rotationAnimation")
     }
     
     private func showUpdateVC() {
         guard !UserDefaults.standard.updateIsShowed() else { return }
         coordinator?.presentUpdateVC(viewController: self)
-    }
-}
-
-//MARK: - AddKeyPopUpViewControllerDelegate
-extension VPNViewController: AddKeyViewControllerDelegate {
-    func didFinishKey() {
-        guard let key = UserDefaults.standard.getVpnKey() else { return }
-        guard key.contains("ssconf://") else { 
-            showErrorAlert(message: "enterValidKey".localized)
-            return }
-        connectVpn()
     }
 }
 

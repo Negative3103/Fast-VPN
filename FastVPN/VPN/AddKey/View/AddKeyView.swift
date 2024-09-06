@@ -13,12 +13,13 @@ final class AddKeyView: CustomView {
     @IBOutlet weak var keyTextField: UITextField!
     @IBOutlet weak var button: HighlightButton! {
         didSet {
-            button.layer.cornerRadius = 10
+            button.setBorder(enable: true, borderWidth: 1.5, color: .white)
+            button.layer.cornerRadius = 16
         }
     }
     @IBOutlet weak var keyView: UIView! {
         didSet {
-            keyView.layer.cornerRadius = 10
+            keyView.layer.cornerRadius = 16
         }
     }
 }

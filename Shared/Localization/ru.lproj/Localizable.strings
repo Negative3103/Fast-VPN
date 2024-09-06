@@ -11,7 +11,7 @@ vpn = "VPN";
 about = "Информация";
 
 //MARK: - VPN
-fastVPN = "Быстрый VPN";
+fastVPN = "⚡ БЫСТРЫЙ ВПН ⚡";
 server = "Сервер:";
 status = "Статус:";
 connected = "Подключен";
@@ -19,7 +19,7 @@ disconnected = "Отключен";
 deleteCurrentUrl = "Удалить текущую подписку";
 enterKey = "Для подключения добавьте ключ";
 enterValidKey = "Введите действительную ссылку";
-tariffEndDate = "Дата окончания подписки";
+tariffEndDate = "Подписка кончится";
 
 //MARK: - Buttons
 delete = "Удалить";
@@ -68,3 +68,6 @@ newFastVpn = "БЫСТРЫЙ VPN";
 chooseTariff = "ВЫБЕРИТЕ ТАРИФ";
 choosePayment = "ВЫБЕРИТЕ СПОСОБ ОПЛАТЫ";
 settingsWithTg = "НАСТРОИТЬ ЧЕРЕЗ ТЕЛЕГРАМ БОТ";
+buyWithoutAdd = "Купить тариф без рекламы";
+information = "ИНФОРМАЦИЯ";
+

@@ -28,7 +28,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавление ключа доступа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="106-4S-Ixs">
                                     <rect key="frame" x="0.0" y="0.0" width="361" height="26.333333333333332"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <color key="textColor" name="black"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="keyTitle"/>
@@ -37,7 +37,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чтобы добавить сервер Быстрый VPN,  вставьте ключ доступа в это поле:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jT6-cJ-p1V">
                                     <rect key="frame" x="0.0" y="26.333333333333339" width="361" height="43.666666666666657"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <color key="textColor" name="gray"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="keySubtitle"/>
@@ -53,6 +53,7 @@
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="key" translatesAutoresizingMaskIntoConstraints="NO" id="283-Fg-lFX">
                                             <rect key="frame" x="0.0" y="17" width="16" height="16"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="Qci-Qo-5Np"/>
                                                 <constraint firstAttribute="width" constant="16" id="YgH-Ac-nEm"/>
@@ -64,14 +65,14 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="Kjr-gb-hx3"/>
                                             </constraints>
-                                            <color key="textColor" name="black"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                         </textField>
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" name="gray"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="V68-ey-JYg" secondAttribute="bottom" id="7t3-km-OZ5"/>
                                 <constraint firstAttribute="trailing" secondItem="V68-ey-JYg" secondAttribute="trailing" constant="20" id="MpN-uc-kyF"/>
@@ -82,7 +83,7 @@
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaV-Un-n2k" customClass="HighlightButton" customModule="FastVPN" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="140" width="361" height="50"/>
-                            <color key="backgroundColor" name="black"/>
+                            <color key="backgroundColor" name="newBlack"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="dnU-mt-Uvf"/>
                             </constraints>
@@ -91,10 +92,10 @@
                             <state key="normal" title="Добавить"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
-                                    <color key="value" name="black50"/>
+                                    <color key="value" name="newBlack50"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="normalBackgroundColor">
-                                    <color key="value" name="black"/>
+                                    <color key="value" name="newBlack"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="add"/>
                             </userDefinedRuntimeAttributes>
@@ -110,7 +111,7 @@
                         <constraint firstAttribute="width" constant="32" id="Ibv-ap-vYf"/>
                         <constraint firstAttribute="height" constant="32" id="hKj-yt-LHg"/>
                     </constraints>
-                    <color key="tintColor" name="black50"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <state key="normal" image="xmark" catalog="system"/>
                     <connections>
@@ -140,14 +141,11 @@
     <resources>
         <image name="key" width="16" height="16.333333969116211"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <namedColor name="black">
-            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="newBlack">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="black50">
-            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.89999997615814209" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="gray">
-            <color red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="0.40000000596046448" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="newBlack50">
+            <color red="0.082352941176470587" green="0.082352941176470587" blue="0.082352941176470587" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
