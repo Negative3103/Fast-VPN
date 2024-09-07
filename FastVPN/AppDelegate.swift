@@ -12,6 +12,7 @@ import FirebaseMessaging
 import UserNotifications
 import CocoaLumberjackSwift
 import BackgroundTasks
+import Network
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         registerForPushNotifications()
         
         BGTaskScheduler.shared.register(forTaskWithIdentifier: "com.fastVpn.networkMonitorTask", using: nil) { task in
-            self.handleNetworkMonitorTask(task: task as! BGProcessingTask)
+            self.handleNetworkMonitorTask(task: task as! BGAppRefreshTask)
         }
 
         return true
@@ -60,18 +61,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        scheduleAppRefresh()
         guard let vc = (application.topViewController() as? VPNViewController) else { return }
         vc.checkStatus()
-        vc.setMonitoring()
     }
     
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        NetworkMonitor.shared.stopMonitoring()
-    }
-    
-    func handleNetworkMonitorTask(task: BGProcessingTask) {
+    func handleNetworkMonitorTask(task: BGAppRefreshTask) {
+        let queue = DispatchQueue.global(qos: .background)
+        let monitor = NWPathMonitor()
+        monitor.start(queue: queue)
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                task.setTaskCompleted(success: true)
+            } else {
+                Notification.Name.noInternet.post()
+                task.setTaskCompleted(success: false)
+            }
+            monitor.cancel()
+        }
+
         task.expirationHandler = {
+            monitor.cancel()
             task.setTaskCompleted(success: false)
+        }
+    }
+    
+    func scheduleAppRefresh() {
+        let request = BGAppRefreshTaskRequest(identifier: "com.fastVpn.networkMonitorTask")
+        request.earliestBeginDate = Date(timeIntervalSinceNow: 15 * 60)
+        do {
+            try BGTaskScheduler.shared.submit(request)
+        } catch {
+            print("Не удалось запланировать задачу: \(error)")
         }
     }
     

@@ -17,7 +17,8 @@ extension Notification.Name {
     static let startVPN = Notification.Name(rawValue: "startVPN")
     static let connectKey = Notification.Name(rawValue: "connectKey")
     static let getData = Notification.Name(rawValue: "getData")
-
+    static let noInternet = Notification.Name(rawValue: "noInternet")
+    
     func post(object: Any? = nil, userInfo: [AnyHashable : Any]? = nil) {
         NotificationCenter.default.post(name: self, object: object, userInfo: userInfo)
     }

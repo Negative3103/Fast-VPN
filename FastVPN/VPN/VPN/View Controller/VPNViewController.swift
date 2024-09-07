@@ -37,7 +37,9 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
             guard let serverModel = serverModel else { return }
             UserDefaults.standard.setVpnServer(server: serverModel.server ?? "")
             UserDefaults.standard.setHasServer(hasServer: true)
-            view().serverLabel.text = serverModel.server
+            if let firstPart = serverModel.server?.split(separator: ".").first {
+                view().serverLabel.text = String(firstPart)
+            }
         }
     }
     
@@ -134,12 +136,13 @@ extension VPNViewController {
         navigationController?.navigationBar.installBlurEffect()
         view().ballBtn.setImage(.appImage(.ballActiv), for: .normal)
         
-        Notification.Name.deleteUrl.onPost { _ in
+        Notification.Name.noInternet.onPost { [weak self] _ in self?.vpn.stop("0")}
+        Notification.Name.deleteUrl.onPost { [weak self] _ in
             UserDefaults.standard.removeVpnKey()
             UserDefaults.standard.removeVpnServer()
-            self.serverModel = nil
-            self.vpn.stop("0")
-            self.setupButtonStatus()
+            self?.serverModel = nil
+            self?.vpn.stop("0")
+            self?.setupButtonStatus()
         }
         
         Notification.Name.universalLink.onPost { [weak self] clientID in
@@ -157,7 +160,7 @@ extension VPNViewController {
         monitor.onConnectionTypeChanged = { connectionType in
             DispatchQueue.main.async {
                 switch connectionType {
-                case .wifi, .cellular, .ethernet, .unknown:
+                case .wifi, .cellular, .ethernet:
                     guard let serverModel = self.serverModel else { return }
                     self.vpn.start("0", configJson: serverModel.returnJSON()) { [weak self] errorCode in
                         guard let `self` = self else { return }
@@ -167,6 +170,8 @@ extension VPNViewController {
                         }
                         Notification.Name.getData.post()
                     }
+                case .unknown:
+                    self.vpn.stop("0")
                 }
             }
         }
@@ -216,14 +221,18 @@ extension VPNViewController {
         UIView.transition(with: view(), duration: 0.5, options: .transitionCrossDissolve) {
             self.view().ballBtn.setImage(active ? .appImage(.ballActiv) : .appImage(.ballNoActiv), for: .normal)
         }
-        view().serverLabel.text = UserDefaults.standard.getVpnServer()
+        if let firstPart = UserDefaults.standard.getVpnServer()?.split(separator: ".").first {
+            view().serverLabel.text = String(firstPart)
+        }
     }
     
     internal func checkStatus() {
         let active = vpn.isActive("0")
         self.shouldAnimate = active
         view().ballBtn.setImage(active ? .appImage(.ballActiv) : .appImage(.ballNoActiv), for: .normal)
-        view().serverLabel.text = UserDefaults.standard.getVpnServer()
+        if let firstPart = UserDefaults.standard.getVpnServer()?.split(separator: ".").first {
+            view().serverLabel.text = String(firstPart)
+        }
     }
     
     private func showUpdateVC() {
