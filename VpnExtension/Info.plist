@@ -3,11 +3,19 @@
 <plist version="1.0">
 <dict>
 	<key>NSExtension</key>
-	<dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.networkextension.packet-tunnel</string>
-		<key>NSExtensionPrincipalClass</key>
-		<string>PacketTunnelProvider</string>
-	</dict>
+	<array>
+		<dict>
+			<key>NSExtensionPointIdentifier</key>
+			<string>com.apple.networkextension.packet-tunnel</string>
+			<key>NSExtensionPrincipalClass</key>
+			<string>PacketTunnelProvider</string>
+		</dict>
+		<dict>
+			<key>NSExtensionPointIdentifier</key>
+			<string>com.apple.app-intents</string>
+			<key>NSExtensionPrincipalClass</key>
+			<string>FastVPN.ShortcutButtonVPN</string>
+		</dict>
+	</array>
 </dict>
 </plist>
