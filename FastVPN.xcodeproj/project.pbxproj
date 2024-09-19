@@ -39,6 +39,10 @@
 		D10750082C1CBA8200026F0A /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750072C1CBA8200026F0A /* UINavigationBar.swift */; };
 		D107500A2C1CC1A000026F0A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10750092C1CC1A000026F0A /* UIViewController.swift */; };
 		D107500C2C1CC1D200026F0A /* MainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D107500B2C1CC1D200026F0A /* MainConstants.swift */; };
+		D12AB4CC2C9BEA3F008C5C0E /* dataCollection.docx in Resources */ = {isa = PBXBuildFile; fileRef = D12AB4C82C9BEA3E008C5C0E /* dataCollection.docx */; };
+		D12AB4CD2C9BEA3F008C5C0E /* conditions.docx in Resources */ = {isa = PBXBuildFile; fileRef = D12AB4C92C9BEA3F008C5C0E /* conditions.docx */; };
+		D12AB4CE2C9BEA3F008C5C0E /* attribution.docx in Resources */ = {isa = PBXBuildFile; fileRef = D12AB4CA2C9BEA3F008C5C0E /* attribution.docx */; };
+		D12AB4CF2C9BEA3F008C5C0E /* politicy.docx in Resources */ = {isa = PBXBuildFile; fileRef = D12AB4CB2C9BEA3F008C5C0E /* politicy.docx */; };
 		D137AEBF2C2EE58000966F6C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D137AEBE2C2EE58000966F6C /* String.swift */; };
 		D13C35652C8AC6BF00368ADC /* TariffModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13C35642C8AC6BF00368ADC /* TariffModel.swift */; };
 		D13C35672C8AC7A900368ADC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13C35662C8AC7A900368ADC /* CustomTableViewCell.swift */; };
@@ -172,6 +176,10 @@
 		D10750072C1CBA8200026F0A /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		D10750092C1CC1A000026F0A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		D107500B2C1CC1D200026F0A /* MainConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConstants.swift; sourceTree = "<group>"; };
+		D12AB4C82C9BEA3E008C5C0E /* dataCollection.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = dataCollection.docx; sourceTree = "<group>"; };
+		D12AB4C92C9BEA3F008C5C0E /* conditions.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = conditions.docx; sourceTree = "<group>"; };
+		D12AB4CA2C9BEA3F008C5C0E /* attribution.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = attribution.docx; sourceTree = "<group>"; };
+		D12AB4CB2C9BEA3F008C5C0E /* politicy.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = politicy.docx; sourceTree = "<group>"; };
 		D137AEBE2C2EE58000966F6C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D13C35642C8AC6BF00368ADC /* TariffModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TariffModel.swift; sourceTree = "<group>"; };
 		D13C35662C8AC7A900368ADC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -452,6 +460,17 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		D12AB4C72C9BEA1D008C5C0E /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				D12AB4CA2C9BEA3F008C5C0E /* attribution.docx */,
+				D12AB4C92C9BEA3F008C5C0E /* conditions.docx */,
+				D12AB4C82C9BEA3E008C5C0E /* dataCollection.docx */,
+				D12AB4CB2C9BEA3F008C5C0E /* politicy.docx */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
 		D18B84C32C1EFFE7006B72C7 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +653,7 @@
 		D1C6E1EC2C1C2FCD006935CD /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				D12AB4C72C9BEA1D008C5C0E /* Files */,
 				0B7E54172C9AEDE100958A12 /* Shortcuts */,
 				D1011EDB2C6B39B80053550C /* Layout */,
 				D1BE862B2C1EDD2200332CA2 /* Localization */,
@@ -956,8 +976,12 @@
 				D18B84D52C1F003D006B72C7 /* LanguageCollectionViewCell.xib in Resources */,
 				D1011ECD2C6B35B00053550C /* TariffsTableViewCell.xib in Resources */,
 				D1011EC92C6B35A20053550C /* TariffsView.xib in Resources */,
+				D12AB4CF2C9BEA3F008C5C0E /* politicy.docx in Resources */,
+				D12AB4CD2C9BEA3F008C5C0E /* conditions.docx in Resources */,
 				D1CC86352C5A131B006E4F18 /* UpdateView.xib in Resources */,
 				D1C6E2352C1C360F006935CD /* VPNView.xib in Resources */,
+				D12AB4CC2C9BEA3F008C5C0E /* dataCollection.docx in Resources */,
+				D12AB4CE2C9BEA3F008C5C0E /* attribution.docx in Resources */,
 				D1011EB72C6B34710053550C /* DescriptionsCollectionViewCell.xib in Resources */,
 				D1011EB32C6B34650053550C /* DescriptionsView.xib in Resources */,
 			);
@@ -1233,7 +1257,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1250,7 +1274,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1271,7 +1295,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FastVPN/FastVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = UP5XFBQDLT;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1288,7 +1312,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rapid.fastvpn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
