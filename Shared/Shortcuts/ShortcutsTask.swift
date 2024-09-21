@@ -20,8 +20,8 @@ struct ShortcutButtonVPN: AppIntent {
     
     func perform() async throws -> some IntentResult {
         print("vpn.connectVpn() Start")
-        
-        let vpn = await VPNViewController()
+    
+        let vpn = await VPNViewController.shared
         
         await vpn.connectVpn()
         

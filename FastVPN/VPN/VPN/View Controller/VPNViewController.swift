@@ -22,6 +22,9 @@ final class VPNViewController: UIViewController, ViewSpecificController, AlertVi
     //MARK: - Root View
     typealias RootView = VPNView
     
+    //MARK: - Shared Instance
+    static let shared = VPNViewController()
+    
     //MARK: - Services
     internal let customSpinnerView = CustomSpinnerView()
     private let viewModel = VPNViewModel()
